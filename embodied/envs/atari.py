@@ -49,14 +49,33 @@ class Atari(embodied.Env):
     self.rng = np.random.default_rng(seed)
 
     with self.LOCK:
+      # Force ALE to use CPU to avoid CUDA conflicts with JAX
+      # Save original CUDA visibility, hide GPUs from ALE, then restore
+      original_cuda = os.environ.get('CUDA_VISIBLE_DEVICES', None)
+      os.environ['CUDA_VISIBLE_DEVICES'] = ''
+
       self.ale = ale_py.ALEInterface()
       self.ale.setLoggerMode(ale_py.LoggerMode.Error)
       self.ale.setInt(b'random_seed', self.rng.integers(0, 2 ** 31))
+
+      # Restore CUDA visibility for JAX
+      if original_cuda is not None:
+        os.environ['CUDA_VISIBLE_DEVICES'] = original_cuda
+      else:
+        os.environ.pop('CUDA_VISIBLE_DEVICES', None)
+
       path = os.environ.get('ALE_ROM_PATH', None)
       if path:
         self.ale.loadROM(os.path.join(path, f'{name}.bin'))
       else:
-        self.ale.loadROM(roms.get_rom_path(name))
+        # Support both ale-py 0.8.x and 0.9.x
+        if hasattr(roms, 'get_rom_path'):
+          self.ale.loadROM(roms.get_rom_path(name))
+        else:
+          # ale-py 0.8.x: ROMs are attributes
+          rom_name = ''.join([word.capitalize() for word in name.split('_')])
+          rom_path = getattr(roms, rom_name)
+          self.ale.loadROM(rom_path)
 
     self.ale.setFloat('repeat_action_probability', 0.25 if sticky else 0.0)
     self.actionset = {
