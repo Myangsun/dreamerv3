@@ -13,6 +13,13 @@ GAME="atari100k_pong"
 
 module load cuda/12.4.0
 
+# Prevent JAX from preallocating all GPU memory (helps avoid CUDA conflicts with ALE)
+export XLA_PYTHON_CLIENT_PREALLOCATE=false
+export XLA_PYTHON_CLIENT_MEM_FRACTION=0.75
+
+# Force ALE to use dummy video driver (no GPU rendering)
+export SDL_VIDEODRIVER=dummy
+
 # Set Atari ROM path for ale-py 0.8.1
 export ALE_ROM_PATH=~/.local/lib/python3.11/site-packages/AutoROM/roms
 
@@ -39,7 +46,8 @@ echo ""
 python3 dreamerv3/main.py \
   --logdir $LOGDIR \
   --configs atari100k \
-  --task $GAME
+  --task $GAME \
+  --jax.platform cpu
 
 echo ""
 echo "=== Training Complete ==="
