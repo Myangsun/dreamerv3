@@ -1,0 +1,1627 @@
+=== Verifying GPU access ===
+JAX devices: [CudaDevice(id=0)]
+GPU count: 1
+
+=== Starting DreamerV3 test run ===
+2025-11-25 18:05:51.515190: E external/xla/xla/python/profiler/internal/python_hooks.cc:400] Can't import tensorflow.python.profiler.trace
+2025-11-25 18:05:58.306231: E external/xla/xla/python/profiler/internal/python_hooks.cc:400] Can't import tensorflow.python.profiler.trace
+---  ___                           __   ______ ---
+--- |   \ _ _ ___ __ _ _ __  ___ _ \ \ / /__ / ---
+--- | |) | '_/ -_) _` | '  \/ -_) '/\ V / |_ \ ---
+--- |___/|_| \___\__,_|_|_|_\___|_|  \_/ |___/ ---
+Replica: 0 / 1
+Logdir: /home/msun14/logdir/dreamer/test_20251125_180508
+Run script: train
+Observations
+  image            Space(uint8, shape=(64, 64, 3), low=0, high=255)
+  reward           Space(float32, shape=(), low=-inf, high=inf)
+  is_first         Space(bool, shape=(), low=False, high=True)
+  is_last          Space(bool, shape=(), low=False, high=True)
+  is_terminal      Space(bool, shape=(), low=False, high=True)
+Actions
+  action           Space(int32, shape=(), low=0, high=17)
+Extras
+  consec           Space(int32, shape=(), low=-2147483648, high=2147483647)
+  stepid           Space(uint8, shape=(20,), low=0, high=255)
+  dyn/deter        Space(float32, shape=(8,), low=-inf, high=inf)
+  dyn/stoch        Space(float32, shape=(2, 4), low=-inf, high=inf)
+JAX devices (1): [TFRT_CPU_0]
+Policy devices: TFRT_CPU_0
+Train devices:  TFRT_CPU_0
+Initializing parameters...
+Optimizer opt has 11,735 params:
+         6,339 dec
+         3,752 enc
+           816 dyn
+           297 pol
+           189 rew
+           189 val
+           153 con
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/logits/bias
+[1]
+[1]
+pol/head/action/logits/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/logits/bias
+[2]
+[1]
+pol/head/action/logits/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[3]
+.count
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/logits/bias
+[1]
+[1]
+pol/head/action/logits/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/logits/bias
+[2]
+[1]
+pol/head/action/logits/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[3]
+.count
+Done initializing!
+Compiling 1 checkpoint groups...
+Largest checkpoint group: 0 GB
+Compiling train and report...
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/logits/bias
+[1]
+[1]
+pol/head/action/logits/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/logits/bias
+[2]
+[1]
+pol/head/action/logits/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[3]
+.count
+Train cost analysis:
+  FLOPS:            2.2e+09
+  Memory (temp):    4.0e+07
+  Memory (inputs):  1.2e+06
+  Memory (outputs): 1.5e+05
+  Memory (code):    1.1e+06
+
+Report cost analysis:
+  FLOPS:            3.3e+08
+  Memory (temp):    5.2e+06
+  Memory (inputs):  6.4e+05
+  Memory (outputs): 2.4e+06
+  Memory (code):    1.4e+06
+
+Done compiling!
+Did not find any checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180520F793464
+Saved checkpoint.
+Start training loop
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180537F788695
+Saved checkpoint.
+Start JAX profiler: /home/msun14/logdir/dreamer/test_20251125_180508
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180554F083496
+Saved checkpoint.
+Stop JAX profiler
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180610F073434
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180625F558189
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180640F940338
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180656F813725
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180712F187951
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180727F545329
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180742F968825
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180758F315773
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180813F702434
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180829F583088
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180845F057837
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180900F447104
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180915F807635
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180931F190654
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T180946F747689
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181002F048795
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181017F870267
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181033F108180
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181048F515376
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181104F360493
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181119F727013
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181135F165195
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181151F689186
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181207F576359
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181222F973986
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181238F424849
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181253F827085
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181309F637082
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181325F058548
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181340F528911
+Saved checkpoint.
+
+--------------------[Agent Step 4_320]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 2.1 / episode/length 208 / train/loss/con 0.81 / train/loss/dyn 1 / train/loss/image 706.67 / train/loss/policy -3.7e-4 / train/loss/rep 1 / train/loss/repval 2.7 / train/loss/rew 1.37 / train/loss/value 0.15 / train/rand/action 1 / replay/replay_ratio 34.59 / fps/policy 8.6 / fps/train 269.72
+
+Writing metrics: /home/msun14/logdir/dreamer/test_20251125_180508/scores.jsonl
+Writing metrics: /home/msun14/logdir/dreamer/test_20251125_180508/metrics.jsonl
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181355F662906
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181411F730203
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181427F546961
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181442F940430
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181458F271698
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181513F624796
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181529F533128
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181544F894219
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181600F296751
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181615F781896
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181631F574868
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181646F580042
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181702F337127
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181717F812550
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181733F033391
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181748F430172
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181803F900622
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181819F251301
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181834F655633
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181850F045533
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181905F992073
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181921F314886
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181936F704575
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T181952F566137
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T182007F893704
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T182023F289723
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T182038F744353
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T182054F539684
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T182109F961119
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T182125F196584
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T182140F511132
+Saved checkpoint.
+Saving checkpoint: /home/msun14/logdir/dreamer/test_20251125_180508/ckpt/20251125T182157F002444
+Saved checkpoint.
+
+--------------------[Agent Step 8_590]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.1 / episode/length 185 / train/loss/con 0.49 / train/loss/dyn 1 / train/loss/image 252.91 / train/loss/policy -7.8e-5 / train/loss/rep 1 / train/loss/repval 1.07 / train/loss/rew 0.58 / train/loss/value 0.12 / train/rand/action 1 / replay/replay_ratio 35.2 / fps/policy 8.52 / fps/train 272.74
+
+[2025-11-25T18:23:25.869] error: *** JOB 6685806 ON node3002 CANCELLED AT 2025-11-25T18:23:25 DUE to SIGNAL Terminated ***

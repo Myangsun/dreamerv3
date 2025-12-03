@@ -8,5 +8,5 @@ MUJOCO_LOG.TXT
 
 # Experiment outputs
 logdir/
-*.out
-logs/
+# *.out
+# logs/

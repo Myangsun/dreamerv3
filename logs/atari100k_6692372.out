@@ -1,0 +1,2666 @@
+=== Job Information ===
+Job ID: 6692372
+Node: node2804
+Game: atari100k_pong (100k benchmark)
+Start time: Wed Nov 26 02:31:36 EST 2025
+
+=== Verifying GPU ===
+Devices: [CudaDevice(id=0)]
+
+=== Starting Atari 100k Training: atari100k_pong ===
+This is the DATA-EFFICIENT benchmark (110k steps)
+Expected duration: 2-4 hours
+Logdir: ./logdir/dreamer/atari100k_pong_20251126_023138
+
+---  ___                           __   ______ ---
+--- |   \ _ _ ___ __ _ _ __  ___ _ \ \ / /__ / ---
+--- | |) | '_/ -_) _` | '  \/ -_) '/\ V / |_ \ ---
+--- |___/|_| \___\__,_|_|_|_\___|_|  \_/ |___/ ---
+Replica: 0 / 1
+Logdir: logdir/dreamer/atari100k_pong_20251126_023138
+Run script: parallel
+A.L.E: Arcade Learning Environment (version 0.9.0+750d7f9)
+[Powered by Stella]
+Observations
+  image            Space(uint8, shape=(64, 64, 3), low=0, high=255)
+  reward           Space(float32, shape=(), low=-inf, high=inf)
+  is_first         Space(bool, shape=(), low=False, high=True)
+  is_last          Space(bool, shape=(), low=False, high=True)
+  is_terminal      Space(bool, shape=(), low=False, high=True)
+Actions
+  action           Space(int32, shape=(), low=0, high=6)
+Extras
+  consec           Space(int32, shape=(), low=-2147483648, high=2147483647)
+  stepid           Space(uint8, shape=(20,), low=0, high=255)
+  dyn/deter        Space(float32, shape=(8192,), low=-inf, high=inf)
+  dyn/stoch        Space(float32, shape=(32, 64), low=-inf, high=inf)
+JAX devices (1): [cuda:0]
+Policy devices: cuda:0
+Train devices:  cuda:0
+Initializing parameters...
+[Env00000Logger] Connecting to localhost:33741
+[Env00000Logger] Connection established
+[Env00000] Make env
+A.L.E: Arcade Learning Environment (version 0.9.0+750d7f9)
+[Powered by Stella]
+[Env00001] Make env
+A.L.E: Arcade Learning Environment (version 0.9.0+750d7f9)
+[Powered by Stella]
+[Env00002] Make env
+A.L.E: Arcade Learning Environment (version 0.9.0+750d7f9)
+[Powered by Stella]
+[Env00003] Make env
+Optimizer opt has 165,942,536 params:
+    95,483,904 dyn
+    20,282,115 dec
+    12,850,431 val
+    12,595,206 pol
+    10,749,183 rew
+    10,488,833 con
+     3,492,864 enc
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/logits/bias
+[1]
+[1]
+pol/head/action/logits/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/logits/bias
+[2]
+[1]
+pol/head/action/logits/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/logits/bias
+[1]
+[1]
+pol/head/action/logits/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/logits/bias
+[2]
+[1]
+pol/head/action/logits/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+A.L.E: Arcade Learning Environment (version 0.9.0+750d7f9)
+[Powered by Stella]
+[Env00004] Make env
+A.L.E: Arcade Learning Environment (version 0.9.0+750d7f9)
+[Powered by Stella]
+Done initializing!
+Compiling 1 checkpoint groups...
+Largest checkpoint group: 2 GB
+Compiling train and report...
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/logits/bias
+[1]
+[1]
+pol/head/action/logits/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/logits/bias
+[2]
+[1]
+pol/head/action/logits/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+Train cost analysis:
+No available
+Report cost analysis:
+No available
+Done compiling!
+Did not find any checkpoint.
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/agent/20251126T023235F321747
+Saved checkpoint.
+[LearnerLogger] Connecting to localhost:33741
+[LearnerReplayUpdater] Connecting to localhost:41033
+[LearnerLogger] Connection established
+[ActorLogger] Connecting to localhost:33741
+[LearnerReplayUpdater] Connection established
+[LearnerReplayTrain] Connecting to localhost:41033
+[LearnerReplayReport] Connecting to localhost:41033
+[ActorLogger] Connection established
+[LearnerReplayTrain] Connection established
+[ActorReplay] Connecting to localhost:41033
+[LearnerReplayEval] Connecting to localhost:41033
+[LearnerReplayReport] Connection established
+[Actor] Binding to 0.0.0.0:43763
+[LearnerReplayEval] Connection established
+[ActorReplay] Connection established
+[Actor] Listening at 0.0.0.0:43763
+Did not find any checkpoint.
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T023140F012213
+Saved checkpoint.
+[Logger] Binding to 0.0.0.0:33741
+[Logger] Listening at 0.0.0.0:33741
+[Logger] Accepted connection from 127.0.0.1:38158
+[Logger] Accepted connection from 127.0.0.1:38386
+[Logger] Accepted connection from 127.0.0.1:43778
+[Logger] Accepted connection from 127.0.0.1:43784
+
+--------------------[Agent Step 708]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+No metrics.
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 2_536]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 0 / replay_eval/replay_ratio 0 / fps/policy 14.78 / fps/env 2.01
+
+[Env00000] Connecting to localhost:38923
+[Env00000] Still trying to connect... ([Errno 111] Connection refused)
+[Env00000] Connection established
+[Env00000] Episode of length 824 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 5_236]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 0 / replay_eval/replay_ratio 0 / episode/score -20 / episode/length 1212 / fps/policy 25.73 / fps/env 5.15
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 6_736]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 13.97 / replay_eval/replay_ratio 0 / fps/policy 21.72 / fps/env 4.34 / episode/score -21 / episode/length 761 / fps/train 235.94 / train/loss/con 0.21 / train/loss/dyn 13.51 / train/loss/image 646.26 / train/loss/policy -0.01 / train/loss/rep 13.51 / train/loss/repval 10.8 / train/loss/rew 5.39 / train/loss/value 6.09 / train/rand/action 1
+
+2025-11-26 02:39:41.297698: E external/xla/xla/python/profiler/internal/python_hooks.cc:412] Can't import tensorflow.python.profiler.trace
+2025-11-26 02:40:17.900942: E external/xla/xla/python/profiler/internal/python_hooks.cc:412] Can't import tensorflow.python.profiler.trace
+[Env00000] Episode of length 962 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 8_852]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.3 / replay_eval/replay_ratio 0 / fps/policy 10.75 / fps/env 2.14 / episode/score -21 / episode/length 988 / fps/train 1074.32 / train/loss/con 0.02 / train/loss/dyn 6.73 / train/loss/image 24.29 / train/loss/policy -0.18 / train/loss/rep 6.73 / train/loss/repval 8.1 / train/loss/rew 3.98 / train/loss/value 7.6 / train/rand/action 1
+
+[Env00000] Episode of length 1241 with score -17.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 12_580]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / episode/score -20 / episode/length 832 / fps/policy 38.98 / fps/env 7.8 / fps/train 1991.38 / train/loss/con 0.02 / train/loss/dyn 1.01 / train/loss/image 4.67 / train/loss/policy -0.19 / train/loss/rep 1.01 / train/loss/repval 4.16 / train/loss/rew 0.79 / train/loss/value 2.6 / train/rand/action 1
+
+[Env00000] Episode of length 894 with score -20.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+
+--------------------[Agent Step 16_320]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -20 / episode/length 893 / fps/policy 38.98 / fps/env 7.78 / fps/train 1994.11 / train/loss/con 0.03 / train/loss/dyn 1 / train/loss/image 4.25 / train/loss/policy -0.16 / train/loss/rep 1 / train/loss/repval 3.2 / train/loss/rew 0.13 / train/loss/value 1.77 / train/rand/action 0.89
+
+[Env00000] Episode of length 827 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T024641F118334
+Saved checkpoint.
+
+--------------------[Agent Step 19_708]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 826 / fps/policy 38.91 / fps/env 7.8 / fps/train 1799.35 / train/loss/con 0.03 / train/loss/dyn 1.04 / train/loss/image 4.09 / train/loss/policy -0.05 / train/loss/rep 1.04 / train/loss/repval 2.63 / train/loss/rew 0.13 / train/loss/value 1.37 / train/rand/action 0.36
+
+[Env00000] Episode of length 880 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 23_440]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -21 / episode/length 883 / replay/replay_ratio 259.39 / replay_eval/replay_ratio 0 / fps/policy 35.24 / fps/env 7.05 / fps/train 1995.82 / train/loss/con 0.03 / train/loss/dyn 1 / train/loss/image 3.85 / train/loss/policy -0.02 / train/loss/rep 1 / train/loss/repval 2.39 / train/loss/rew 0.13 / train/loss/value 1.27 / train/rand/action 0.16
+
+[Env00000] Episode of length 858 with score -20.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 27_168]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 823 / fps/policy 38.78 / fps/env 7.76 / fps/train 1990.22 / train/loss/con 0.03 / train/loss/dyn 1.03 / train/loss/image 3.92 / train/loss/policy -5.4e-3 / train/loss/rep 1.03 / train/loss/repval 2.19 / train/loss/rew 0.13 / train/loss/value 1.2 / train/rand/action 0.05
+
+[Env00000] Episode of length 821 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 30_848]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 764 / fps/policy 38.47 / fps/env 7.68 / fps/train 1964.16 / train/loss/con 0.03 / train/loss/dyn 1.35 / train/loss/image 3.9 / train/loss/policy -2.1e-3 / train/loss/rep 1.35 / train/loss/repval 2.08 / train/loss/rew 0.13 / train/loss/value 1.11 / train/rand/action 0.02
+
+[Env00000] Episode of length 763 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 34_576]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 764 / fps/policy 38.83 / fps/env 7.77 / fps/train 1984.31 / train/loss/con 0.03 / train/loss/dyn 1.08 / train/loss/image 3.44 / train/loss/policy -1.4e-3 / train/loss/rep 1.08 / train/loss/repval 1.85 / train/loss/rew 0.13 / train/loss/value 1 / train/rand/action 0.02
+
+[Env00000] Episode of length 759 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 38_304]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 822 / fps/policy 38.71 / fps/env 7.76 / fps/train 1988.95 / train/loss/con 0.03 / train/loss/dyn 1.17 / train/loss/image 3.43 / train/loss/policy -4.2e-3 / train/loss/rep 1.17 / train/loss/repval 1.61 / train/loss/rew 0.13 / train/loss/value 0.86 / train/rand/action 0.08
+
+[Env00000] Episode of length 762 with score -21.00
+[Env00000] Episode of length 765 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 42_036]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -21 / episode/length 764 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/policy 38.83 / fps/env 7.77 / fps/train 1987.94 / train/loss/con 0.03 / train/loss/dyn 1.11 / train/loss/image 3.1 / train/loss/policy -1.1e-3 / train/loss/rep 1.11 / train/loss/repval 1.79 / train/loss/rew 0.14 / train/loss/value 1.16 / train/rand/action 0.02
+
+[Env00000] Episode of length 760 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 45_772]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -21 / episode/length 762 / replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / fps/policy 38.92 / fps/env 7.79 / fps/train 1993.17 / train/loss/con 0.03 / train/loss/dyn 1.43 / train/loss/image 2.9 / train/loss/policy -1.7e-4 / train/loss/rep 1.43 / train/loss/repval 1.7 / train/loss/rew 0.14 / train/loss/value 1.09 / train/rand/action 5.2e-3
+
+[Env00000] Episode of length 764 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T030141F272503
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Saved checkpoint.
+
+--------------------[Agent Step 48_984]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 761 / fps/policy 33.52 / fps/env 6.69 / fps/train 1713.83 / train/loss/con 0.03 / train/loss/dyn 1.13 / train/loss/image 2.69 / train/loss/policy -8.8e-5 / train/loss/rep 1.13 / train/loss/repval 1.69 / train/loss/rew 0.14 / train/loss/value 1.23 / train/rand/action 5.9e-3
+
+[Env00000] Episode of length 761 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+
+--------------------[Agent Step 52_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.68 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 761 / fps/policy 38.88 / fps/env 7.77 / fps/train 1990.86 / train/loss/con 0.03 / train/loss/dyn 1.15 / train/loss/image 2.56 / train/loss/policy 1.5e-3 / train/loss/rep 1.15 / train/loss/repval 1.69 / train/loss/rew 0.14 / train/loss/value 1.07 / train/rand/action 0.23
+
+[Env00000] Episode of length 791 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 56_480]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 788 / fps/policy 38.91 / fps/env 7.78 / fps/train 1933.71 / train/loss/con 0.03 / train/loss/dyn 1.25 / train/loss/image 2.45 / train/loss/policy 1.8e-3 / train/loss/rep 1.25 / train/loss/repval 1.48 / train/loss/rew 0.14 / train/loss/value 0.89 / train/rand/action 0.24
+
+[Env00000] Episode of length 820 with score -21.00
+[Env00000] Episode of length 762 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 60_144]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.44 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 761 / fps/policy 38.41 / fps/env 7.68 / fps/train 2025 / train/loss/con 0.03 / train/loss/dyn 1.33 / train/loss/image 2.25 / train/loss/policy 2.4e-4 / train/loss/rep 1.33 / train/loss/repval 1.64 / train/loss/rew 0.12 / train/loss/value 1.29 / train/rand/action 0.25
+
+[Env00000] Episode of length 761 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 63_872]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -21 / episode/length 818 / replay/replay_ratio 260.56 / replay_eval/replay_ratio 0 / fps/policy 38.87 / fps/env 7.77 / fps/train 1989.94 / train/loss/con 0.03 / train/loss/dyn 1.45 / train/loss/image 2.19 / train/loss/policy -2.3e-3 / train/loss/rep 1.45 / train/loss/repval 1.71 / train/loss/rew 0.11 / train/loss/value 1.32 / train/rand/action 0.41
+
+[Env00000] Episode of length 1022 with score -18.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 67_604]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 783 / fps/policy 38.78 / fps/env 7.76
+
+[Env00000] Episode of length 938 with score -20.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 71_328]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1986.76 / train/loss/con 0.02 / train/loss/dyn 1.41 / train/loss/image 1.97 / train/loss/policy -3e-3 / train/loss/rep 1.41 / train/loss/repval 1.62 / train/loss/rew 0.08 / train/loss/value 1.3 / train/rand/action 0.64 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / episode/score -19 / episode/length 989 / fps/policy 38.82 / fps/env 7.76
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T031641F418844
+Saved checkpoint.
+
+--------------------[Agent Step 74_564]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1987 / train/loss/con 0.02 / train/loss/dyn 1.44 / train/loss/image 1.9 / train/loss/policy 1.4e-3 / train/loss/rep 1.44 / train/loss/repval 1.54 / train/loss/rew 0.07 / train/loss/value 1.25 / train/rand/action 0.52 / episode/score -21 / episode/length 810 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/policy 38.88 / fps/env 7.69
+
+[Env00000] Episode of length 985 with score -20.00
+[Env00000] Episode of length 840 with score -20.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 78_288]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1718.66 / train/loss/con 0.02 / train/loss/dyn 1.77 / train/loss/image 1.77 / train/loss/policy 6.9e-3 / train/loss/rep 1.77 / train/loss/repval 1.58 / train/loss/rew 0.07 / train/loss/value 1.28 / train/rand/action 0.55 / episode/score -21 / episode/length 820 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/policy 33.66 / fps/env 6.81
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 82_032]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1994.28 / train/loss/con 0.02 / train/loss/dyn 1.86 / train/loss/image 1.42 / train/loss/policy 4.6e-3 / train/loss/rep 1.86 / train/loss/repval 1.43 / train/loss/rew 0.06 / train/loss/value 1.16 / train/rand/action 0.64 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 787 / fps/policy 38.91 / fps/env 7.78
+
+[Env00000] Episode of length 1171 with score -19.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 85_688]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1993.93 / train/loss/con 0.02 / train/loss/dyn 1.64 / train/loss/image 1.18 / train/loss/policy 6.3e-3 / train/loss/rep 1.64 / train/loss/repval 1.32 / train/loss/rew 0.04 / train/loss/value 1.07 / train/rand/action 0.5 / replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 821 / fps/policy 38.24 / fps/env 7.65
+
+[Env00000] Episode of length 993 with score -19.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 89_412]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1951.93 / train/loss/con 0.02 / train/loss/dyn 1.75 / train/loss/image 1.11 / train/loss/policy 7.4e-3 / train/loss/rep 1.75 / train/loss/repval 1.38 / train/loss/rew 0.04 / train/loss/value 1.1 / train/rand/action 0.44 / replay/replay_ratio 260.57 / replay_eval/replay_ratio 0 / episode/score -20 / episode/length 899 / fps/policy 38.73 / fps/env 7.75
+
+[Env00000] Episode of length 1258 with score -20.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 93_152]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1987.74 / train/loss/con 0.02 / train/loss/dyn 1.79 / train/loss/image 1 / train/loss/policy 6.7e-3 / train/loss/rep 1.79 / train/loss/repval 1.42 / train/loss/rew 0.03 / train/loss/value 1.17 / train/rand/action 0.37 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 876 / fps/policy 39.01 / fps/env 7.77
+
+[Env00000] Episode of length 1081 with score -21.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 96_880]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1989.76 / train/loss/con 0.02 / train/loss/dyn 1.7 / train/loss/image 0.82 / train/loss/policy 6.6e-3 / train/loss/rep 1.7 / train/loss/repval 1.46 / train/loss/rew 0.03 / train/loss/value 1.19 / train/rand/action 0.29 / replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / episode/score -21 / episode/length 1080 / fps/policy 38.82 / fps/env 7.77
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 100_608]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1989.8 / train/loss/con 0.02 / train/loss/dyn 1.61 / train/loss/image 0.75 / train/loss/policy 5.8e-3 / train/loss/rep 1.61 / train/loss/repval 1.42 / train/loss/rew 0.02 / train/loss/value 1.17 / train/rand/action 0.21 / replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / episode/score -19 / episode/length 1371 / fps/policy 38.75 / fps/env 7.76
+
+[Env00000] Episode of length 1533 with score -20.00
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T033141F599156
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saved checkpoint.
+
+--------------------[Agent Step 103_872]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1988.06 / train/loss/con 0.02 / train/loss/dyn 1.65 / train/loss/image 0.74 / train/loss/policy 5.5e-3 / train/loss/rep 1.65 / train/loss/repval 1.44 / train/loss/rew 0.02 / train/loss/value 1.2 / train/rand/action 0.23 / replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / fps/policy 34 / fps/env 6.78 / episode/score -12 / episode/length 2208
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 107_596]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1739.79 / train/loss/con 0.02 / train/loss/dyn 1.62 / train/loss/image 0.7 / train/loss/policy 6e-3 / train/loss/rep 1.62 / train/loss/repval 1.44 / train/loss/rew 0.02 / train/loss/value 1.2 / train/rand/action 0.2 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / episode/score -20 / episode/length 1696 / fps/policy 38.94 / fps/env 7.79
+
+[Env00000] Episode of length 1713 with score -18.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 111_356]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1986.59 / train/loss/con 0.02 / train/loss/dyn 1.61 / train/loss/image 0.67 / train/loss/policy 8.1e-3 / train/loss/rep 1.61 / train/loss/repval 1.47 / train/loss/rew 0.02 / train/loss/value 1.24 / train/rand/action 0.2 / replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / episode/score -17 / episode/length 1969 / fps/policy 38.86 / fps/env 7.76
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 114_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1943.31 / train/loss/con 0.02 / train/loss/dyn 1.61 / train/loss/image 0.64 / train/loss/policy 9.6e-3 / train/loss/rep 1.61 / train/loss/repval 1.43 / train/loss/rew 0.02 / train/loss/value 1.23 / train/rand/action 0.22 / replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -17 / episode/length 1770 / fps/policy 38.11 / fps/env 7.64
+
+[Env00000] Episode of length 1983 with score -17.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 118_728]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 2001.72 / train/loss/con 0.02 / train/loss/dyn 1.63 / train/loss/image 0.63 / train/loss/policy 9e-3 / train/loss/rep 1.63 / train/loss/repval 1.47 / train/loss/rew 0.02 / train/loss/value 1.26 / train/rand/action 0.2 / replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -17 / episode/length 1732 / fps/policy 38.9 / fps/env 7.76
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 122_460]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1992.51 / train/loss/con 0.02 / train/loss/dyn 1.59 / train/loss/image 0.59 / train/loss/policy 9.6e-3 / train/loss/rep 1.59 / train/loss/repval 1.58 / train/loss/rew 0.02 / train/loss/value 1.33 / train/rand/action 0.17 / replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / fps/policy 38.84 / fps/env 7.78 / episode/score -19 / episode/length 1709
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 126_184]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1988.52 / train/loss/con 0.02 / train/loss/dyn 1.62 / train/loss/image 0.58 / train/loss/policy 8.2e-3 / train/loss/rep 1.62 / train/loss/repval 1.62 / train/loss/rew 0.02 / train/loss/value 1.38 / train/rand/action 0.15 / replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / episode/score -15 / episode/length 2004 / fps/policy 38.83 / fps/env 7.76
+
+[Env00000] Episode of length 2358 with score -16.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T034641F747410
+Saved checkpoint.
+
+--------------------[Agent Step 129_432]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1987.46 / train/loss/con 0.02 / train/loss/dyn 1.6 / train/loss/image 0.58 / train/loss/policy 9.7e-3 / train/loss/rep 1.6 / train/loss/repval 1.61 / train/loss/rew 0.02 / train/loss/value 1.37 / train/rand/action 0.15 / replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -17 / episode/length 2094 / fps/policy 38.66 / fps/env 7.57
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 133_164]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1729.44 / train/loss/con 0.02 / train/loss/dyn 1.59 / train/loss/image 0.58 / train/loss/policy 9.5e-3 / train/loss/rep 1.59 / train/loss/repval 1.54 / train/loss/rew 0.02 / train/loss/value 1.3 / train/rand/action 0.15 / replay/replay_ratio 259.05 / replay_eval/replay_ratio 0 / fps/policy 34 / fps/env 6.97
+
+[Env00000] Episode of length 2360 with score -13.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 136_896]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1990.81 / train/loss/con 0.02 / train/loss/dyn 1.56 / train/loss/image 0.56 / train/loss/policy 9.1e-3 / train/loss/rep 1.56 / train/loss/repval 1.59 / train/loss/rew 0.02 / train/loss/value 1.36 / train/rand/action 0.14 / replay/replay_ratio 260.84 / replay_eval/replay_ratio 0 / episode/score -13 / episode/length 2359 / fps/policy 38.86 / fps/env 7.77
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 140_544]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1990.13 / train/loss/con 0.02 / train/loss/dyn 1.58 / train/loss/image 0.57 / train/loss/policy 8.8e-3 / train/loss/rep 1.58 / train/loss/repval 1.6 / train/loss/rew 0.02 / train/loss/value 1.35 / train/rand/action 0.14 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / episode/score -14 / episode/length 1984 / fps/policy 38.39 / fps/env 7.61
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 144_276]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1946.32 / train/loss/con 0.02 / train/loss/dyn 1.58 / train/loss/image 0.58 / train/loss/policy 8.8e-3 / train/loss/rep 1.58 / train/loss/repval 1.64 / train/loss/rew 0.02 / train/loss/value 1.38 / train/rand/action 0.13 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/policy 38.62 / fps/env 7.77 / episode/score -13 / episode/length 2154
+
+[Env00000] Episode of length 2800 with score -6.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 148_000]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -13 / episode/length 2593 / fps/train 1991.19 / train/loss/con 0.02 / train/loss/dyn 1.58 / train/loss/image 0.58 / train/loss/policy 9.3e-3 / train/loss/rep 1.58 / train/loss/repval 1.74 / train/loss/rew 0.02 / train/loss/value 1.43 / train/rand/action 0.12 / replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / fps/policy 38.76 / fps/env 7.77
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 151_728]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1984.89 / train/loss/con 0.02 / train/loss/dyn 1.59 / train/loss/image 0.62 / train/loss/policy 7.3e-3 / train/loss/rep 1.59 / train/loss/repval 1.7 / train/loss/rew 0.02 / train/loss/value 1.38 / train/rand/action 0.11 / replay/replay_ratio 259.44 / replay_eval/replay_ratio 0 / fps/policy 38.79 / fps/env 7.75
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 155_456]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1987.83 / train/loss/con 0.02 / train/loss/dyn 1.57 / train/loss/image 0.58 / train/loss/policy 6.5e-3 / train/loss/rep 1.57 / train/loss/repval 1.68 / train/loss/rew 0.02 / train/loss/value 1.39 / train/rand/action 0.11 / replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -14 / episode/length 2316 / fps/policy 38.81 / fps/env 7.77
+
+[Env00000] Episode of length 2634 with score -12.00
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T040141F912453
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Saved checkpoint.
+
+--------------------[Agent Step 158_708]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1951.91 / train/loss/con 0.02 / train/loss/dyn 1.56 / train/loss/image 0.58 / train/loss/policy 5.5e-3 / train/loss/rep 1.56 / train/loss/repval 1.64 / train/loss/rew 0.02 / train/loss/value 1.36 / train/rand/action 0.1 / replay/replay_ratio 259.43 / replay_eval/replay_ratio 0 / fps/policy 33.8 / fps/env 6.76 / episode/score -12 / episode/length 2633
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 162_448]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1770.7 / train/loss/con 0.02 / train/loss/dyn 1.53 / train/loss/image 0.57 / train/loss/policy 6e-3 / train/loss/rep 1.53 / train/loss/repval 1.67 / train/loss/rew 0.02 / train/loss/value 1.39 / train/rand/action 0.1 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/policy 38.98 / fps/env 7.78 / episode/score -14 / episode/length 2216
+
+[Env00000] Episode of length 2109 with score -15.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 166_216]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1995.83 / train/loss/con 0.02 / train/loss/dyn 1.54 / train/loss/image 0.56 / train/loss/policy 5.2e-3 / train/loss/rep 1.54 / train/loss/repval 1.62 / train/loss/rew 0.02 / train/loss/value 1.36 / train/rand/action 0.1 / replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / fps/policy 39.01 / fps/env 7.82 / episode/score -15 / episode/length 2108
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 169_860]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1956.34 / train/loss/con 0.02 / train/loss/dyn 1.53 / train/loss/image 0.56 / train/loss/policy 6.6e-3 / train/loss/rep 1.53 / train/loss/repval 1.69 / train/loss/rew 0.02 / train/loss/value 1.43 / train/rand/action 0.11 / replay/replay_ratio 260.57 / replay_eval/replay_ratio 0 / episode/score -17 / episode/length 1760 / fps/policy 38.14 / fps/env 7.62
+
+[Env00000] Episode of length 1632 with score -19.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 173_600]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1994.98 / train/loss/con 0.02 / train/loss/dyn 1.53 / train/loss/image 0.56 / train/loss/policy 4.9e-3 / train/loss/rep 1.53 / train/loss/repval 1.69 / train/loss/rew 0.02 / train/loss/value 1.4 / train/rand/action 0.11 / replay/replay_ratio 259.17 / replay_eval/replay_ratio 0 / fps/policy 38.95 / fps/env 7.78 / episode/score -19 / episode/length 1631
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 177_328]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1996.24 / train/loss/con 0.02 / train/loss/dyn 1.55 / train/loss/image 0.56 / train/loss/policy 4.2e-3 / train/loss/rep 1.55 / train/loss/repval 1.67 / train/loss/rew 0.02 / train/loss/value 1.36 / train/rand/action 0.11 / replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -14 / episode/length 1977 / fps/policy 38.95 / fps/env 7.79
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 181_072]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1987.01 / train/loss/con 0.02 / train/loss/dyn 1.57 / train/loss/image 0.55 / train/loss/policy 4.5e-3 / train/loss/rep 1.57 / train/loss/repval 1.76 / train/loss/rew 0.02 / train/loss/value 1.42 / train/rand/action 0.11 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/policy 38.9 / fps/env 7.78 / episode/score -13 / episode/length 2249
+
+[Env00000] Episode of length 2340 with score -13.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T041642F063291
+Saved checkpoint.
+
+--------------------[Agent Step 184_324]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1995.35 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.53 / train/loss/policy 3.9e-3 / train/loss/rep 1.5 / train/loss/repval 1.68 / train/loss/rew 0.02 / train/loss/value 1.38 / train/rand/action 0.12 / replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -13 / episode/length 2339 / fps/policy 38.31 / fps/env 7.49
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 188_064]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1734.66 / train/loss/con 0.02 / train/loss/dyn 1.52 / train/loss/image 0.54 / train/loss/policy 5.3e-3 / train/loss/rep 1.52 / train/loss/repval 1.7 / train/loss/rew 0.02 / train/loss/value 1.43 / train/rand/action 0.13 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / episode/score -11 / episode/length 2360 / fps/policy 34.64 / fps/env 7.08
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+
+--------------------[Agent Step 191_796]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1995.53 / train/loss/con 0.02 / train/loss/dyn 1.51 / train/loss/image 0.53 / train/loss/policy 5.7e-3 / train/loss/rep 1.51 / train/loss/repval 1.76 / train/loss/rew 0.01 / train/loss/value 1.47 / train/rand/action 0.13 / replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / episode/score -6 / episode/length 3326 / fps/policy 38.88 / fps/env 7.78
+
+[Env00000] Episode of length 2655 with score -7.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 195_440]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1992.63 / train/loss/con 0.02 / train/loss/dyn 1.52 / train/loss/image 0.53 / train/loss/policy 5.8e-3 / train/loss/rep 1.52 / train/loss/repval 1.83 / train/loss/rew 0.02 / train/loss/value 1.53 / train/rand/action 0.12 / episode/score -7 / episode/length 2654 / replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / fps/policy 38.36 / fps/env 7.59
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 199_184]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1942.26 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.53 / train/loss/policy 6.3e-3 / train/loss/rep 1.5 / train/loss/repval 1.87 / train/loss/rew 0.01 / train/loss/value 1.54 / train/rand/action 0.12 / replay/replay_ratio 260.57 / replay_eval/replay_ratio 0 / episode/score -7 / episode/length 2588 / fps/policy 38.6 / fps/env 7.8
+
+[Env00000] Episode of length 2472 with score -15.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 202_928]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+fps/train 1998.15 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.52 / train/loss/policy 5.4e-3 / train/loss/rep 1.5 / train/loss/repval 1.88 / train/loss/rew 0.01 / train/loss/value 1.56 / train/rand/action 0.12 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / episode/score -15 / episode/length 2471 / fps/policy 39 / fps/env 7.79
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 206_672]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1992.99 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.5 / train/loss/policy 5.7e-3 / train/loss/rep 1.49 / train/loss/repval 1.91 / train/loss/rew 0.01 / train/loss/value 1.58 / train/rand/action 0.13 / fps/policy 38.9 / fps/env 7.8 / episode/score -15 / episode/length 2263
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 210_412]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / fps/train 1994.82 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.49 / train/loss/policy 5.1e-3 / train/loss/rep 1.49 / train/loss/repval 1.89 / train/loss/rew 0.01 / train/loss/value 1.57 / train/rand/action 0.12 / episode/score -19 / episode/length 1377 / fps/policy 38.95 / fps/env 7.79
+
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T043142F201479
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Saved checkpoint.
+
+--------------------[Agent Step 213_668]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.43 / replay_eval/replay_ratio 0 / fps/train 1848.25 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.52 / train/loss/policy 4.3e-3 / train/loss/rep 1.5 / train/loss/repval 1.9 / train/loss/rew 0.01 / train/loss/value 1.58 / train/rand/action 0.12 / episode/score -5 / episode/length 2716 / fps/policy 33.86 / fps/env 6.76
+
+[Env00000] Episode of length 2779 with score -3.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 217_412]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -16 / episode/length 1753 / replay/replay_ratio 260.31 / replay_eval/replay_ratio 0 / fps/train 1888.92 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.51 / train/loss/policy 4.6e-3 / train/loss/rep 1.5 / train/loss/repval 1.94 / train/loss/rew 0.01 / train/loss/value 1.63 / train/rand/action 0.12 / fps/policy 39 / fps/env 7.8
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 221_048]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1995.05 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.49 / train/loss/policy 4.7e-3 / train/loss/rep 1.49 / train/loss/repval 1.99 / train/loss/rew 0.01 / train/loss/value 1.65 / train/rand/action 0.12 / episode/score -15 / episode/length 1992 / fps/policy 38.96 / fps/env 7.81
+
+[Env00000] Episode of length 2391 with score -7.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 224_780]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1935.85 / train/loss/con 0.02 / train/loss/dyn 1.47 / train/loss/image 0.47 / train/loss/policy 5.2e-3 / train/loss/rep 1.47 / train/loss/repval 2 / train/loss/rew 0.01 / train/loss/value 1.66 / train/rand/action 0.12 / fps/policy 37.8 / fps/env 7.56 / episode/score -7 / episode/length 2390
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 228_520]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1996.64 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.47 / train/loss/policy 3.9e-3 / train/loss/rep 1.49 / train/loss/repval 1.97 / train/loss/rew 0.01 / train/loss/value 1.64 / train/rand/action 0.1 / episode/score -12 / episode/length 2044 / fps/policy 39.03 / fps/env 7.81
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 232_268]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1995.93 / train/loss/con 0.02 / train/loss/dyn 1.51 / train/loss/image 0.48 / train/loss/policy 4.2e-3 / train/loss/rep 1.51 / train/loss/repval 2.05 / train/loss/rew 0.01 / train/loss/value 1.72 / train/rand/action 0.11 / episode/score -9 / episode/length 2711 / fps/policy 38.95 / fps/env 7.79
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 236_016]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / fps/train 1997.9 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.47 / train/loss/policy 4.1e-3 / train/loss/rep 1.49 / train/loss/repval 2.05 / train/loss/rew 0.01 / train/loss/value 1.69 / train/rand/action 0.1 / fps/policy 39.06 / fps/env 7.82
+
+[Env00000] Episode of length 3398 with score -5.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T044642F370334
+Saved checkpoint.
+
+--------------------[Agent Step 239_252]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -11 / episode/length 2181 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1998.04 / train/loss/con 0.02 / train/loss/dyn 1.47 / train/loss/image 0.46 / train/loss/policy 4.6e-3 / train/loss/rep 1.47 / train/loss/repval 2.09 / train/loss/rew 0.01 / train/loss/value 1.77 / train/rand/action 0.11 / fps/policy 38.35 / fps/env 7.45
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 242_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1722.06 / train/loss/con 0.02 / train/loss/dyn 1.51 / train/loss/image 0.46 / train/loss/policy 4e-3 / train/loss/rep 1.51 / train/loss/repval 2.11 / train/loss/rew 0.01 / train/loss/value 1.76 / train/rand/action 0.11 / fps/policy 34.34 / fps/env 7.08
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 246_740]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1997.69 / train/loss/con 0.02 / train/loss/dyn 1.52 / train/loss/image 0.46 / train/loss/policy 3.7e-3 / train/loss/rep 1.52 / train/loss/repval 2.07 / train/loss/rew 0.01 / train/loss/value 1.73 / train/rand/action 0.11 / fps/policy 39.15 / fps/env 7.8 / episode/score -11 / episode/length 2053
+
+[Env00000] Episode of length 2633 with score -6.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+
+--------------------[Agent Step 250_384]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / episode/score -6 / episode/length 2632 / fps/train 2000.97 / train/loss/con 0.02 / train/loss/dyn 1.51 / train/loss/image 0.46 / train/loss/policy 5e-3 / train/loss/rep 1.51 / train/loss/repval 2.23 / train/loss/rew 0.01 / train/loss/value 1.82 / train/rand/action 0.11 / fps/policy 37.91 / fps/env 7.59
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 254_132]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1940.88 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.43 / train/loss/policy 4.3e-3 / train/loss/rep 1.5 / train/loss/repval 2.15 / train/loss/rew 0.01 / train/loss/value 1.8 / train/rand/action 0.11 / fps/policy 38.95 / fps/env 7.8
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 257_872]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / episode/score -7 / episode/length 2469 / fps/train 1996.9 / train/loss/con 0.02 / train/loss/dyn 1.47 / train/loss/image 0.42 / train/loss/policy 4.3e-3 / train/loss/rep 1.47 / train/loss/repval 2.16 / train/loss/rew 0.01 / train/loss/value 1.83 / train/rand/action 0.09 / fps/policy 38.99 / fps/env 7.8
+
+[Env00000] Episode of length 2857 with score -5.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 261_616]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1996.28 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.42 / train/loss/policy 4.9e-3 / train/loss/rep 1.5 / train/loss/repval 2.06 / train/loss/rew 0.01 / train/loss/value 1.76 / train/rand/action 0.1 / episode/score -8 / episode/length 3038 / fps/policy 39.1 / fps/env 7.81
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 265_364]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / fps/train 2000.21 / train/loss/con 0.02 / train/loss/dyn 1.48 / train/loss/image 0.41 / train/loss/policy 4.5e-3 / train/loss/rep 1.48 / train/loss/repval 2.12 / train/loss/rew 0.01 / train/loss/value 1.8 / train/rand/action 0.11 / fps/policy 38.95 / fps/env 7.81 / episode/score -6 / episode/length 2602
+
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T050142F536943
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saved checkpoint.
+
+--------------------[Agent Step 268_608]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1791.89 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.4 / train/loss/policy 4.7e-3 / train/loss/rep 1.49 / train/loss/repval 2.17 / train/loss/rew 0.01 / train/loss/value 1.86 / train/rand/action 0.1 / fps/policy 33.7 / fps/env 6.73 / episode/score 3 / episode/length 2835
+
+[Env00000] Episode of length 2528 with score -5.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 272_368]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1 / episode/length 3101 / replay/replay_ratio 259.39 / replay_eval/replay_ratio 0 / fps/train 1942.97 / train/loss/con 0.02 / train/loss/dyn 1.52 / train/loss/image 0.41 / train/loss/policy 3.9e-3 / train/loss/rep 1.52 / train/loss/repval 2.13 / train/loss/rew 0.01 / train/loss/value 1.81 / train/rand/action 0.1 / fps/policy 39.27 / fps/env 7.85
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 276_012]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.55 / replay_eval/replay_ratio 0 / fps/train 1997.12 / train/loss/con 0.02 / train/loss/dyn 1.52 / train/loss/image 0.39 / train/loss/policy 3.6e-3 / train/loss/rep 1.52 / train/loss/repval 2.15 / train/loss/rew 0.01 / train/loss/value 1.81 / train/rand/action 0.1 / fps/policy 39.13 / fps/env 7.81
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 279_748]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -2 / episode/length 2940 / replay/replay_ratio 259.71 / replay_eval/replay_ratio 0 / fps/train 1939.05 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.39 / train/loss/policy 3.9e-3 / train/loss/rep 1.49 / train/loss/repval 2.2 / train/loss/rew 0.01 / train/loss/value 1.87 / train/rand/action 0.1 / fps/policy 37.75 / fps/env 7.55
+
+[Env00000] Episode of length 2983 with score -2.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 283_492]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / fps/train 1996.14 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.38 / train/loss/policy 4.2e-3 / train/loss/rep 1.5 / train/loss/repval 2.23 / train/loss/rew 0.01 / train/loss/value 1.87 / train/rand/action 0.1 / episode/score -3 / episode/length 2937 / fps/policy 39.06 / fps/env 7.82
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 287_236]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.45 / replay_eval/replay_ratio 0 / fps/train 1999.12 / train/loss/con 0.02 / train/loss/dyn 1.51 / train/loss/image 0.38 / train/loss/policy 4.2e-3 / train/loss/rep 1.51 / train/loss/repval 2.26 / train/loss/rew 0.01 / train/loss/value 1.89 / train/rand/action 0.1 / fps/policy 39.02 / fps/env 7.8
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 290_976]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -10 / episode/length 2135 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1994.52 / train/loss/con 0.02 / train/loss/dyn 1.46 / train/loss/image 0.35 / train/loss/policy 4.7e-3 / train/loss/rep 1.46 / train/loss/repval 2.17 / train/loss/rew 0.01 / train/loss/value 1.9 / train/rand/action 0.1 / fps/policy 39.02 / fps/env 7.81
+
+[Env00000] Episode of length 2649 with score -1.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T051642F696649
+Saved checkpoint.
+
+--------------------[Agent Step 294_208]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.56 / replay_eval/replay_ratio 0 / episode/score 2 / episode/length 2810 / fps/train 1996.46 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.36 / train/loss/policy 3e-3 / train/loss/rep 1.5 / train/loss/repval 2.06 / train/loss/rew 0.01 / train/loss/value 1.73 / train/rand/action 0.11 / fps/policy 38.3 / fps/env 7.45
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 297_956]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.03 / replay_eval/replay_ratio 0 / fps/train 1718.48 / train/loss/con 0.02 / train/loss/dyn 1.47 / train/loss/image 0.35 / train/loss/policy 6e-3 / train/loss/rep 1.47 / train/loss/repval 2.31 / train/loss/rew 0.01 / train/loss/value 2.02 / train/rand/action 0.1 / fps/policy 34.18 / fps/env 7.05 / episode/score -9 / episode/length 2470
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 301_700]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.83 / replay_eval/replay_ratio 0 / fps/train 1999.64 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.34 / train/loss/policy 3.7e-3 / train/loss/rep 1.49 / train/loss/repval 2.16 / train/loss/rew 0.01 / train/loss/value 1.87 / train/rand/action 0.1 / episode/score 3 / episode/length 2977 / fps/policy 39.09 / fps/env 7.8
+
+[Env00000] Episode of length 3013 with score 1.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 305_172]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / episode/score -2 / episode/length 3119 / fps/train 2000.22 / train/loss/con 0.02 / train/loss/dyn 1.47 / train/loss/image 0.34 / train/loss/policy 4.6e-3 / train/loss/rep 1.47 / train/loss/repval 2.17 / train/loss/rew 0.01 / train/loss/value 1.94 / train/rand/action 0.1 / fps/policy 36.23 / fps/env 7.25
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+
+--------------------[Agent Step 308_896]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.7 / replay_eval/replay_ratio 0 / fps/train 1845.79 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.34 / train/loss/policy 3.4e-3 / train/loss/rep 1.49 / train/loss/repval 2.14 / train/loss/rew 0.01 / train/loss/value 1.83 / train/rand/action 0.11 / fps/policy 38.87 / fps/env 7.75
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 312_644]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / fps/train 1992.37 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.33 / train/loss/policy 5.1e-3 / train/loss/rep 1.5 / train/loss/repval 2.23 / train/loss/rew 0.01 / train/loss/value 1.97 / train/rand/action 0.11 / episode/score -5 / episode/length 2809 / fps/policy 38.99 / fps/env 7.8
+
+[Env00000] Episode of length 2626 with score -8.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+
+--------------------[Agent Step 316_388]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / fps/train 1996.04 / train/loss/con 0.02 / train/loss/dyn 1.48 / train/loss/image 0.33 / train/loss/policy 4.2e-3 / train/loss/rep 1.48 / train/loss/repval 2.15 / train/loss/rew 0.01 / train/loss/value 1.87 / train/rand/action 0.1 / episode/score 4 / episode/length 2629 / fps/policy 38.93 / fps/env 7.82
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 320_132]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / fps/train 1996.71 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.33 / train/loss/policy 3.8e-3 / train/loss/rep 1.5 / train/loss/repval 2.22 / train/loss/rew 0.01 / train/loss/value 1.92 / train/rand/action 0.1 / fps/policy 38.97 / fps/env 7.78
+
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T053142F869044
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Saved checkpoint.
+
+--------------------[Agent Step 323_364]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.71 / replay_eval/replay_ratio 0 / fps/train 1729.92 / train/loss/con 0.02 / train/loss/dyn 1.46 / train/loss/image 0.32 / train/loss/policy 3.6e-3 / train/loss/rep 1.46 / train/loss/repval 2.16 / train/loss/rew 0.01 / train/loss/value 1.87 / train/rand/action 0.09 / episode/score 7 / episode/length 2768 / fps/policy 33.67 / fps/env 6.73
+
+[Env00000] Episode of length 2877 with score 2.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 327_120]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.31 / replay_eval/replay_ratio 0 / fps/train 1995.04 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.32 / train/loss/policy 4.3e-3 / train/loss/rep 1.49 / train/loss/repval 2.23 / train/loss/rew 0.01 / train/loss/value 1.95 / train/rand/action 0.1 / episode/score 2 / episode/length 2876 / fps/policy 39.13 / fps/env 7.81
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 330_764]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.45 / replay_eval/replay_ratio 0 / fps/train 2001.18 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.31 / train/loss/policy 4e-3 / train/loss/rep 1.49 / train/loss/repval 2.22 / train/loss/rew 0.01 / train/loss/value 1.91 / train/rand/action 0.1 / fps/policy 39.01 / fps/env 7.81
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 334_420]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.58 / replay_eval/replay_ratio 0 / fps/train 1896.73 / train/loss/con 0.02 / train/loss/dyn 1.43 / train/loss/image 0.3 / train/loss/policy 5.2e-3 / train/loss/rep 1.43 / train/loss/repval 2.13 / train/loss/rew 0.01 / train/loss/value 1.93 / train/rand/action 0.1 / fps/policy 36.99 / episode/score -3 / episode/length 3015 / fps/env 7.4
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 338_168]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -1 / episode/length 2954 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1999.28 / train/loss/con 0.02 / train/loss/dyn 1.46 / train/loss/image 0.3 / train/loss/policy 4e-3 / train/loss/rep 1.46 / train/loss/repval 2.11 / train/loss/rew 0.01 / train/loss/value 1.89 / train/rand/action 0.1 / fps/policy 39.12 / fps/env 7.82
+
+[Env00000] Episode of length 3160 with score 2.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 341_904]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 2 / episode/length 3159 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1995.23 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.31 / train/loss/policy 3.3e-3 / train/loss/rep 1.49 / train/loss/repval 2.22 / train/loss/rew 0.01 / train/loss/value 1.89 / train/rand/action 0.1 / fps/policy 38.84 / fps/env 7.77
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 345_648]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.44 / replay_eval/replay_ratio 0 / fps/train 1992.99 / train/loss/con 0.02 / train/loss/dyn 1.53 / train/loss/image 0.32 / train/loss/policy 3.6e-3 / train/loss/rep 1.53 / train/loss/repval 2.21 / train/loss/rew 0.01 / train/loss/value 1.88 / train/rand/action 0.1 / episode/score 7 / episode/length 2619 / fps/policy 39.08 / fps/env 7.81
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T054643F063042
+Saved checkpoint.
+
+--------------------[Agent Step 348_900]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.55 / replay_eval/replay_ratio 0 / fps/train 2000.01 / train/loss/con 0.02 / train/loss/dyn 1.51 / train/loss/image 0.31 / train/loss/policy 3.9e-3 / train/loss/rep 1.51 / train/loss/repval 2.34 / train/loss/rew 0.01 / train/loss/value 1.96 / train/rand/action 0.1 / episode/score 6 / episode/length 2610 / fps/policy 38.39 / fps/env 7.44
+
+[Env00000] Episode of length 3035 with score 5.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 352_640]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1728.83 / train/loss/con 0.02 / train/loss/dyn 1.45 / train/loss/image 0.28 / train/loss/policy 4.2e-3 / train/loss/rep 1.45 / train/loss/repval 2.3 / train/loss/rew 0.01 / train/loss/value 1.97 / train/rand/action 0.1 / episode/score 5 / episode/length 3034 / fps/policy 34.4 / fps/env 7.11
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 356_368]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1995.31 / train/loss/con 0.02 / train/loss/dyn 1.47 / train/loss/image 0.29 / train/loss/policy 3.8e-3 / train/loss/rep 1.47 / train/loss/repval 2.19 / train/loss/rew 0.01 / train/loss/value 1.89 / train/rand/action 0.1 / fps/policy 38.99 / episode/score -3 / episode/length 3145 / fps/env 7.8
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 359_908]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 11 / episode/length 2484 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1992.03 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.3 / train/loss/policy 3.4e-3 / train/loss/rep 1.5 / train/loss/repval 2.28 / train/loss/rew 0.01 / train/loss/value 1.93 / train/rand/action 0.09 / fps/policy 36.71 / fps/env 7.35
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 363_652]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1884.87 / train/loss/con 0.02 / train/loss/dyn 1.46 / train/loss/image 0.29 / train/loss/policy 4.2e-3 / train/loss/rep 1.46 / train/loss/repval 2.18 / train/loss/rew 0.01 / train/loss/value 1.95 / train/rand/action 0.09 / fps/policy 39.06 / fps/env 7.79
+
+[Env00000] Episode of length 3344 with score 2.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 367_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -2 / episode/length 2999 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1998.06 / train/loss/con 0.02 / train/loss/dyn 1.51 / train/loss/image 0.29 / train/loss/policy 3.5e-3 / train/loss/rep 1.51 / train/loss/repval 2.31 / train/loss/rew 0.01 / train/loss/value 1.97 / train/rand/action 0.09 / fps/policy 39.02 / fps/env 7.81
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 371_136]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1994.14 / train/loss/con 0.02 / train/loss/dyn 1.47 / train/loss/image 0.28 / train/loss/policy 4.2e-3 / train/loss/rep 1.47 / train/loss/repval 2.25 / train/loss/rew 0.01 / train/loss/value 1.95 / train/rand/action 0.09 / fps/policy 38.91 / fps/env 7.79 / episode/score -1 / episode/length 3400
+
+[Env00000] Episode of length 2484 with score -7.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 374_884]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1996.69 / train/loss/con 0.02 / train/loss/dyn 1.48 / train/loss/image 0.28 / train/loss/policy 3.5e-3 / train/loss/rep 1.48 / train/loss/repval 2.23 / train/loss/rew 0.01 / train/loss/value 1.91 / train/rand/action 0.09 / fps/policy 38.96 / fps/env 7.8 / episode/score -7 / episode/length 2483
+
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T060143F202364
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saved checkpoint.
+
+--------------------[Agent Step 378_108]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.71 / replay_eval/replay_ratio 0 / fps/train 1720.47 / train/loss/con 0.02 / train/loss/dyn 1.52 / train/loss/image 0.29 / train/loss/policy 3.5e-3 / train/loss/rep 1.52 / train/loss/repval 2.32 / train/loss/rew 0.01 / train/loss/value 1.94 / train/rand/action 0.09 / episode/score -7 / episode/length 2595 / fps/policy 33.61 / fps/env 6.71
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 381_856]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.31 / replay_eval/replay_ratio 0 / fps/train 1994.61 / train/loss/con 0.02 / train/loss/dyn 1.47 / train/loss/image 0.27 / train/loss/policy 4.1e-3 / train/loss/rep 1.47 / train/loss/repval 2.24 / train/loss/rew 0.01 / train/loss/value 1.91 / train/rand/action 0.09 / fps/policy 38.97 / fps/env 7.8 / episode/score -3 / episode/length 2692
+
+[Env00000] Episode of length 2749 with score 9.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+
+--------------------[Agent Step 385_480]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.28 / replay_eval/replay_ratio 0 / fps/train 1995.34 / train/loss/con 0.02 / train/loss/dyn 1.47 / train/loss/image 0.27 / train/loss/policy 3.4e-3 / train/loss/rep 1.47 / train/loss/repval 2.19 / train/loss/rew 0.01 / train/loss/value 1.87 / train/rand/action 0.09 / fps/policy 38.99 / fps/env 7.79 / episode/score 9 / episode/length 2748
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 389_140]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.41 / replay_eval/replay_ratio 0 / fps/train 1889.76 / train/loss/con 0.02 / train/loss/dyn 1.55 / train/loss/image 0.29 / train/loss/policy 3.2e-3 / train/loss/rep 1.55 / train/loss/repval 2.24 / train/loss/rew 0.01 / train/loss/value 1.88 / train/rand/action 0.1 / episode/score 2 / episode/length 2741 / fps/policy 36.92 / fps/env 7.38
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 392_884]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9 / episode/length 2855 / replay/replay_ratio 260.55 / replay_eval/replay_ratio 0 / fps/train 1999.71 / train/loss/con 0.02 / train/loss/dyn 1.47 / train/loss/image 0.27 / train/loss/policy 3.7e-3 / train/loss/rep 1.47 / train/loss/repval 2.25 / train/loss/rew 0.01 / train/loss/value 1.89 / train/rand/action 0.1 / fps/policy 39.09 / fps/env 7.82
+
+[Env00000] Episode of length 2720 with score 4.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 396_640]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / fps/train 1999 / train/loss/con 0.02 / train/loss/dyn 1.48 / train/loss/image 0.27 / train/loss/policy 4.1e-3 / train/loss/rep 1.48 / train/loss/repval 2.17 / train/loss/rew 0.01 / train/loss/value 1.87 / train/rand/action 0.09 / fps/policy 39 / fps/env 7.8 / episode/score 4 / episode/length 2719
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 400_384]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / fps/train 2000.03 / train/loss/con 0.02 / train/loss/dyn 1.5 / train/loss/image 0.28 / train/loss/policy 3.2e-3 / train/loss/rep 1.5 / train/loss/repval 2.28 / train/loss/rew 0.01 / train/loss/value 1.89 / train/rand/action 0.09 / fps/policy 39.05 / episode/score 2 / episode/length 2945 / fps/env 7.81
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Saving checkpoint: logdir/dreamer/atari100k_pong_20251126_023138/ckpt/logger/20251126T061643F395648
+Saved checkpoint.
+
+--------------------[Agent Step 403_620]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.72 / replay_eval/replay_ratio 0 / fps/train 1997.76 / train/loss/con 0.02 / train/loss/dyn 1.46 / train/loss/image 0.26 / train/loss/policy 3.3e-3 / train/loss/rep 1.46 / train/loss/repval 2.14 / train/loss/rew 0.01 / train/loss/value 1.82 / train/rand/action 0.09 / episode/score 4 / episode/length 3109 / fps/policy 38.56 / fps/env 7.34
+
+[Env00000] Episode of length 2876 with score -4.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 407_360]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.96 / replay_eval/replay_ratio 0 / episode/score -4 / episode/length 2875 / fps/train 1722.43 / train/loss/con 0.02 / train/loss/dyn 1.46 / train/loss/image 0.26 / train/loss/policy 3.8e-3 / train/loss/rep 1.46 / train/loss/repval 2.17 / train/loss/rew 0.01 / train/loss/value 1.86 / train/rand/action 0.09 / fps/policy 34.2 / fps/env 7.22
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 411_108]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.17 / replay_eval/replay_ratio 0 / fps/train 1996.47 / train/loss/con 0.02 / train/loss/dyn 1.49 / train/loss/image 0.27 / train/loss/policy 3e-3 / train/loss/rep 1.49 / train/loss/repval 2.24 / train/loss/rew 0.01 / train/loss/value 1.86 / train/rand/action 0.1 / fps/policy 38.94 / fps/env 7.78
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 414_676]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.55 / replay_eval/replay_ratio 0 / fps/train 1997.04 / train/loss/con 0.02 / train/loss/dyn 1.46 / train/loss/image 0.26 / train/loss/policy 3.3e-3 / train/loss/rep 1.46 / train/loss/repval 2.17 / train/loss/rew 0.01 / train/loss/value 1.83 / train/rand/action 0.09 / episode/score 8 / episode/length 2838 / fps/policy 37.17 / fps/env 7.41
+
+[Env00000] Episode of length 2355 with score 10.00
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+
+--------------------[Agent Step 418_428]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 259.42 / replay_eval/replay_ratio 0 / fps/train 1901.63 / train/loss/con 0.02 / train/loss/dyn 1.46 / train/loss/image 0.25 / train/loss/policy 3.3e-3 / train/loss/rep 1.46 / train/loss/repval 2.09 / train/loss/rew 0.01 / train/loss/value 1.8 / train/rand/action 0.09 / episode/score 10 / episode/length 2354 / fps/policy 38.98 / fps/env 7.82
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 422_168]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+replay/replay_ratio 260.55 / replay_eval/replay_ratio 0 / fps/train 1999.74 / train/loss/con 0.02 / train/loss/dyn 1.51 / train/loss/image 0.26 / train/loss/policy 3.3e-3 / train/loss/rep 1.51 / train/loss/repval 2.18 / train/loss/rew 0.01 / train/loss/value 1.82 / train/rand/action 0.09 / fps/policy 39.12 / fps/env 7.79
+
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/metrics.jsonl
+Writing metrics: logdir/dreamer/atari100k_pong_20251126_023138/scores.jsonl
+
+--------------------[Agent Step 425_908]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score -4 / episode/length 2810 / replay/replay_ratio 260 / replay_eval/replay_ratio 0 / fps/train 1995.67 / train/loss/con 0.02 / train/loss/dyn 1.52 / train/loss/image 0.28 / train/loss/policy 2.7e-3 / train/loss/rep 1.52 / train/loss/repval 2.15 / train/loss/rew 0.01 / train/loss/value 1.79 / train/rand/action 0.09 / fps/policy 38.91 / fps/env 7.79
+
+[Env00000] Episode of length 2906 with score -5.00
+[2025-11-26T06:31:25.830] error: *** JOB 6692372 ON node2804 CANCELLED AT 2025-11-26T06:31:25 DUE TO TIME LIMIT ***

@@ -1,0 +1,3013 @@
+=== Resuming DMC Humanoid Walk Training ===
+Job ID: 6785309
+Logdir: ./logdir/dreamer/dmc_humanoid_walk_20251130_032240
+Start time: Sun Nov 30 22:23:32 EST 2025
+
+=== Verifying GPU ===
+Devices: [CudaDevice(id=0)]
+
+---  ___                           __   ______ ---
+--- |   \ _ _ ___ __ _ _ __  ___ _ \ \ / /__ / ---
+--- | |) | '_/ -_) _` | '  \/ -_) '/\ V / |_ \ ---
+--- |___/|_| \___\__,_|_|_|_\___|_|  \_/ |___/ ---
+Replica: 0 / 1
+Logdir: logdir/dreamer/dmc_humanoid_walk_20251130_032240
+Run script: train
+Observations
+  is_first         Space(bool, shape=(), low=False, high=True)
+  is_last          Space(bool, shape=(), low=False, high=True)
+  is_terminal      Space(bool, shape=(), low=False, high=True)
+  reward           Space(float32, shape=(), low=-inf, high=inf)
+  image            Space(uint8, shape=(64, 64, 3), low=0, high=255)
+Actions
+  action           Space(float32, shape=(21,), low=-1.0, high=1.0)
+Extras
+  consec           Space(int32, shape=(), low=-2147483648, high=2147483647)
+  stepid           Space(uint8, shape=(20,), low=0, high=255)
+  dyn/deter        Space(float32, shape=(8192,), low=-inf, high=inf)
+  dyn/stoch        Space(float32, shape=(32, 64), low=-inf, high=inf)
+JAX devices (1): [cuda:0]
+Policy devices: cuda:0
+Train devices:  cuda:0
+Initializing parameters...
+Optimizer opt has 165,994,796 params:
+    95,499,264 dyn
+    20,282,115 dec
+    12,850,431 val
+    12,632,106 pol
+    10,749,183 rew
+    10,488,833 con
+     3,492,864 enc
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+Done initializing!
+Compiling 1 checkpoint groups...
+Largest checkpoint group: 2 GB
+Compiling train and report...
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+Train cost analysis:
+No available
+Report cost analysis:
+No available
+Done compiling!
+Found existing checkpoint.
+Loading checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251130T193601F016573
+Replay buffer unnamed is empty 60.1s: None
+Replay buffer unnamed is empty 60.1s: None
+Loaded checkpoint.
+Start training loop
+
+--------------------[Agent Step 536_848]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 4.66 / train/loss/image 7.73 / train/loss/policy -8.3e-3 / train/loss/rep 4.66 / train/loss/repval 0.02 / train/loss/rew 6.7e-3 / train/loss/value 0.01 / replay/replay_ratio 737.29 / fps/policy 8.14 / fps/train 2083.34
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 538_272]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.81 / train/loss/image 7.2 / train/loss/policy -0.01 / train/loss/rep 3.81 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 11.76 / fps/train 3011.8
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 539_840]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.53 / train/loss/image 6.96 / train/loss/policy -0.01 / train/loss/rep 3.53 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 13 / fps/train 3327.03
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 541_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.33 / train/loss/image 6.8 / train/loss/policy -7.7e-3 / train/loss/rep 3.33 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.91 / fps/train 3305.48
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 542_944]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.31 / train/loss/image 6.8 / train/loss/policy -0.01 / train/loss/rep 3.31 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.92 / fps/train 3308.52
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 544_512]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.22 / train/loss/image 6.7 / train/loss/policy -0.01 / train/loss/rep 3.22 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.94 / fps/train 3313.47
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+
+--------------------[Agent Step 546_080]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.27 / train/loss/image 6.75 / train/loss/policy -9.5e-3 / train/loss/rep 3.27 / train/loss/repval 0.02 / train/loss/rew 5.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.94 / fps/train 3313.18
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251130T224052F722947
+Saved checkpoint.
+
+--------------------[Agent Step 547_344]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.22 / train/loss/image 6.68 / train/loss/policy -0.01 / train/loss/rep 3.22 / train/loss/repval 0.02 / train/loss/rew 5.9e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.43 / fps/train 2671.15
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 548_912]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.3 / train/loss/image 6.75 / train/loss/policy -0.01 / train/loss/rep 3.3 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.99 / fps/train 3324.56
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 550_480]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.23 / train/loss/image 6.68 / train/loss/policy -9.4e-3 / train/loss/rep 3.23 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.98
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 552_048]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0.57 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.34 / train/loss/image 6.75 / train/loss/policy -0.01 / train/loss/rep 3.34 / train/loss/repval 0.02 / train/loss/rew 6.9e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3314.91
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 553_584]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.27 / train/loss/image 6.73 / train/loss/policy -0.01 / train/loss/rep 3.27 / train/loss/repval 0.02 / train/loss/rew 5.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3270.27
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 555_152]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.34 / train/loss/image 6.77 / train/loss/policy -0.01 / train/loss/rep 3.34 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3316.19
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 556_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.28 / train/loss/image 6.72 / train/loss/policy -0.02 / train/loss/rep 3.28 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.41
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251130T225552F844981
+Saved checkpoint.
+
+--------------------[Agent Step 558_160]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.22 / train/loss/image 6.7 / train/loss/policy -9.4e-3 / train/loss/rep 3.22 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 11.6 / fps/train 2968.54
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 559_728]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.29 / train/loss/image 6.74 / train/loss/policy -0.01 / train/loss/rep 3.29 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.85
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 561_296]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.32 / train/loss/image 6.75 / train/loss/policy -0.01 / train/loss/rep 3.32 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3321.8
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 562_864]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.29 / train/loss/image 6.73 / train/loss/policy -9.8e-3 / train/loss/rep 3.29 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3316.95
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 564_432]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.32 / train/loss/image 6.75 / train/loss/policy -0.01 / train/loss/rep 3.32 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.04
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 566_000]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.35 / train/loss/image 6.77 / train/loss/policy -0.01 / train/loss/rep 3.35 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3322.86
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 567_568]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0.66 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.29 / train/loss/image 6.71 / train/loss/policy -0.01 / train/loss/rep 3.29 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3316.9
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 569_136]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.36 / train/loss/image 6.81 / train/loss/policy -6.4e-3 / train/loss/rep 3.36 / train/loss/repval 0.02 / train/loss/rew 6.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3323.24
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251130T231053F026855
+Saved checkpoint.
+
+--------------------[Agent Step 570_464]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.3 / train/loss/image 6.77 / train/loss/policy -0.01 / train/loss/rep 3.3 / train/loss/repval 0.02 / train/loss/rew 6.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.96 / fps/train 2806.39
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 572_032]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.36 / train/loss/image 6.82 / train/loss/policy -0.01 / train/loss/rep 3.36 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3322.52
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 573_600]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.32 / train/loss/image 6.73 / train/loss/policy -8.2e-3 / train/loss/rep 3.32 / train/loss/repval 0.02 / train/loss/rew 5.7e-3 / train/loss/value 1e-2 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3322.12
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 575_168]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.31 / train/loss/image 6.77 / train/loss/policy -9.3e-3 / train/loss/rep 3.31 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.62
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 576_736]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.33 / train/loss/image 6.75 / train/loss/policy -0.01 / train/loss/rep 3.33 / train/loss/repval 0.02 / train/loss/rew 5.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.99 / fps/train 3324.5
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 578_304]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.38 / train/loss/image 6.8 / train/loss/policy -0.01 / train/loss/rep 3.38 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3317.89
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 579_872]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.37 / train/loss/image 6.77 / train/loss/policy -7.1e-3 / train/loss/rep 3.37 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3322.93
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251130T232553F506340
+Saved checkpoint.
+
+--------------------[Agent Step 581_216]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.39 / train/loss/image 6.8 / train/loss/policy -0.01 / train/loss/rep 3.39 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 11.17 / fps/train 2860
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 582_784]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.35 / train/loss/image 6.76 / train/loss/policy -0.01 / train/loss/rep 3.35 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3314.6
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 584_352]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.21 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.47 / train/loss/image 6.87 / train/loss/policy -0.01 / train/loss/rep 3.47 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3316.03
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 585_920]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.38 / train/loss/image 6.81 / train/loss/policy -8.7e-3 / train/loss/rep 3.38 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.2
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 587_488]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.44 / train/loss/image 6.85 / train/loss/policy -0.01 / train/loss/rep 3.44 / train/loss/repval 0.02 / train/loss/rew 6.7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3321.02
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 589_056]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.41 / train/loss/image 6.83 / train/loss/policy -0.01 / train/loss/rep 3.41 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3322.95
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+
+--------------------[Agent Step 590_624]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.45 / train/loss/image 6.86 / train/loss/policy -0.01 / train/loss/rep 3.45 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3321.64
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 592_192]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.37 / train/loss/image 6.82 / train/loss/policy -0.01 / train/loss/rep 3.37 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3321.92
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251130T234053F633698
+Saved checkpoint.
+
+--------------------[Agent Step 593_552]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.43 / train/loss/image 6.85 / train/loss/policy -0.01 / train/loss/rep 3.43 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 11.26 / fps/train 2882.38
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 595_120]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.45 / train/loss/image 6.85 / train/loss/policy -8.7e-3 / train/loss/rep 3.45 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3323.68
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 596_656]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.44 / train/loss/image 6.83 / train/loss/policy -0.01 / train/loss/rep 3.44 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.72 / fps/train 3257.27
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 598_224]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.41 / train/loss/image 6.85 / train/loss/policy -9.8e-3 / train/loss/rep 3.41 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3321.18
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+
+--------------------[Agent Step 599_792]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0.41 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.44 / train/loss/image 6.86 / train/loss/policy -9.9e-3 / train/loss/rep 3.44 / train/loss/repval 0.02 / train/loss/rew 7.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3314.94
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 601_360]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.43 / train/loss/image 6.84 / train/loss/policy -0.01 / train/loss/rep 3.43 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3314.74
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 602_928]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.43 / train/loss/image 6.83 / train/loss/policy -0.01 / train/loss/rep 3.43 / train/loss/repval 0.02 / train/loss/rew 6.7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3315.98
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251130T235554F415977
+Saved checkpoint.
+
+--------------------[Agent Step 604_256]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.43 / train/loss/image 6.84 / train/loss/policy -0.01 / train/loss/rep 3.43 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 11 / fps/train 2816.67
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 605_824]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.43 / train/loss/image 6.83 / train/loss/policy -0.01 / train/loss/rep 3.43 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3322.29
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 607_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.43 / train/loss/image 6.88 / train/loss/policy -0.01 / train/loss/rep 3.43 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3318.54
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 608_960]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.43 / train/loss/image 6.86 / train/loss/policy -9.8e-3 / train/loss/rep 3.43 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3316.07
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 610_528]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.47 / train/loss/image 6.9 / train/loss/policy -0.01 / train/loss/rep 3.47 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.8
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 612_096]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.43 / train/loss/image 6.85 / train/loss/policy -9.9e-3 / train/loss/rep 3.43 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.18
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 613_664]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.48 / train/loss/image 6.88 / train/loss/policy -0.01 / train/loss/rep 3.48 / train/loss/repval 0.02 / train/loss/rew 5.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.37
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 615_232]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.43 / train/loss/image 6.86 / train/loss/policy -0.01 / train/loss/rep 3.43 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.99 / fps/train 3325.09
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T001054F869329
+Saved checkpoint.
+
+--------------------[Agent Step 616_544]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.22 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.55 / train/loss/image 6.95 / train/loss/policy -8.7e-3 / train/loss/rep 3.55 / train/loss/repval 0.02 / train/loss/rew 6.9e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.83 / fps/train 2772.81
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 618_112]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.5 / train/loss/image 6.91 / train/loss/policy -8.8e-3 / train/loss/rep 3.5 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.07
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 619_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.5 / train/loss/image 6.93 / train/loss/policy -9e-3 / train/loss/rep 3.5 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3317.71
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 621_248]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.52 / train/loss/image 6.92 / train/loss/policy -9.5e-3 / train/loss/rep 3.52 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3323.08
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 622_816]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.47 / train/loss/image 6.87 / train/loss/policy -9.3e-3 / train/loss/rep 3.47 / train/loss/repval 0.02 / train/loss/rew 5.7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3321.01
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 624_384]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.47 / train/loss/image 6.86 / train/loss/policy -0.01 / train/loss/rep 3.47 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3317.26
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 625_952]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.53 / train/loss/image 6.91 / train/loss/policy -9.8e-3 / train/loss/rep 3.53 / train/loss/repval 0.02 / train/loss/rew 5.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3321.96
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T002555F463161
+Saved checkpoint.
+
+--------------------[Agent Step 627_280]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.51 / train/loss/image 6.9 / train/loss/policy -0.01 / train/loss/rep 3.51 / train/loss/repval 0.02 / train/loss/rew 5.9e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 11.03 / fps/train 2823.82
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 628_848]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.47 / train/loss/image 6.86 / train/loss/policy -9.7e-3 / train/loss/rep 3.47 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.11
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 630_416]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.45 / train/loss/image 6.84 / train/loss/policy -0.01 / train/loss/rep 3.45 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.31
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 631_984]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.15 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.47 / train/loss/image 6.84 / train/loss/policy -0.01 / train/loss/rep 3.47 / train/loss/repval 0.02 / train/loss/rew 5.9e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.94 / fps/train 3312.23
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 633_552]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.62 / train/loss/image 6.97 / train/loss/policy -8.7e-3 / train/loss/rep 3.62 / train/loss/repval 0.02 / train/loss/rew 7.3e-3 / train/loss/value 0.02 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.92
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 635_120]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.52 / train/loss/image 6.9 / train/loss/policy -0.01 / train/loss/rep 3.52 / train/loss/repval 0.02 / train/loss/rew 7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3315.97
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 636_688]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.5 / train/loss/image 6.91 / train/loss/policy -9.2e-3 / train/loss/rep 3.5 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.06
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 638_256]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.57 / train/loss/image 6.96 / train/loss/policy -8.7e-3 / train/loss/rep 3.57 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.91
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T004056F094599
+Saved checkpoint.
+
+--------------------[Agent Step 639_584]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.52 / train/loss/image 6.91 / train/loss/policy -0.01 / train/loss/rep 3.52 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.99 / fps/train 2812.71
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 641_152]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.51 / train/loss/image 6.93 / train/loss/policy -0.01 / train/loss/rep 3.51 / train/loss/repval 0.02 / train/loss/rew 6.9e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3321.02
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 642_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.54 / train/loss/image 6.96 / train/loss/policy -0.01 / train/loss/rep 3.54 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3321.97
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 644_288]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.47 / train/loss/image 6.87 / train/loss/policy -9.5e-3 / train/loss/rep 3.47 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3321.72
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 645_856]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.62 / train/loss/image 6.96 / train/loss/policy -9.3e-3 / train/loss/rep 3.62 / train/loss/repval 0.02 / train/loss/rew 5.9e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3321.33
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 647_424]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.59 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.47 / train/loss/image 6.89 / train/loss/policy -9.3e-3 / train/loss/rep 3.47 / train/loss/repval 0.02 / train/loss/rew 5.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.93 / fps/train 3308.93
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 648_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.54 / train/loss/image 6.92 / train/loss/policy -8.5e-3 / train/loss/rep 3.54 / train/loss/repval 0.02 / train/loss/rew 6.8e-3 / train/loss/value 0.02 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.7
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T005556F921708
+Saved checkpoint.
+
+--------------------[Agent Step 650_272]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.54 / train/loss/image 6.93 / train/loss/policy -8.4e-3 / train/loss/rep 3.54 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.63 / fps/train 2721.94
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 651_840]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.63 / train/loss/image 7.01 / train/loss/policy -9.8e-3 / train/loss/rep 3.63 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3314.96
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 653_408]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.53 / train/loss/image 6.94 / train/loss/policy -9.7e-3 / train/loss/rep 3.53 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3318.82
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 654_976]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.52 / train/loss/image 6.95 / train/loss/policy -0.01 / train/loss/rep 3.52 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.02 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3315.58
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 656_544]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.53 / train/loss/image 6.92 / train/loss/policy -0.01 / train/loss/rep 3.53 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3321.34
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 658_112]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.59 / train/loss/image 6.97 / train/loss/policy -9e-3 / train/loss/rep 3.59 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3318.5
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 659_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.52 / train/loss/image 6.91 / train/loss/policy -9.9e-3 / train/loss/rep 3.52 / train/loss/repval 0.02 / train/loss/rew 6.7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3322.42
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T011057F246531
+Saved checkpoint.
+
+--------------------[Agent Step 661_136]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.54 / train/loss/image 6.93 / train/loss/policy -9e-3 / train/loss/rep 3.54 / train/loss/repval 0.02 / train/loss/rew 6.7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 11.06 / fps/train 2831.75
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 662_688]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.58 / train/loss/image 6.95 / train/loss/policy -9.7e-3 / train/loss/rep 3.58 / train/loss/repval 0.02 / train/loss/rew 7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.93 / fps/train 3309.42
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 664_256]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0.91 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.61 / train/loss/image 6.98 / train/loss/policy -0.01 / train/loss/rep 3.61 / train/loss/repval 0.02 / train/loss/rew 6.9e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3314.17
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 665_824]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.5 / train/loss/image 6.89 / train/loss/policy -9.5e-3 / train/loss/rep 3.5 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.94 / fps/train 3312.88
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 667_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.53 / train/loss/image 6.91 / train/loss/policy -9.8e-3 / train/loss/rep 3.53 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.04
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 668_960]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.62 / train/loss/image 6.98 / train/loss/policy -9.7e-3 / train/loss/rep 3.62 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3322.42
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 670_528]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.53 / train/loss/image 6.91 / train/loss/policy -0.01 / train/loss/rep 3.53 / train/loss/repval 0.02 / train/loss/rew 6.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3316.97
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 672_096]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.59 / train/loss/image 6.94 / train/loss/policy -9.7e-3 / train/loss/rep 3.59 / train/loss/repval 0.02 / train/loss/rew 5.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.62
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T012558F432092
+Saved checkpoint.
+
+--------------------[Agent Step 673_424]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.59 / train/loss/image 6.94 / train/loss/policy -0.01 / train/loss/rep 3.59 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.97 / fps/train 2807.92
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 674_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.57 / train/loss/image 6.94 / train/loss/policy -0.01 / train/loss/rep 3.57 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3317.4
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 676_560]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.51 / train/loss/image 6.89 / train/loss/policy -9.4e-3 / train/loss/rep 3.51 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3315.74
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 678_128]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.61 / train/loss/image 6.95 / train/loss/policy -7.9e-3 / train/loss/rep 3.61 / train/loss/repval 0.02 / train/loss/rew 6.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3316.73
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 679_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.31 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.49 / train/loss/image 6.87 / train/loss/policy -9e-3 / train/loss/rep 3.49 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.91 / fps/train 3304.81
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 681_232]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.65 / train/loss/image 6.97 / train/loss/policy -9.8e-3 / train/loss/rep 3.65 / train/loss/repval 0.02 / train/loss/rew 7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.92 / fps/train 3307.45
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 682_800]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.57 / train/loss/image 6.9 / train/loss/policy -8.8e-3 / train/loss/rep 3.57 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.94 / fps/train 3311.68
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T014058F788302
+Saved checkpoint.
+
+--------------------[Agent Step 684_096]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.59 / train/loss/image 6.91 / train/loss/policy -9.2e-3 / train/loss/rep 3.59 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.78 / fps/train 2759.08
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 685_664]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.58 / train/loss/image 6.93 / train/loss/policy -9.5e-3 / train/loss/rep 3.58 / train/loss/repval 0.02 / train/loss/rew 5.9e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3314.54
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 687_232]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.61 / train/loss/image 6.93 / train/loss/policy -0.01 / train/loss/rep 3.61 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3318.76
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 688_784]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.53 / train/loss/image 6.88 / train/loss/policy -9.5e-3 / train/loss/rep 3.53 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 9.9e-3 / replay/replay_ratio 260 / fps/policy 12.91 / fps/train 3305.74
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 690_352]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.62 / train/loss/image 6.91 / train/loss/policy -9.4e-3 / train/loss/rep 3.62 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.94 / fps/train 3313.74
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 691_920]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.59 / train/loss/image 6.93 / train/loss/policy -8.9e-3 / train/loss/rep 3.59 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.7
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 693_488]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.6 / train/loss/image 6.94 / train/loss/policy -9.7e-3 / train/loss/rep 3.6 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.94 / fps/train 3313.36
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 695_056]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.55 / train/loss/image 6.92 / train/loss/policy -9.2e-3 / train/loss/rep 3.55 / train/loss/repval 0.02 / train/loss/rew 6.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.95 / fps/train 3314.54
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T015559F925390
+Saved checkpoint.
+
+--------------------[Agent Step 696_336]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 2.26 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.69 / train/loss/image 6.96 / train/loss/policy -8.9e-3 / train/loss/rep 3.69 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.61 / fps/train 2715.67
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 697_888]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.66 / train/loss/image 6.98 / train/loss/policy -0.01 / train/loss/rep 3.66 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.92 / fps/train 3307.02
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 699_440]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.58 / train/loss/image 6.91 / train/loss/policy -9.5e-3 / train/loss/rep 3.58 / train/loss/repval 0.02 / train/loss/rew 6.9e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.92 / fps/train 3308.22
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+
+--------------------[Agent Step 700_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.59 / train/loss/image 6.93 / train/loss/policy -9.5e-3 / train/loss/rep 3.59 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.92 / fps/train 3306.85
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 702_560]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.64 / train/loss/image 6.96 / train/loss/policy -9.3e-3 / train/loss/rep 3.64 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.94 / fps/train 3313.61
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 704_128]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.73 / train/loss/image 7 / train/loss/policy -9.5e-3 / train/loss/rep 3.73 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.94 / fps/train 3311.38
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 705_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.58 / train/loss/image 6.9 / train/loss/policy -9.6e-3 / train/loss/rep 3.58 / train/loss/repval 0.01 / train/loss/rew 5.5e-3 / train/loss/value 9.6e-3 / replay/replay_ratio 260 / fps/policy 12.93 / fps/train 3309.07
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T021100F376049
+Saved checkpoint.
+
+--------------------[Agent Step 706_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.71 / train/loss/image 7.01 / train/loss/policy -9.6e-3 / train/loss/rep 3.71 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.85 / fps/train 2778.74
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 708_544]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.58 / train/loss/image 6.91 / train/loss/policy -9.8e-3 / train/loss/rep 3.58 / train/loss/repval 0.02 / train/loss/rew 5.6e-3 / train/loss/value 9.4e-3 / replay/replay_ratio 260 / fps/policy 12.92 / fps/train 3307.17
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 710_096]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.65 / train/loss/image 6.96 / train/loss/policy -8.6e-3 / train/loss/rep 3.65 / train/loss/repval 0.02 / train/loss/rew 5.7e-3 / train/loss/value 9.6e-3 / replay/replay_ratio 260 / fps/policy 12.92 / fps/train 3307.91
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 711_648]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 2.75 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.63 / train/loss/image 6.93 / train/loss/policy -9.4e-3 / train/loss/rep 3.63 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.9 / fps/train 3303.02
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 713_200]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.74 / train/loss/image 7 / train/loss/policy -8.8e-3 / train/loss/rep 3.74 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.93 / fps/train 3308.84
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 714_752]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.62 / train/loss/image 6.95 / train/loss/policy -8.5e-3 / train/loss/rep 3.62 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 9.3e-3 / replay/replay_ratio 260 / fps/policy 12.92 / fps/train 3308.37
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 716_304]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.67 / train/loss/image 6.98 / train/loss/policy -9.6e-3 / train/loss/rep 3.67 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.9 / fps/train 3303.52
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 717_856]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.66 / train/loss/image 6.95 / train/loss/policy -9.5e-3 / train/loss/rep 3.66 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 9.6e-3 / replay/replay_ratio 260 / fps/policy 12.93 / fps/train 3310.28
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T022601F566130
+Saved checkpoint.
+
+--------------------[Agent Step 719_168]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.58 / train/loss/image 6.87 / train/loss/policy -9.2e-3 / train/loss/rep 3.58 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 9.8e-3 / replay/replay_ratio 260 / fps/policy 10.83 / fps/train 2772.37
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 720_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.59 / train/loss/image 6.91 / train/loss/policy -9.6e-3 / train/loss/rep 3.59 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.86 / fps/train 3293.18
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 722_288]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.6 / train/loss/image 6.92 / train/loss/policy -9.1e-3 / train/loss/rep 3.6 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3322.94
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 723_856]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.64 / train/loss/image 6.97 / train/loss/policy -9.7e-3 / train/loss/rep 3.64 / train/loss/repval 0.02 / train/loss/rew 6.7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.69
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 725_424]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.64 / train/loss/image 6.97 / train/loss/policy -9.1e-3 / train/loss/rep 3.64 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.99 / fps/train 3326.35
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 726_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.74 / train/loss/image 7.02 / train/loss/policy -9.5e-3 / train/loss/rep 3.74 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 1e-2 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3321
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 728_512]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 3.66 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.68 / train/loss/image 6.99 / train/loss/policy -9.7e-3 / train/loss/rep 3.68 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.64 / fps/train 3234.87
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T024102F286273
+Saved checkpoint.
+
+--------------------[Agent Step 729_744]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.73 / train/loss/image 7.06 / train/loss/policy -8.9e-3 / train/loss/rep 3.73 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.2 / fps/train 2611.42
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+
+--------------------[Agent Step 731_312]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.72 / train/loss/image 7.02 / train/loss/policy -9.5e-3 / train/loss/rep 3.72 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3317.73
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 732_864]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.63 / train/loss/image 6.97 / train/loss/policy -0.01 / train/loss/rep 3.63 / train/loss/repval 0.02 / train/loss/rew 6.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.83 / fps/train 3283.59
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 734_432]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.74 / train/loss/image 7.05 / train/loss/policy -8.2e-3 / train/loss/rep 3.74 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3316.82
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 736_000]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.65 / train/loss/image 6.98 / train/loss/policy -9.5e-3 / train/loss/rep 3.65 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 9.6e-3 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3318.69
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 737_568]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.67 / train/loss/image 6.99 / train/loss/policy -9.1e-3 / train/loss/rep 3.67 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.99 / fps/train 3324.27
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 739_136]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.75 / train/loss/image 7.04 / train/loss/policy -9.1e-3 / train/loss/rep 3.75 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.02
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 740_704]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.72 / train/loss/image 7.01 / train/loss/policy -9.1e-3 / train/loss/rep 3.72 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3323.39
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T025602F886676
+Saved checkpoint.
+
+--------------------[Agent Step 741_936]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.72 / train/loss/image 7.05 / train/loss/policy -9.2e-3 / train/loss/rep 3.72 / train/loss/repval 0.02 / train/loss/rew 6.7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.24 / fps/train 2620.84
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 743_504]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 3.58 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.71 / train/loss/image 7.03 / train/loss/policy -9.5e-3 / train/loss/rep 3.71 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.95
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 745_072]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.82 / train/loss/image 7.11 / train/loss/policy -9.3e-3 / train/loss/rep 3.82 / train/loss/repval 0.02 / train/loss/rew 6.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.93 / fps/train 3311.05
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 746_640]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.77 / train/loss/image 7.08 / train/loss/policy -8.8e-3 / train/loss/rep 3.77 / train/loss/repval 0.02 / train/loss/rew 6.1e-3 / train/loss/value 1e-2 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3321.75
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+
+--------------------[Agent Step 748_208]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.75 / train/loss/image 7.07 / train/loss/policy -9.6e-3 / train/loss/rep 3.75 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3323.2
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 749_776]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.76 / train/loss/image 7.08 / train/loss/policy -9.3e-3 / train/loss/rep 3.76 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3318.03
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 751_344]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.66 / train/loss/image 6.98 / train/loss/policy -0.01 / train/loss/rep 3.66 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.99 / fps/train 3326.37
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T031104F080115
+Saved checkpoint.
+
+--------------------[Agent Step 752_576]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.79 / train/loss/image 7.04 / train/loss/policy -9.5e-3 / train/loss/rep 3.79 / train/loss/repval 0.01 / train/loss/rew 5.4e-3 / train/loss/value 9.3e-3 / replay/replay_ratio 260 / fps/policy 10.23 / fps/train 2618.55
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 754_112]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.73 / train/loss/image 7.05 / train/loss/policy -9.8e-3 / train/loss/rep 3.73 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.48
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 755_664]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.67 / train/loss/image 6.98 / train/loss/policy -0.01 / train/loss/rep 3.67 / train/loss/repval 0.02 / train/loss/rew 5.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.88 / fps/train 3296.58
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 757_232]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.83 / train/loss/image 7.11 / train/loss/policy -9e-3 / train/loss/rep 3.83 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3319.6
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+
+--------------------[Agent Step 758_800]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.81 / train/loss/image 7.1 / train/loss/policy -0.01 / train/loss/rep 3.81 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.99 / fps/train 3324.58
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+
+--------------------[Agent Step 760_368]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0.79 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.88 / train/loss/image 7.15 / train/loss/policy -0.01 / train/loss/rep 3.88 / train/loss/repval 0.02 / train/loss/rew 7.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.93 / fps/train 3310.49
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 761_936]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.84 / train/loss/image 7.14 / train/loss/policy -9.4e-3 / train/loss/rep 3.84 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.14
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 763_488]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.86 / train/loss/image 7.13 / train/loss/policy -0.01 / train/loss/rep 3.86 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.93 / fps/train 3309.03
+
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T032605F062032
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Saved checkpoint.
+
+--------------------[Agent Step 764_656]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.81 / train/loss/image 7.09 / train/loss/policy -9.1e-3 / train/loss/rep 3.81 / train/loss/repval 0.02 / train/loss/rew 5.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 9.65 / fps/train 2470.04
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 766_208]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.78 / train/loss/image 7.03 / train/loss/policy -8.6e-3 / train/loss/rep 3.78 / train/loss/repval 0.02 / train/loss/rew 5.5e-3 / train/loss/value 9.6e-3 / replay/replay_ratio 260 / fps/policy 12.93 / fps/train 3310.1
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+
+--------------------[Agent Step 767_776]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.87 / train/loss/image 7.14 / train/loss/policy -0.01 / train/loss/rep 3.87 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3318.91
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 769_344]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.84 / train/loss/image 7.09 / train/loss/policy -0.01 / train/loss/rep 3.84 / train/loss/repval 0.02 / train/loss/rew 6.7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.99 / fps/train 3325.49
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+
+--------------------[Agent Step 770_912]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.87 / train/loss/image 7.12 / train/loss/policy -8.4e-3 / train/loss/rep 3.87 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.99 / fps/train 3324.35
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 772_480]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.8 / train/loss/image 7.06 / train/loss/policy -0.01 / train/loss/rep 3.8 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3318.68
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 774_048]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.88 / train/loss/image 7.12 / train/loss/policy -9.7e-3 / train/loss/rep 3.88 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3322.15
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T034105F747234
+Saved checkpoint.
+
+--------------------[Agent Step 775_264]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.84 / train/loss/image 7.09 / train/loss/policy -9.3e-3 / train/loss/rep 3.84 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 9.7e-3 / replay/replay_ratio 260 / fps/policy 10.13 / fps/train 2592.91
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 776_832]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.88 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.88 / train/loss/image 7.1 / train/loss/policy -8.7e-3 / train/loss/rep 3.88 / train/loss/repval 0.02 / train/loss/rew 6.6e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.94 / fps/train 3312.07
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 778_400]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.84 / train/loss/image 7.09 / train/loss/policy -9.1e-3 / train/loss/rep 3.84 / train/loss/repval 0.02 / train/loss/rew 6.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3322.04
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 779_968]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.92 / train/loss/image 7.16 / train/loss/policy -9e-3 / train/loss/rep 3.92 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.25
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 781_536]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.88 / train/loss/image 7.11 / train/loss/policy -9.9e-3 / train/loss/rep 3.88 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 9.9e-3 / replay/replay_ratio 260 / fps/policy 12.99 / fps/train 3325.62
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 783_104]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.84 / train/loss/image 7.07 / train/loss/policy -9.2e-3 / train/loss/rep 3.84 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3321.15
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 784_672]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.89 / train/loss/image 7.14 / train/loss/policy -0.01 / train/loss/rep 3.89 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 1e-2 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3323.93
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T035606F440063
+Saved checkpoint.
+
+--------------------[Agent Step 786_128]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.92 / train/loss/image 7.12 / train/loss/policy -0.01 / train/loss/rep 3.92 / train/loss/repval 0.02 / train/loss/rew 6.2e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.46 / fps/train 2678.76
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 787_696]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.82 / train/loss/image 7.09 / train/loss/policy -9e-3 / train/loss/rep 3.82 / train/loss/repval 0.02 / train/loss/rew 5.9e-3 / train/loss/value 9.3e-3 / replay/replay_ratio 260 / fps/policy 13 / fps/train 3327.85
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 789_264]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.91 / train/loss/image 7.14 / train/loss/policy -9.6e-3 / train/loss/rep 3.91 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.98 / fps/train 3324.12
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 790_800]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.96 / train/loss/image 7.19 / train/loss/policy -0.01 / train/loss/rep 3.96 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3270.65
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 792_368]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0.71 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.91 / train/loss/image 7.14 / train/loss/policy -0.01 / train/loss/rep 3.91 / train/loss/repval 0.02 / train/loss/rew 6.8e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.94 / fps/train 3312.08
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+
+--------------------[Agent Step 793_936]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.84 / train/loss/image 7.09 / train/loss/policy -8.4e-3 / train/loss/rep 3.84 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.95
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 795_504]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.98 / train/loss/image 7.21 / train/loss/policy -0.01 / train/loss/rep 3.98 / train/loss/repval 0.02 / train/loss/rew 6.7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3317.26
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 797_072]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.88 / train/loss/image 7.1 / train/loss/policy -9.3e-3 / train/loss/rep 3.88 / train/loss/repval 0.02 / train/loss/rew 6.3e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.63
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_humanoid_walk_20251130_032240/ckpt/20251201T041107F409361
+Saved checkpoint.
+
+--------------------[Agent Step 798_288]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.93 / train/loss/image 7.14 / train/loss/policy -0.01 / train/loss/rep 3.93 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 10.03 / fps/train 2568.7
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 799_824]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.92 / train/loss/image 7.14 / train/loss/policy -0.01 / train/loss/rep 3.92 / train/loss/repval 0.02 / train/loss/rew 6.4e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.67 / fps/train 3243.46
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 801_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.92 / train/loss/image 7.17 / train/loss/policy -0.01 / train/loss/rep 3.92 / train/loss/repval 0.02 / train/loss/rew 6.7e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.97 / fps/train 3320.89
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 802_960]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.93 / train/loss/image 7.15 / train/loss/policy -8.8e-3 / train/loss/rep 3.93 / train/loss/repval 0.02 / train/loss/rew 6e-3 / train/loss/value 9.9e-3 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3318.1
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 804_528]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.99 / train/loss/image 7.19 / train/loss/policy -0.01 / train/loss/rep 3.99 / train/loss/repval 0.02 / train/loss/rew 6.5e-3 / train/loss/value 0.01 / replay/replay_ratio 260 / fps/policy 12.99 / fps/train 3324.51
+
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_humanoid_walk_20251130_032240/scores.jsonl
+
+--------------------[Agent Step 806_096]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.93 / train/loss/image 7.11 / train/loss/policy -9.5e-3 / train/loss/rep 3.93 / train/loss/repval 0.02 / train/loss/rew 5.5e-3 / train/loss/value 9.2e-3 / replay/replay_ratio 260 / fps/policy 12.96 / fps/train 3317.21
+
+[2025-12-01T04:23:49.011] error: *** JOB 6785309 ON node3205 CANCELLED AT 2025-12-01T04:23:49 DUE TO TIME LIMIT ***
