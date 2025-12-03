@@ -1,0 +1,2971 @@
+=== Resuming DMC Cheetah Run Training ===
+Job ID: 6807958
+Logdir: ./logdir/dreamer/dmc_cheetah_run_20251129_211920
+Start time: Mon Dec  1 14:24:37 EST 2025
+
+=== Verifying GPU ===
+Devices: [CudaDevice(id=0)]
+
+---  ___                           __   ______ ---
+--- |   \ _ _ ___ __ _ _ __  ___ _ \ \ / /__ / ---
+--- | |) | '_/ -_) _` | '  \/ -_) '/\ V / |_ \ ---
+--- |___/|_| \___\__,_|_|_|_\___|_|  \_/ |___/ ---
+Replica: 0 / 1
+Logdir: logdir/dreamer/dmc_cheetah_run_20251129_211920
+Run script: train
+Observations
+  is_first         Space(bool, shape=(), low=False, high=True)
+  is_last          Space(bool, shape=(), low=False, high=True)
+  is_terminal      Space(bool, shape=(), low=False, high=True)
+  reward           Space(float32, shape=(), low=-inf, high=inf)
+  image            Space(uint8, shape=(64, 64, 3), low=0, high=255)
+Actions
+  action           Space(float32, shape=(6,), low=-1.0, high=1.0)
+Extras
+  consec           Space(int32, shape=(), low=-2147483648, high=2147483647)
+  stepid           Space(uint8, shape=(20,), low=0, high=255)
+  dyn/deter        Space(float32, shape=(8192,), low=-inf, high=inf)
+  dyn/stoch        Space(float32, shape=(32, 64), low=-inf, high=inf)
+JAX devices (1): [cuda:0]
+Policy devices: cuda:0
+Train devices:  cuda:0
+Initializing parameters...
+Optimizer opt has 165,948,686 params:
+    95,483,904 dyn
+    20,282,115 dec
+    12,850,431 val
+    12,601,356 pol
+    10,749,183 rew
+    10,488,833 con
+     3,492,864 enc
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+Done initializing!
+Compiling 1 checkpoint groups...
+Largest checkpoint group: 2 GB
+Compiling train and report...
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+Train cost analysis:
+No available
+Report cost analysis:
+No available
+Done compiling!
+Found existing checkpoint.
+Loading checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T021338F164128
+Loaded checkpoint.
+Start training loop
+
+--------------------[Agent Step 699_056]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.71 / train/loss/image 0.62 / train/loss/policy 5.3e-3 / train/loss/rep 1.71 / train/loss/repval 1.19 / train/loss/rew 0.49 / train/loss/value 1.11 / replay/replay_ratio 751.32 / fps/policy 8.93 / fps/train 2285.33
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 700_592]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.38 / train/loss/image 0.56 / train/loss/policy 6.3e-3 / train/loss/rep 1.38 / train/loss/repval 1.14 / train/loss/rew 0.48 / train/loss/value 1.09 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3275.43
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 702_080]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.32 / train/loss/image 0.54 / train/loss/policy 6.2e-3 / train/loss/rep 1.32 / train/loss/repval 1.13 / train/loss/rew 0.48 / train/loss/value 1.09 / replay/replay_ratio 260 / fps/policy 12.33 / fps/train 3156.01
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 703_616]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.52 / train/loss/policy 7.1e-3 / train/loss/rep 1.26 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.69
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 705_152]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.27 / train/loss/image 0.53 / train/loss/policy 6e-3 / train/loss/rep 1.27 / train/loss/repval 1.13 / train/loss/rew 0.48 / train/loss/value 1.09 / replay/replay_ratio 260 / fps/policy 12.74 / fps/train 3260.48
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 706_704]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.53 / train/loss/policy 6.6e-3 / train/loss/rep 1.24 / train/loss/repval 1.12 / train/loss/rew 0.47 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.81 / fps/train 3279.73
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 708_240]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.51 / train/loss/policy 7.2e-3 / train/loss/rep 1.23 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.4
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T144127F467522
+Saved checkpoint.
+
+--------------------[Agent Step 709_616]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.51 / train/loss/policy 8.4e-3 / train/loss/rep 1.22 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.09 / replay/replay_ratio 260 / fps/policy 11.38 / fps/train 2913.3
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 711_152]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.53 / train/loss/policy 9.3e-3 / train/loss/rep 1.26 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.88
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 712_688]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.52 / train/loss/policy 8.3e-3 / train/loss/rep 1.25 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.09 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.96
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 714_224]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 751.49 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.32 / train/loss/image 0.55 / train/loss/policy 7e-3 / train/loss/rep 1.32 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.75 / fps/train 3264.91
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 715_760]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.53 / train/loss/policy 6.7e-3 / train/loss/rep 1.25 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.75
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 717_296]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.52 / train/loss/policy 6.6e-3 / train/loss/rep 1.23 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.84
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 718_832]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.51 / train/loss/policy 8.6e-3 / train/loss/rep 1.22 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.09 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.6
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T145628F167212
+Saved checkpoint.
+
+--------------------[Agent Step 720_320]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.21 / train/loss/image 0.52 / train/loss/policy 7.9e-3 / train/loss/rep 1.21 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 11.13 / fps/train 2850.26
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 721_856]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.53 / train/loss/policy 7.7e-3 / train/loss/rep 1.25 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3275.21
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 723_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.21 / train/loss/image 0.51 / train/loss/policy 9.2e-3 / train/loss/rep 1.21 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3269.1
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 724_928]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.51 / train/loss/policy 8.7e-3 / train/loss/rep 1.25 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.94
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 726_464]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.52 / train/loss/policy 9.7e-3 / train/loss/rep 1.24 / train/loss/repval 1.13 / train/loss/rew 0.48 / train/loss/value 1.09 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.06
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 728_000]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.52 / train/loss/policy 6.6e-3 / train/loss/rep 1.25 / train/loss/repval 1.13 / train/loss/rew 0.48 / train/loss/value 1.09 / replay/replay_ratio 260 / fps/policy 12.76 / fps/train 3265.55
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 729_552]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 861.93 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.28 / train/loss/image 0.52 / train/loss/policy 7.6e-3 / train/loss/rep 1.28 / train/loss/repval 1.13 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.82 / fps/train 3281.04
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 731_088]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.52 / train/loss/policy 8.2e-3 / train/loss/rep 1.25 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.09 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.35
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T151128F958042
+Saved checkpoint.
+
+--------------------[Agent Step 732_368]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.5 / train/loss/policy 7.5e-3 / train/loss/rep 1.23 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 10.59 / fps/train 2711.17
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 733_904]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.52 / train/loss/policy 8.1e-3 / train/loss/rep 1.24 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3270.32
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 735_440]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.52 / train/loss/policy 6.4e-3 / train/loss/rep 1.23 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.74
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 736_976]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.51 / train/loss/policy 6.3e-3 / train/loss/rep 1.25 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3269.3
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 738_512]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.28 / train/loss/image 0.52 / train/loss/policy 6.6e-3 / train/loss/rep 1.28 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.57
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 740_048]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.52 / train/loss/policy 8.5e-3 / train/loss/rep 1.22 / train/loss/repval 1.12 / train/loss/rew 0.47 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.68
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 741_584]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.52 / train/loss/policy 8.3e-3 / train/loss/rep 1.23 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3275.33
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T152629F465465
+Saved checkpoint.
+
+--------------------[Agent Step 742_944]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.51 / train/loss/policy 6.3e-3 / train/loss/rep 1.26 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 11.28 / fps/train 2887.38
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 744_480]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.27 / train/loss/image 0.51 / train/loss/policy 6.5e-3 / train/loss/rep 1.27 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.04
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 746_016]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 867.02 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.51 / train/loss/policy 7.3e-3 / train/loss/rep 1.23 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.54
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 747_552]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.34 / train/loss/image 0.53 / train/loss/policy 8.6e-3 / train/loss/rep 1.34 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3268.15
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 749_088]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.51 / train/loss/policy 9e-3 / train/loss/rep 1.22 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3275.06
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 750_624]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.5 / train/loss/policy 7.6e-3 / train/loss/rep 1.24 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3272.96
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 752_160]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.5 / train/loss/policy 8.4e-3 / train/loss/rep 1.23 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3270.44
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 753_696]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.29 / train/loss/image 0.51 / train/loss/policy 8.3e-3 / train/loss/rep 1.29 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.75
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T154130F026386
+Saved checkpoint.
+
+--------------------[Agent Step 755_056]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.51 / train/loss/policy 7.7e-3 / train/loss/rep 1.24 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 11.28 / fps/train 2886.83
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 756_592]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.52 / train/loss/policy 8.6e-3 / train/loss/rep 1.25 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 12.76 / fps/train 3267.52
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 758_128]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.5 / train/loss/policy 8.8e-3 / train/loss/rep 1.23 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.06 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.78
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 759_664]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.51 / train/loss/policy 6.9e-3 / train/loss/rep 1.24 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.06 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3270.03
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 761_200]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.3 / train/loss/image 0.52 / train/loss/policy 7.8e-3 / train/loss/rep 1.3 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.24
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 762_736]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 827.65 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.34 / train/loss/image 0.53 / train/loss/policy 7.9e-3 / train/loss/rep 1.34 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 12.68 / fps/train 3247.07
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 764_272]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.5 / train/loss/policy 7e-3 / train/loss/rep 1.24 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3277.13
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T155630F161533
+Saved checkpoint.
+
+--------------------[Agent Step 765_568]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.5 / train/loss/policy 6.1e-3 / train/loss/rep 1.24 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 10.67 / fps/train 2731.14
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 767_120]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.5 / train/loss/policy 6.3e-3 / train/loss/rep 1.22 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 12.81 / fps/train 3280.4
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 768_656]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.51 / train/loss/policy 7.3e-3 / train/loss/rep 1.26 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.42
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 770_192]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.2 / train/loss/image 0.49 / train/loss/policy 6.5e-3 / train/loss/rep 1.2 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.09 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3269.69
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 771_728]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.51 / train/loss/policy 5.6e-3 / train/loss/rep 1.24 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.64
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 773_264]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.51 / train/loss/policy 8.4e-3 / train/loss/rep 1.22 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.88
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 774_800]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.27 / train/loss/image 0.51 / train/loss/policy 9.6e-3 / train/loss/rep 1.27 / train/loss/repval 1.12 / train/loss/rew 0.48 / train/loss/value 1.08 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3276.22
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 776_336]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.5 / train/loss/policy 0.01 / train/loss/rep 1.26 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.06 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.9
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T161131F071281
+Saved checkpoint.
+
+--------------------[Agent Step 777_616]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 465.36 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.5 / train/loss/policy 8.1e-3 / train/loss/rep 1.24 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.06 / replay/replay_ratio 260 / fps/policy 10.57 / fps/train 2705.01
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 779_152]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.28 / train/loss/image 0.5 / train/loss/policy 7.1e-3 / train/loss/rep 1.28 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3276.75
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 780_688]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.51 / train/loss/policy 7.7e-3 / train/loss/rep 1.24 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3270.35
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 782_224]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.51 / train/loss/policy 7.9e-3 / train/loss/rep 1.26 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.06 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.12
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 783_760]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.51 / train/loss/policy 8.2e-3 / train/loss/rep 1.25 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.06 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3275.33
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 785_296]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.5 / train/loss/policy 7.9e-3 / train/loss/rep 1.25 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.06 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.05
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 786_832]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.5 / train/loss/policy 8.1e-3 / train/loss/rep 1.26 / train/loss/repval 1.11 / train/loss/rew 0.48 / train/loss/value 1.06 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.91
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T162631F624635
+Saved checkpoint.
+
+--------------------[Agent Step 788_144]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.51 / train/loss/policy 6.4e-3 / train/loss/rep 1.26 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 10.87 / fps/train 2781.74
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 789_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.28 / train/loss/image 0.52 / train/loss/policy 7.1e-3 / train/loss/rep 1.28 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.06 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.62
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 791_232]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.5 / train/loss/policy 6.4e-3 / train/loss/rep 1.25 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3277.21
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 792_768]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.35 / train/loss/image 0.52 / train/loss/policy 7.8e-3 / train/loss/rep 1.35 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.08
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 794_304]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 860.34 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.5 / train/loss/policy 7.2e-3 / train/loss/rep 1.23 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3270.87
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 795_840]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.5 / train/loss/policy 6.4e-3 / train/loss/rep 1.23 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.33
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 797_376]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.49 / train/loss/policy 6.9e-3 / train/loss/rep 1.23 / train/loss/repval 1.1 / train/loss/rew 0.49 / train/loss/value 1.06 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.04
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 798_912]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.5 / train/loss/policy 8.4e-3 / train/loss/rep 1.23 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.38
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T164131F991530
+Saved checkpoint.
+
+--------------------[Agent Step 800_240]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.5 / train/loss/policy 0.02 / train/loss/rep 1.24 / train/loss/repval 1.14 / train/loss/rew 0.48 / train/loss/value 1.09 / replay/replay_ratio 260 / fps/policy 11.03 / fps/train 2823.78
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 801_792]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.51 / train/loss/policy 0.01 / train/loss/rep 1.23 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3277.78
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 803_328]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.5 / train/loss/policy 0.01 / train/loss/rep 1.23 / train/loss/repval 1.08 / train/loss/rew 0.48 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.99
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 804_864]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.5 / train/loss/policy 9.8e-3 / train/loss/rep 1.24 / train/loss/repval 1.08 / train/loss/rew 0.48 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3276.72
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 806_416]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.51 / train/loss/policy 8.4e-3 / train/loss/rep 1.22 / train/loss/repval 1.08 / train/loss/rew 0.48 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3277.87
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 807_952]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.28 / train/loss/image 0.51 / train/loss/policy 7.6e-3 / train/loss/rep 1.28 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3275.21
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 809_504]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.21 / train/loss/image 0.49 / train/loss/policy 7.5e-3 / train/loss/rep 1.21 / train/loss/repval 1.08 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3277.74
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T165632F478634
+Saved checkpoint.
+
+--------------------[Agent Step 810_848]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 878.96 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.5 / train/loss/policy 7.7e-3 / train/loss/rep 1.23 / train/loss/repval 1.08 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 11.12 / fps/train 2846.61
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 812_368]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.5 / train/loss/policy 7e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.64 / fps/train 3235.04
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 813_904]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.49 / train/loss/policy 7.8e-3 / train/loss/rep 1.24 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.04
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 815_440]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.27 / train/loss/image 0.5 / train/loss/policy 7.7e-3 / train/loss/rep 1.27 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3276.15
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 816_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.5 / train/loss/policy 7.4e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3277.9
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 818_528]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.5 / train/loss/policy 6.4e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3275.47
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 820_080]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.49 / train/loss/policy 7.1e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.81 / fps/train 3279.4
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 821_632]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.49 / train/loss/policy 6.1e-3 / train/loss/rep 1.24 / train/loss/repval 1.08 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.81 / fps/train 3278.54
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T171133F642600
+Saved checkpoint.
+
+--------------------[Agent Step 822_976]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.5 / train/loss/policy 6e-3 / train/loss/rep 1.26 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 11.17 / fps/train 2860.64
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 824_528]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.49 / train/loss/policy 7.9e-3 / train/loss/rep 1.24 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3277.77
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 826_064]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 857.11 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.21 / train/loss/image 0.48 / train/loss/policy 8.1e-3 / train/loss/rep 1.21 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.46
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 827_616]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.49 / train/loss/policy 6.5e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3277.76
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 829_152]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.5 / train/loss/policy 6.2e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3270.79
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 830_688]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.49 / train/loss/policy 6.2e-3 / train/loss/rep 1.22 / train/loss/repval 1.1 / train/loss/rew 0.49 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.73 / fps/train 3258.4
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 832_224]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.5 / train/loss/policy 6.6e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3268.02
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T172634F023449
+Saved checkpoint.
+
+--------------------[Agent Step 833_568]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.49 / train/loss/policy 7.3e-3 / train/loss/rep 1.23 / train/loss/repval 1.08 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 11.18 / fps/train 2861.81
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 835_104]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.49 / train/loss/policy 7.3e-3 / train/loss/rep 1.24 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.73 / fps/train 3259.81
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 836_640]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.49 / train/loss/policy 8.5e-3 / train/loss/rep 1.23 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.75 / fps/train 3265.21
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 838_144]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.49 / train/loss/policy 9.7e-3 / train/loss/rep 1.24 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.52 / fps/train 3206.27
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 839_696]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.49 / train/loss/policy 9.2e-3 / train/loss/rep 1.22 / train/loss/repval 1.1 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3276.63
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 841_232]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.49 / train/loss/policy 9.8e-3 / train/loss/rep 1.23 / train/loss/repval 1.1 / train/loss/rew 0.49 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.2
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 842_768]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 885.31 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.48 / train/loss/policy 8.6e-3 / train/loss/rep 1.22 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.86
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 844_304]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.27 / train/loss/image 0.49 / train/loss/policy 7.2e-3 / train/loss/rep 1.27 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.56
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T174134F523724
+Saved checkpoint.
+
+--------------------[Agent Step 845_632]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.5 / train/loss/policy 7.6e-3 / train/loss/rep 1.23 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 11.06 / fps/train 2830.82
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 847_168]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.21 / train/loss/image 0.49 / train/loss/policy 9.1e-3 / train/loss/rep 1.21 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.75 / fps/train 3265.16
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 848_704]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.48 / train/loss/policy 8.4e-3 / train/loss/rep 1.24 / train/loss/repval 1.08 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.93
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 850_240]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.49 / train/loss/policy 7.5e-3 / train/loss/rep 1.24 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.49
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 851_792]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.48 / train/loss/policy 6.7e-3 / train/loss/rep 1.23 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3277.78
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 853_328]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.49 / train/loss/policy 5.3e-3 / train/loss/rep 1.23 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.05 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.81
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 854_880]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.49 / train/loss/policy 6.6e-3 / train/loss/rep 1.26 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.81 / fps/train 3278.6
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T175635F155301
+Saved checkpoint.
+
+--------------------[Agent Step 856_192]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.49 / train/loss/policy 7.7e-3 / train/loss/rep 1.22 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 10.87 / fps/train 2782.31
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 857_712]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 870.58 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.49 / train/loss/policy 6e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.64 / fps/train 3234.74
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 859_248]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.48 / train/loss/policy 7.4e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.09
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 860_784]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.49 / train/loss/policy 6.5e-3 / train/loss/rep 1.25 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.76 / fps/train 3265.32
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 862_304]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.27 / train/loss/image 0.49 / train/loss/policy 7.1e-3 / train/loss/rep 1.27 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.64 / fps/train 3235.12
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 863_840]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.21 / train/loss/image 0.48 / train/loss/policy 6.8e-3 / train/loss/rep 1.21 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.43
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 865_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.49 / train/loss/policy 6.9e-3 / train/loss/rep 1.25 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.81 / fps/train 3278.49
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 866_944]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.49 / train/loss/policy 8.7e-3 / train/loss/rep 1.24 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.81 / fps/train 3278.69
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T181135F839066
+Saved checkpoint.
+
+--------------------[Agent Step 868_288]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.3 / train/loss/image 0.5 / train/loss/policy 7.9e-3 / train/loss/rep 1.3 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 11.15 / fps/train 2853.51
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 869_824]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.5 / train/loss/policy 6.9e-3 / train/loss/rep 1.26 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.7
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 871_360]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.49 / train/loss/policy 5.9e-3 / train/loss/rep 1.25 / train/loss/repval 1.08 / train/loss/rew 0.48 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.67
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 872_912]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.47 / train/loss/policy 6.5e-3 / train/loss/rep 1.22 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3276.87
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 874_448]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 871.12 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.48 / train/loss/policy 7e-3 / train/loss/rep 1.23 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.12
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 875_984]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.48 / train/loss/policy 7.9e-3 / train/loss/rep 1.22 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.68
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 877_536]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.48 / train/loss/policy 9.1e-3 / train/loss/rep 1.23 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3277.15
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T182636F861731
+Saved checkpoint.
+
+--------------------[Agent Step 878_880]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.49 / train/loss/policy 8.6e-3 / train/loss/rep 1.25 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 11.2 / fps/train 2867.02
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 880_416]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.49 / train/loss/policy 6e-3 / train/loss/rep 1.25 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.93
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 881_952]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.49 / train/loss/policy 6.2e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3272.09
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 883_488]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.48 / train/loss/policy 6.1e-3 / train/loss/rep 1.24 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.76 / fps/train 3267.37
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 885_024]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.48 / train/loss/policy 5.6e-3 / train/loss/rep 1.26 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3270.43
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 886_560]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.49 / train/loss/policy 6.3e-3 / train/loss/rep 1.25 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3269.11
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 888_096]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.48 / train/loss/policy 7.7e-3 / train/loss/rep 1.23 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3270.26
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 889_632]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.48 / train/loss/policy 6.9e-3 / train/loss/rep 1.25 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3270.03
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T184137F105106
+Saved checkpoint.
+
+--------------------[Agent Step 890_960]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 671.8 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.48 / train/loss/policy 9.1e-3 / train/loss/rep 1.24 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 11.06 / fps/train 2832.18
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 892_496]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.47 / train/loss/policy 6.8e-3 / train/loss/rep 1.23 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.75 / fps/train 3263.58
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 894_032]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.27 / train/loss/image 0.49 / train/loss/policy 6.4e-3 / train/loss/rep 1.27 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.73 / fps/train 3258.64
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 895_568]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.48 / train/loss/policy 6.2e-3 / train/loss/rep 1.24 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.75 / fps/train 3264.33
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 897_104]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.5 / train/loss/policy 7.1e-3 / train/loss/rep 1.24 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.76 / fps/train 3266.16
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 898_640]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.48 / train/loss/policy 8e-3 / train/loss/rep 1.23 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.75 / fps/train 3264.59
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 900_176]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.48 / train/loss/policy 7.4e-3 / train/loss/rep 1.24 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.76 / fps/train 3267.36
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T185637F784267
+Saved checkpoint.
+
+--------------------[Agent Step 901_520]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.49 / train/loss/policy 9.2e-3 / train/loss/rep 1.24 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 11.2 / fps/train 2866.72
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 903_056]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.49 / train/loss/policy 6.7e-3 / train/loss/rep 1.23 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.69 / fps/train 3249.89
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 904_592]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.48 / train/loss/policy 6.8e-3 / train/loss/rep 1.26 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3269.69
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 906_128]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 879.54 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.48 / train/loss/policy 8.3e-3 / train/loss/rep 1.26 / train/loss/repval 1.06 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.74 / fps/train 3260.95
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 907_664]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.48 / train/loss/policy 7.3e-3 / train/loss/rep 1.23 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3268.8
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 909_200]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.47 / train/loss/policy 6.4e-3 / train/loss/rep 1.25 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3268.85
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 910_736]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.48 / train/loss/policy 6.9e-3 / train/loss/rep 1.24 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.04
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 912_272]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.48 / train/loss/policy 7.2e-3 / train/loss/rep 1.26 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.68
+
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T191137F989976
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Saved checkpoint.
+
+--------------------[Agent Step 913_600]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.47 / train/loss/policy 8.1e-3 / train/loss/rep 1.23 / train/loss/repval 1.06 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 11.06 / fps/train 2832.19
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 915_136]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.27 / train/loss/image 0.48 / train/loss/policy 6.9e-3 / train/loss/rep 1.27 / train/loss/repval 1.06 / train/loss/rew 0.49 / train/loss/value 1.01 / replay/replay_ratio 260 / fps/policy 12.75 / fps/train 3264.1
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 916_672]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.21 / train/loss/image 0.48 / train/loss/policy 6.2e-3 / train/loss/rep 1.21 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3270.49
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 918_208]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.22 / train/loss/image 0.48 / train/loss/policy 6.6e-3 / train/loss/rep 1.22 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3275.15
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 919_744]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.27 / train/loss/image 0.48 / train/loss/policy 6.7e-3 / train/loss/rep 1.27 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3275.66
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 921_280]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.48 / train/loss/policy 5.5e-3 / train/loss/rep 1.26 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3270.66
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 922_816]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 837.59 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.48 / train/loss/policy 6.1e-3 / train/loss/rep 1.24 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3270
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T192638F148892
+Saved checkpoint.
+
+--------------------[Agent Step 924_160]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.48 / train/loss/policy 7.6e-3 / train/loss/rep 1.24 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 11.16 / fps/train 2857.35
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 925_696]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.48 / train/loss/policy 6.2e-3 / train/loss/rep 1.25 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.71 / fps/train 3253.04
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 927_232]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.48 / train/loss/policy 7.5e-3 / train/loss/rep 1.26 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.13
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 928_768]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.48 / train/loss/policy 6.4e-3 / train/loss/rep 1.25 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3268.43
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 930_304]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.27 / train/loss/image 0.48 / train/loss/policy 6.6e-3 / train/loss/rep 1.27 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.26
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 931_840]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.49 / train/loss/policy 6e-3 / train/loss/rep 1.24 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3269.61
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 933_376]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.48 / train/loss/policy 5.9e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.53
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T194139F205260
+Saved checkpoint.
+
+--------------------[Agent Step 934_896]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.49 / train/loss/policy 5.8e-3 / train/loss/rep 1.25 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 11.45 / fps/train 2932.2
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 936_432]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.21 / train/loss/image 0.48 / train/loss/policy 6.7e-3 / train/loss/rep 1.21 / train/loss/repval 1.09 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.72 / fps/train 3255.09
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 937_968]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 893.5 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.48 / train/loss/policy 7.7e-3 / train/loss/rep 1.24 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.67 / fps/train 3244.49
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 939_504]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.48 / train/loss/policy 9.1e-3 / train/loss/rep 1.25 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3269.64
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 941_040]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.47 / train/loss/policy 6.5e-3 / train/loss/rep 1.25 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.75 / fps/train 3264.31
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 942_576]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.23 / train/loss/image 0.47 / train/loss/policy 5.6e-3 / train/loss/rep 1.23 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.75 / fps/train 3264.92
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 944_112]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.25 / train/loss/image 0.48 / train/loss/policy 6.7e-3 / train/loss/rep 1.25 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.76 / fps/train 3267.22
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 945_648]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.48 / train/loss/policy 5.1e-3 / train/loss/rep 1.24 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.04 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3273.45
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Saving checkpoint: logdir/dreamer/dmc_cheetah_run_20251129_211920/ckpt/20251201T195639F253127
+Saved checkpoint.
+
+--------------------[Agent Step 947_008]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.27 / train/loss/image 0.49 / train/loss/policy 6.2e-3 / train/loss/rep 1.27 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 11.22 / fps/train 2873.22
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 948_544]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.47 / train/loss/policy 6.2e-3 / train/loss/rep 1.24 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.75 / fps/train 3265.02
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 950_080]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.28 / train/loss/image 0.48 / train/loss/policy 6.5e-3 / train/loss/rep 1.28 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.8 / fps/train 3275.96
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 951_616]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.29 / train/loss/image 0.49 / train/loss/policy 8.1e-3 / train/loss/rep 1.29 / train/loss/repval 1.08 / train/loss/rew 0.49 / train/loss/value 1.03 / replay/replay_ratio 260 / fps/policy 12.77 / fps/train 3268.88
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 953_152]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.26 / train/loss/image 0.48 / train/loss/policy 8.3e-3 / train/loss/rep 1.26 / train/loss/repval 1.06 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.78 / fps/train 3271.07
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+
+--------------------[Agent Step 954_688]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 890.88 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.3 / train/loss/image 0.47 / train/loss/policy 7.6e-3 / train/loss/rep 1.3 / train/loss/repval 1.06 / train/loss/rew 0.49 / train/loss/value 1.01 / replay/replay_ratio 260 / fps/policy 12.76 / fps/train 3265.94
+
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/metrics.jsonl
+Writing metrics: logdir/dreamer/dmc_cheetah_run_20251129_211920/scores.jsonl
+
+--------------------[Agent Step 956_224]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.24 / train/loss/image 0.47 / train/loss/policy 6.6e-3 / train/loss/rep 1.24 / train/loss/repval 1.07 / train/loss/rew 0.49 / train/loss/value 1.02 / replay/replay_ratio 260 / fps/policy 12.79 / fps/train 3274.87
+
+/var/spool/slurmd/job6807958/slurm_script: line 36: 1564770 Killed                  python3 dreamerv3/main.py --logdir $LOGDIR --configs dmc_vision --task dmc_cheetah_run
+
+=== Training Complete ===
+End time: Mon Dec  1 20:11:53 EST 2025
+[2025-12-01T20:11:53.450] error: Detected 1 oom_kill event in StepId=6807958.batch. Some of the step tasks have been OOM Killed.

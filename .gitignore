@@ -1,0 +1,13 @@
+.pytest_cache
+dist
+__pycache__/
+*.py[cod]
+*.egg-info
+MUJOCO_LOG.TXT
+
+# Experiment outputs
+logdir/
+# *.out
+# logs/
+# logdir/dreamer/atari100k_pong_20251126_023138
+# logdir/dreamer/crafter_20251126_014459

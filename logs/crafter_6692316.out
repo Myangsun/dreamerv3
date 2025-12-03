@@ -1,0 +1,2782 @@
+=== Job Information ===
+Job ID: 6692316
+Node: node3208
+Start time: Wed Nov 26 01:44:58 EST 2025
+
+=== Verifying GPU ===
+Devices: [CudaDevice(id=0)]
+
+=== Starting Crafter Training ===
+Logdir: ./logdir/dreamer/crafter_20251126_014459
+
+2025-11-26 01:47:05.292405: E external/xla/xla/python/profiler/internal/python_hooks.cc:412] Can't import tensorflow.python.profiler.trace
+2025-11-26 01:47:17.840361: E external/xla/xla/python/profiler/internal/python_hooks.cc:412] Can't import tensorflow.python.profiler.trace
+---  ___                           __   ______ ---
+--- |   \ _ _ ___ __ _ _ __  ___ _ \ \ / /__ / ---
+--- | |) | '_/ -_) _` | '  \/ -_) '/\ V / |_ \ ---
+--- |___/|_| \___\__,_|_|_|_\___|_|  \_/ |___/ ---
+Replica: 0 / 1
+Logdir: logdir/dreamer/crafter_20251126_014459
+Run script: train
+Observations
+  image            Space(uint8, shape=(64, 64, 3), low=0, high=255)
+  reward           Space(float32, shape=(), low=-inf, high=inf)
+  is_first         Space(bool, shape=(), low=False, high=True)
+  is_last          Space(bool, shape=(), low=False, high=True)
+  is_terminal      Space(bool, shape=(), low=False, high=True)
+Actions
+  action           Space(int32, shape=(), low=0, high=17)
+Extras
+  consec           Space(int32, shape=(), low=-2147483648, high=2147483647)
+  stepid           Space(uint8, shape=(20,), low=0, high=255)
+  dyn/deter        Space(float32, shape=(8192,), low=-inf, high=inf)
+  dyn/stoch        Space(float32, shape=(32, 64), low=-inf, high=inf)
+JAX devices (1): [cuda:0]
+Policy devices: cuda:0
+Train devices:  cuda:0
+Initializing parameters...
+Optimizer opt has 165,965,075 params:
+    95,495,168 dyn
+    20,282,115 dec
+    12,850,431 val
+    12,606,481 pol
+    10,749,183 rew
+    10,488,833 con
+     3,492,864 enc
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/logits/bias
+[1]
+[1]
+pol/head/action/logits/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/logits/bias
+[2]
+[1]
+pol/head/action/logits/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/logits/bias
+[1]
+[1]
+pol/head/action/logits/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/logits/bias
+[2]
+[1]
+pol/head/action/logits/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+Done initializing!
+Compiling 1 checkpoint groups...
+Largest checkpoint group: 2 GB
+Compiling train and report...
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cnn0/bias
+[1]
+[1]
+enc/cnn0/kernel
+[1]
+[1]
+enc/cnn0norm/scale
+[1]
+[1]
+enc/cnn1/bias
+[1]
+[1]
+enc/cnn1/kernel
+[1]
+[1]
+enc/cnn1norm/scale
+[1]
+[1]
+enc/cnn2/bias
+[1]
+[1]
+enc/cnn2/kernel
+[1]
+[1]
+enc/cnn2norm/scale
+[1]
+[1]
+enc/cnn3/bias
+[1]
+[1]
+enc/cnn3/kernel
+[1]
+[1]
+enc/cnn3norm/scale
+[1]
+[1]
+pol/head/action/logits/bias
+[1]
+[1]
+pol/head/action/logits/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cnn0/bias
+[2]
+[1]
+enc/cnn0/kernel
+[2]
+[1]
+enc/cnn0norm/scale
+[2]
+[1]
+enc/cnn1/bias
+[2]
+[1]
+enc/cnn1/kernel
+[2]
+[1]
+enc/cnn1norm/scale
+[2]
+[1]
+enc/cnn2/bias
+[2]
+[1]
+enc/cnn2/kernel
+[2]
+[1]
+enc/cnn2norm/scale
+[2]
+[1]
+enc/cnn3/bias
+[2]
+[1]
+enc/cnn3/kernel
+[2]
+[1]
+enc/cnn3norm/scale
+[2]
+[1]
+pol/head/action/logits/bias
+[2]
+[1]
+pol/head/action/logits/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+Train cost analysis:
+No available
+Report cost analysis:
+No available
+Done compiling!
+Did not find any checkpoint.
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T014555F724929
+Saved checkpoint.
+Start training loop
+Start JAX profiler: logdir/dreamer/crafter_20251126_014459
+Stop JAX profiler
+
+--------------------[Agent Step 6_920]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0.1 / episode/length 165 / train/loss/con 0.14 / train/loss/dyn 12.19 / train/loss/image 639.19 / train/loss/policy 0.05 / train/loss/rep 12.19 / train/loss/repval 9.88 / train/loss/rew 4.91 / train/loss/value 6.95 / train/rand/action 1 / replay/replay_ratio 27.91 / fps/policy 54.8 / fps/train 1484.09
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 13_660]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.1 / episode/length 165 / train/loss/con 0.05 / train/loss/dyn 5.95 / train/loss/image 150.06 / train/loss/policy 0.08 / train/loss/rep 5.95 / train/loss/repval 4.72 / train/loss/rew 1.52 / train/loss/value 3.16 / train/rand/action 1 / replay/replay_ratio 32.4 / fps/policy 56.14 / fps/train 1791.02
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 20_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.1 / episode/length 138 / train/loss/con 0.05 / train/loss/dyn 4.13 / train/loss/image 101.82 / train/loss/policy 0.05 / train/loss/rep 4.13 / train/loss/repval 2.99 / train/loss/rew 0.23 / train/loss/value 1.2 / train/rand/action 0.69 / replay/replay_ratio 32.59 / fps/policy 58.36 / fps/train 1872.81
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 27_550]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.1 / episode/length 212 / train/loss/con 0.05 / train/loss/dyn 4.62 / train/loss/image 79.67 / train/loss/policy 0.04 / train/loss/rep 4.62 / train/loss/repval 3.06 / train/loss/rew 0.19 / train/loss/value 1.57 / train/rand/action 0.48 / replay/replay_ratio 32.4 / fps/policy 57.25 / fps/train 1826.24
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 34_520]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.1 / episode/length 403 / train/loss/con 0.05 / train/loss/dyn 5.19 / train/loss/image 69.43 / train/loss/policy 0.02 / train/loss/rep 5.19 / train/loss/repval 2.96 / train/loss/rew 0.17 / train/loss/value 1.72 / train/rand/action 0.38 / replay/replay_ratio 32.53 / fps/policy 57.85 / fps/train 1852.78
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 41_450]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.1 / episode/length 185 / train/loss/con 0.05 / train/loss/dyn 5.31 / train/loss/image 65.22 / train/loss/policy 0.02 / train/loss/rep 5.31 / train/loss/repval 2.75 / train/loss/rew 0.17 / train/loss/value 1.82 / train/rand/action 0.14 / replay/replay_ratio 32.57 / fps/policy 57.66 / fps/train 1848.82
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 48_490]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 3.1 / episode/length 178 / train/loss/con 0.05 / train/loss/dyn 5.41 / train/loss/image 55.41 / train/loss/policy 6.4e-3 / train/loss/rep 5.41 / train/loss/repval 2.61 / train/loss/rew 0.17 / train/loss/value 1.62 / train/rand/action 0.14 / replay/replay_ratio 32.5 / fps/policy 58.57 / fps/train 1874.27
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T020101F666707
+Saved checkpoint.
+
+--------------------[Agent Step 54_370]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 165 / train/loss/con 0.04 / train/loss/dyn 5.55 / train/loss/image 53.56 / train/loss/policy 4.4e-3 / train/loss/rep 5.55 / train/loss/repval 2.51 / train/loss/rew 0.17 / train/loss/value 1.54 / train/rand/action 0.15 / replay/replay_ratio 32.54 / fps/policy 48.72 / fps/train 1561.06
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 61_380]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 3.1 / episode/length 156 / train/loss/con 0.04 / train/loss/dyn 5.6 / train/loss/image 52.94 / train/loss/policy 4.3e-3 / train/loss/rep 5.6 / train/loss/repval 2.43 / train/loss/rew 0.17 / train/loss/value 1.44 / train/rand/action 0.17 / replay/replay_ratio 32.49 / fps/policy 58.34 / fps/train 1866.34
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 68_420]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.1 / episode/length 45 / train/loss/con 0.04 / train/loss/dyn 5.76 / train/loss/image 49.57 / train/loss/policy 4e-3 / train/loss/rep 5.76 / train/loss/repval 2.36 / train/loss/rew 0.17 / train/loss/value 1.54 / train/rand/action 0.15 / replay/replay_ratio 32.5 / fps/policy 58.53 / fps/train 1873.1
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 75_330]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 3.1 / episode/length 222 / train/loss/con 0.04 / train/loss/dyn 6.01 / train/loss/image 47.89 / train/loss/policy 2.3e-3 / train/loss/rep 6.01 / train/loss/repval 2.45 / train/loss/rew 0.17 / train/loss/value 1.52 / train/rand/action 0.19 / replay/replay_ratio 32.51 / fps/policy 57.52 / fps/train 1841.19
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 82_410]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 409 / train/loss/con 0.04 / train/loss/dyn 6.25 / train/loss/image 46.92 / train/loss/policy 3.1e-3 / train/loss/rep 6.25 / train/loss/repval 2.41 / train/loss/rew 0.17 / train/loss/value 1.57 / train/rand/action 0.18 / replay/replay_ratio 32.46 / fps/policy 58.84 / fps/train 1880.86
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 89_560]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 190 / train/loss/con 0.04 / train/loss/dyn 6.52 / train/loss/image 45.73 / train/loss/policy -1.8e-3 / train/loss/rep 6.52 / train/loss/repval 2.49 / train/loss/rew 0.17 / train/loss/value 1.53 / train/rand/action 0.24 / replay/replay_ratio 32.44 / fps/policy 59.26 / fps/train 1892.53
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 96_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 2.1 / episode/length 192 / train/loss/con 0.04 / train/loss/dyn 6.88 / train/loss/image 43.8 / train/loss/policy 1.4e-4 / train/loss/rep 6.88 / train/loss/repval 2.44 / train/loss/rew 0.17 / train/loss/value 1.6 / train/rand/action 0.26 / replay/replay_ratio 32.57 / fps/policy 59.3 / fps/train 1901.81
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T021601F842756
+Saved checkpoint.
+
+--------------------[Agent Step 103_530]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 190 / train/loss/con 0.03 / train/loss/dyn 7.16 / train/loss/image 43.65 / train/loss/policy -1.5e-3 / train/loss/rep 7.16 / train/loss/repval 2.45 / train/loss/rew 0.17 / train/loss/value 1.55 / train/rand/action 0.26 / replay/replay_ratio 32.49 / fps/policy 55.86 / fps/train 1787.03
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 109_800]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 2.1 / episode/length 139 / train/loss/con 0.03 / train/loss/dyn 7.41 / train/loss/image 42.9 / train/loss/policy -6.7e-4 / train/loss/rep 7.41 / train/loss/repval 2.52 / train/loss/rew 0.17 / train/loss/value 1.64 / train/rand/action 0.23 / replay/replay_ratio 32.51 / fps/policy 52.3 / fps/train 1674.02
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 116_930]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 264 / train/loss/con 0.03 / train/loss/dyn 7.62 / train/loss/image 42.55 / train/loss/policy -1.5e-3 / train/loss/rep 7.62 / train/loss/repval 2.48 / train/loss/rew 0.16 / train/loss/value 1.59 / train/rand/action 0.19 / replay/replay_ratio 32.53 / fps/policy 59.33 / fps/train 1900
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 123_880]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 253 / train/loss/con 0.02 / train/loss/dyn 7.92 / train/loss/image 41.46 / train/loss/policy -6.9e-4 / train/loss/rep 7.92 / train/loss/repval 2.46 / train/loss/rew 0.15 / train/loss/value 1.61 / train/rand/action 0.19 / replay/replay_ratio 32.47 / fps/policy 57.77 / fps/train 1847.06
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 130_980]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 3.1 / episode/length 196 / train/loss/con 0.02 / train/loss/dyn 8.2 / train/loss/image 40.43 / train/loss/policy -1.4e-3 / train/loss/rep 8.2 / train/loss/repval 2.57 / train/loss/rew 0.15 / train/loss/value 1.69 / train/rand/action 0.25 / replay/replay_ratio 32.52 / fps/policy 58.88 / fps/train 1885.15
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 138_020]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 236 / train/loss/con 0.02 / train/loss/dyn 8.39 / train/loss/image 40.02 / train/loss/policy 1.3e-3 / train/loss/rep 8.39 / train/loss/repval 2.48 / train/loss/rew 0.14 / train/loss/value 1.64 / train/rand/action 0.26 / replay/replay_ratio 32.5 / fps/policy 58.56 / fps/train 1874.05
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 145_060]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 2.1 / episode/length 118 / train/loss/con 0.02 / train/loss/dyn 8.58 / train/loss/image 38.84 / train/loss/policy 8e-4 / train/loss/rep 8.58 / train/loss/repval 2.45 / train/loss/rew 0.14 / train/loss/value 1.61 / train/rand/action 0.22 / replay/replay_ratio 32.5 / fps/policy 58.66 / fps/train 1877.27
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 152_130]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 204 / train/loss/con 0.02 / train/loss/dyn 8.76 / train/loss/image 38.07 / train/loss/policy 1.2e-3 / train/loss/rep 8.76 / train/loss/repval 2.51 / train/loss/rew 0.13 / train/loss/value 1.66 / train/rand/action 0.21 / replay/replay_ratio 32.51 / fps/policy 58.85 / fps/train 1883.88
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T023101F954671
+Saved checkpoint.
+
+--------------------[Agent Step 158_160]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 2.1 / episode/length 51 / train/loss/con 0.02 / train/loss/dyn 8.97 / train/loss/image 36.97 / train/loss/policy 2.7e-3 / train/loss/rep 8.97 / train/loss/repval 2.51 / train/loss/rew 0.13 / train/loss/value 1.67 / train/rand/action 0.21 / replay/replay_ratio 32.42 / fps/policy 50 / fps/train 1596.26
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 165_380]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 222 / train/loss/con 0.02 / train/loss/dyn 9.16 / train/loss/image 37 / train/loss/policy 2.5e-3 / train/loss/rep 9.16 / train/loss/repval 2.56 / train/loss/rew 0.12 / train/loss/value 1.72 / train/rand/action 0.2 / replay/replay_ratio 32.55 / fps/policy 60.05 / fps/train 1924.87
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 172_290]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 239 / train/loss/con 0.02 / train/loss/dyn 9.34 / train/loss/image 35.57 / train/loss/policy 2.6e-3 / train/loss/rep 9.34 / train/loss/repval 2.47 / train/loss/rew 0.12 / train/loss/value 1.67 / train/rand/action 0.23 / replay/replay_ratio 32.51 / fps/policy 57.25 / fps/train 1832.47
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 179_370]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 3.1 / episode/length 200 / train/loss/con 0.02 / train/loss/dyn 9.38 / train/loss/image 34.61 / train/loss/policy 4.1e-3 / train/loss/rep 9.38 / train/loss/repval 2.49 / train/loss/rew 0.11 / train/loss/value 1.69 / train/rand/action 0.26 / replay/replay_ratio 32.46 / fps/policy 58.62 / fps/train 1873.66
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 186_600]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 3.1 / episode/length 162 / train/loss/con 0.02 / train/loss/dyn 9.52 / train/loss/image 32.94 / train/loss/policy 3.2e-3 / train/loss/rep 9.52 / train/loss/repval 2.49 / train/loss/rew 0.1 / train/loss/value 1.7 / train/rand/action 0.25 / replay/replay_ratio 32.51 / fps/policy 60.09 / fps/train 1923.56
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 193_570]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 185 / train/loss/con 0.02 / train/loss/dyn 9.61 / train/loss/image 32.96 / train/loss/policy 2.8e-3 / train/loss/rep 9.61 / train/loss/repval 2.45 / train/loss/rew 0.1 / train/loss/value 1.61 / train/rand/action 0.23 / replay/replay_ratio 32.53 / fps/policy 57.97 / fps/train 1856.67
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 200_610]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 1.1 / episode/length 43 / train/loss/con 0.02 / train/loss/dyn 9.83 / train/loss/image 32.59 / train/loss/policy 5.2e-3 / train/loss/rep 9.83 / train/loss/repval 2.43 / train/loss/rew 0.1 / train/loss/value 1.63 / train/rand/action 0.26 / replay/replay_ratio 32.5 / fps/policy 58.58 / fps/train 1874.66
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T024602F118489
+Saved checkpoint.
+
+--------------------[Agent Step 207_090]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 301 / train/loss/con 0.02 / train/loss/dyn 10.09 / train/loss/image 32.4 / train/loss/policy 4.2e-3 / train/loss/rep 10.09 / train/loss/repval 2.42 / train/loss/rew 0.1 / train/loss/value 1.6 / train/rand/action 0.24 / replay/replay_ratio 32.42 / fps/policy 53.8 / fps/train 1717.34
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 213_800]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 233 / train/loss/con 0.02 / train/loss/dyn 10.12 / train/loss/image 30.8 / train/loss/policy 2.2e-3 / train/loss/rep 10.12 / train/loss/repval 2.41 / train/loss/rew 0.1 / train/loss/value 1.58 / train/rand/action 0.21 / replay/replay_ratio 32.55 / fps/policy 55.92 / fps/train 1792.13
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 220_830]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 274 / train/loss/con 0.02 / train/loss/dyn 10.25 / train/loss/image 30.19 / train/loss/policy 2.3e-3 / train/loss/rep 10.25 / train/loss/repval 2.44 / train/loss/rew 0.09 / train/loss/value 1.62 / train/rand/action 0.19 / replay/replay_ratio 32.4 / fps/policy 58.35 / fps/train 1861.32
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 228_070]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 173 / train/loss/con 0.02 / train/loss/dyn 10.4 / train/loss/image 30.66 / train/loss/policy 1.6e-3 / train/loss/rep 10.4 / train/loss/repval 2.44 / train/loss/rew 0.09 / train/loss/value 1.6 / train/rand/action 0.19 / replay/replay_ratio 32.61 / fps/policy 60.29 / fps/train 1935.71
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 235_130]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 118 / train/loss/con 0.02 / train/loss/dyn 10.55 / train/loss/image 29.69 / train/loss/policy 2.1e-3 / train/loss/rep 10.55 / train/loss/repval 2.4 / train/loss/rew 0.09 / train/loss/value 1.56 / train/rand/action 0.2 / replay/replay_ratio 32.41 / fps/policy 58.66 / fps/train 1871.79
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 242_250]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 147 / train/loss/con 0.02 / train/loss/dyn 10.59 / train/loss/image 28.96 / train/loss/policy 2e-3 / train/loss/rep 10.59 / train/loss/repval 2.45 / train/loss/rew 0.09 / train/loss/value 1.58 / train/rand/action 0.19 / replay/replay_ratio 32.57 / fps/policy 59.26 / fps/train 1900.59
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 249_350]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 172 / train/loss/con 0.02 / train/loss/dyn 10.76 / train/loss/image 28.65 / train/loss/policy 2.1e-3 / train/loss/rep 10.76 / train/loss/repval 2.39 / train/loss/rew 0.09 / train/loss/value 1.55 / train/rand/action 0.19 / replay/replay_ratio 32.52 / fps/policy 59.01 / fps/train 1889.44
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 256_530]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 247 / train/loss/con 0.02 / train/loss/dyn 10.78 / train/loss/image 28.11 / train/loss/policy 2.1e-3 / train/loss/rep 10.78 / train/loss/repval 2.38 / train/loss/rew 0.09 / train/loss/value 1.54 / train/rand/action 0.18 / replay/replay_ratio 32.45 / fps/policy 59.83 / fps/train 1911.34
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T030102F127066
+Saved checkpoint.
+
+--------------------[Agent Step 262_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 224 / train/loss/con 0.02 / train/loss/dyn 10.9 / train/loss/image 27.86 / train/loss/policy 2.5e-3 / train/loss/rep 10.9 / train/loss/repval 2.35 / train/loss/rew 0.09 / train/loss/value 1.55 / train/rand/action 0.18 / replay/replay_ratio 32.59 / fps/policy 51.57 / fps/train 1655.13
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 269_770]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 170 / train/loss/con 0.02 / train/loss/dyn 10.91 / train/loss/image 27.23 / train/loss/policy 2.2e-3 / train/loss/rep 10.91 / train/loss/repval 2.36 / train/loss/rew 0.09 / train/loss/value 1.52 / train/rand/action 0.2 / replay/replay_ratio 32.45 / fps/policy 58.67 / fps/train 1874.63
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 276_740]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 143 / train/loss/con 0.02 / train/loss/dyn 11.09 / train/loss/image 27.31 / train/loss/policy 2e-3 / train/loss/rep 11.09 / train/loss/repval 2.35 / train/loss/rew 0.09 / train/loss/value 1.53 / train/rand/action 0.17 / replay/replay_ratio 32.53 / fps/policy 58.06 / fps/train 1859.51
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 284_010]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 193 / train/loss/con 0.02 / train/loss/dyn 11.17 / train/loss/image 26.91 / train/loss/policy 1.7e-3 / train/loss/rep 11.17 / train/loss/repval 2.39 / train/loss/rew 0.08 / train/loss/value 1.56 / train/rand/action 0.15 / replay/replay_ratio 32.47 / fps/policy 60.49 / fps/train 1933.98
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 291_170]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 203 / train/loss/con 0.02 / train/loss/dyn 11.13 / train/loss/image 26.49 / train/loss/policy 1.9e-3 / train/loss/rep 11.13 / train/loss/repval 2.41 / train/loss/rew 0.08 / train/loss/value 1.55 / train/rand/action 0.15 / replay/replay_ratio 32.54 / fps/policy 59.65 / fps/train 1910.86
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 298_280]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 161 / train/loss/con 0.02 / train/loss/dyn 11.23 / train/loss/image 26.1 / train/loss/policy 1e-3 / train/loss/rep 11.23 / train/loss/repval 2.35 / train/loss/rew 0.08 / train/loss/value 1.48 / train/rand/action 0.17 / replay/replay_ratio 32.47 / fps/policy 59.13 / fps/train 1890.63
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 305_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 2.1 / episode/length 44 / train/loss/con 0.02 / train/loss/dyn 11.22 / train/loss/image 25.44 / train/loss/policy 1.6e-3 / train/loss/rep 11.22 / train/loss/repval 2.3 / train/loss/rew 0.08 / train/loss/value 1.47 / train/rand/action 0.17 / replay/replay_ratio 32.43 / fps/policy 61.66 / fps/train 1969.03
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T031602F382380
+Saved checkpoint.
+
+--------------------[Agent Step 312_330]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 190 / train/loss/con 0.02 / train/loss/dyn 11.34 / train/loss/image 25.28 / train/loss/policy 1.5e-3 / train/loss/rep 11.34 / train/loss/repval 2.32 / train/loss/rew 0.08 / train/loss/value 1.48 / train/rand/action 0.17 / replay/replay_ratio 32.57 / fps/policy 54.08 / fps/train 1734.17
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 319_210]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 259 / train/loss/con 0.02 / train/loss/dyn 11.27 / train/loss/image 24.82 / train/loss/policy 2e-3 / train/loss/rep 11.27 / train/loss/repval 2.33 / train/loss/rew 0.08 / train/loss/value 1.52 / train/rand/action 0.17 / replay/replay_ratio 32.5 / fps/policy 57.37 / fps/train 1835.78
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 326_440]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 267 / train/loss/con 0.02 / train/loss/dyn 11.38 / train/loss/image 24.26 / train/loss/policy 1.8e-3 / train/loss/rep 11.38 / train/loss/repval 2.33 / train/loss/rew 0.08 / train/loss/value 1.47 / train/rand/action 0.17 / replay/replay_ratio 32.51 / fps/policy 60.23 / fps/train 1927.97
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 333_710]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 159 / train/loss/con 0.02 / train/loss/dyn 11.46 / train/loss/image 24.12 / train/loss/policy 1.5e-3 / train/loss/rep 11.46 / train/loss/repval 2.27 / train/loss/rew 0.08 / train/loss/value 1.47 / train/rand/action 0.17 / replay/replay_ratio 32.47 / fps/policy 60.56 / fps/train 1936.4
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 340_870]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 164 / train/loss/con 0.02 / train/loss/dyn 11.48 / train/loss/image 23.88 / train/loss/policy 1.4e-3 / train/loss/rep 11.48 / train/loss/repval 2.3 / train/loss/rew 0.08 / train/loss/value 1.5 / train/rand/action 0.17 / replay/replay_ratio 32.54 / fps/policy 59.51 / fps/train 1906.42
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 348_170]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 183 / train/loss/con 0.02 / train/loss/dyn 11.59 / train/loss/image 23.75 / train/loss/policy 1.3e-3 / train/loss/rep 11.59 / train/loss/repval 2.31 / train/loss/rew 0.08 / train/loss/value 1.51 / train/rand/action 0.17 / replay/replay_ratio 32.48 / fps/policy 60.74 / fps/train 1942.63
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 355_300]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 206 / train/loss/con 0.02 / train/loss/dyn 11.6 / train/loss/image 23.41 / train/loss/policy 1.4e-3 / train/loss/rep 11.6 / train/loss/repval 2.31 / train/loss/rew 0.08 / train/loss/value 1.51 / train/rand/action 0.17 / replay/replay_ratio 32.53 / fps/policy 59.33 / fps/train 1900.23
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 362_570]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 3.1 / episode/length 191 / train/loss/con 0.02 / train/loss/dyn 11.75 / train/loss/image 23.2 / train/loss/policy 1.3e-3 / train/loss/rep 11.75 / train/loss/repval 2.3 / train/loss/rew 0.08 / train/loss/value 1.5 / train/rand/action 0.16 / replay/replay_ratio 32.47 / fps/policy 60.51 / fps/train 1934.68
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T033102F552514
+Saved checkpoint.
+
+--------------------[Agent Step 368_740]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 231 / train/loss/con 0.02 / train/loss/dyn 11.82 / train/loss/image 23.18 / train/loss/policy 1.8e-3 / train/loss/rep 11.82 / train/loss/repval 2.28 / train/loss/rew 0.08 / train/loss/value 1.5 / train/rand/action 0.16 / replay/replay_ratio 32.53 / fps/policy 51.35 / fps/train 1644.88
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 376_100]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 162 / train/loss/con 0.02 / train/loss/dyn 11.76 / train/loss/image 22.5 / train/loss/policy 1.7e-3 / train/loss/rep 11.76 / train/loss/repval 2.28 / train/loss/rew 0.07 / train/loss/value 1.51 / train/rand/action 0.15 / replay/replay_ratio 32.5 / fps/policy 61.2 / fps/train 1958.42
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 383_330]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 187 / train/loss/con 0.02 / train/loss/dyn 11.81 / train/loss/image 22.25 / train/loss/policy 1.8e-3 / train/loss/rep 11.81 / train/loss/repval 2.31 / train/loss/rew 0.07 / train/loss/value 1.53 / train/rand/action 0.15 / replay/replay_ratio 32.51 / fps/policy 60.17 / fps/train 1926.02
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 390_460]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 163 / train/loss/con 0.02 / train/loss/dyn 11.92 / train/loss/image 22.44 / train/loss/policy 1.7e-3 / train/loss/rep 11.92 / train/loss/repval 2.28 / train/loss/rew 0.07 / train/loss/value 1.52 / train/rand/action 0.16 / replay/replay_ratio 32.38 / fps/policy 59.41 / fps/train 1894.2
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 397_930]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 195 / train/loss/con 0.02 / train/loss/dyn 11.85 / train/loss/image 22.12 / train/loss/policy 1.8e-3 / train/loss/rep 11.85 / train/loss/repval 2.23 / train/loss/rew 0.07 / train/loss/value 1.53 / train/rand/action 0.16 / replay/replay_ratio 32.58 / fps/policy 62.13 / fps/train 1992.8
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 405_250]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 239 / train/loss/con 0.02 / train/loss/dyn 12.02 / train/loss/image 21.74 / train/loss/policy 1.7e-3 / train/loss/rep 12.02 / train/loss/repval 2.24 / train/loss/rew 0.07 / train/loss/value 1.52 / train/rand/action 0.16 / replay/replay_ratio 32.54 / fps/policy 60.97 / fps/train 1953.01
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 412_580]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 231 / train/loss/con 0.02 / train/loss/dyn 11.93 / train/loss/image 21.44 / train/loss/policy 1.6e-3 / train/loss/rep 11.93 / train/loss/repval 2.27 / train/loss/rew 0.07 / train/loss/value 1.54 / train/rand/action 0.15 / replay/replay_ratio 32.49 / fps/policy 61 / fps/train 1951.55
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T034602F653710
+Saved checkpoint.
+
+--------------------[Agent Step 419_150]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 180 / train/loss/con 0.02 / train/loss/dyn 11.98 / train/loss/image 21.36 / train/loss/policy 2e-3 / train/loss/rep 11.98 / train/loss/repval 2.22 / train/loss/rew 0.07 / train/loss/value 1.55 / train/rand/action 0.15 / replay/replay_ratio 32.45 / fps/policy 54.63 / fps/train 1745.52
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 426_250]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 291 / train/loss/con 0.02 / train/loss/dyn 12.02 / train/loss/image 21.18 / train/loss/policy 1.4e-3 / train/loss/rep 12.02 / train/loss/repval 2.24 / train/loss/rew 0.07 / train/loss/value 1.53 / train/rand/action 0.15 / replay/replay_ratio 32.52 / fps/policy 58.76 / fps/train 1881.31
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 433_380]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 163 / train/loss/con 0.02 / train/loss/dyn 12.19 / train/loss/image 20.94 / train/loss/policy 1.1e-3 / train/loss/rep 12.19 / train/loss/repval 2.23 / train/loss/rew 0.07 / train/loss/value 1.52 / train/rand/action 0.16 / replay/replay_ratio 32.53 / fps/policy 59.2 / fps/train 1895.85
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 440_610]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 205 / train/loss/con 0.02 / train/loss/dyn 12.25 / train/loss/image 20.66 / train/loss/policy 1.6e-3 / train/loss/rep 12.25 / train/loss/repval 2.25 / train/loss/rew 0.07 / train/loss/value 1.54 / train/rand/action 0.15 / replay/replay_ratio 32.51 / fps/policy 60.13 / fps/train 1924.64
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 447_940]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 189 / train/loss/con 0.02 / train/loss/dyn 12.16 / train/loss/image 20.61 / train/loss/policy 1.4e-3 / train/loss/rep 12.16 / train/loss/repval 2.26 / train/loss/rew 0.07 / train/loss/value 1.54 / train/rand/action 0.16 / replay/replay_ratio 32.49 / fps/policy 60.62 / fps/train 1939.27
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 455_210]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 216 / train/loss/con 0.02 / train/loss/dyn 12.3 / train/loss/image 20.31 / train/loss/policy 1.6e-3 / train/loss/rep 12.3 / train/loss/repval 2.21 / train/loss/rew 0.07 / train/loss/value 1.51 / train/rand/action 0.17 / replay/replay_ratio 32.47 / fps/policy 60.51 / fps/train 1934.7
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 462_310]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 330 / train/loss/con 0.02 / train/loss/dyn 12.3 / train/loss/image 20.15 / train/loss/policy 9.4e-4 / train/loss/rep 12.3 / train/loss/repval 2.21 / train/loss/rew 0.07 / train/loss/value 1.51 / train/rand/action 0.16 / replay/replay_ratio 32.52 / fps/policy 59.11 / fps/train 1892.66
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 469_640]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 308 / train/loss/con 0.02 / train/loss/dyn 12.4 / train/loss/image 19.95 / train/loss/policy 1.7e-3 / train/loss/rep 12.4 / train/loss/repval 2.2 / train/loss/rew 0.07 / train/loss/value 1.51 / train/rand/action 0.16 / replay/replay_ratio 32.49 / fps/policy 61.04 / fps/train 1952.64
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T040102F925649
+Saved checkpoint.
+
+--------------------[Agent Step 475_530]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 190 / train/loss/con 0.02 / train/loss/dyn 12.4 / train/loss/image 19.63 / train/loss/policy 1.1e-3 / train/loss/rep 12.4 / train/loss/repval 2.22 / train/loss/rew 0.07 / train/loss/value 1.53 / train/rand/action 0.15 / replay/replay_ratio 32.49 / fps/policy 48.99 / fps/train 1567.08
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 482_890]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 214 / train/loss/con 0.02 / train/loss/dyn 12.39 / train/loss/image 19.71 / train/loss/policy 1.4e-3 / train/loss/rep 12.39 / train/loss/repval 2.22 / train/loss/rew 0.07 / train/loss/value 1.51 / train/rand/action 0.16 / replay/replay_ratio 32.5 / fps/policy 61.32 / fps/train 1962.15
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 490_050]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0.1 / episode/length 75 / train/loss/con 0.02 / train/loss/dyn 12.52 / train/loss/image 19.37 / train/loss/policy 1.1e-3 / train/loss/rep 12.52 / train/loss/repval 2.19 / train/loss/rew 0.07 / train/loss/value 1.5 / train/rand/action 0.18 / replay/replay_ratio 32.54 / fps/policy 59.66 / fps/train 1911.11
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 497_350]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 259 / train/loss/con 0.02 / train/loss/dyn 12.62 / train/loss/image 19.59 / train/loss/policy 1.5e-3 / train/loss/rep 12.62 / train/loss/repval 2.17 / train/loss/rew 0.07 / train/loss/value 1.51 / train/rand/action 0.17 / replay/replay_ratio 32.48 / fps/policy 60.66 / fps/train 1940.16
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 504_690]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 3.1 / episode/length 64 / train/loss/con 0.02 / train/loss/dyn 12.49 / train/loss/image 18.9 / train/loss/policy 1.4e-3 / train/loss/rep 12.49 / train/loss/repval 2.21 / train/loss/rew 0.07 / train/loss/value 1.52 / train/rand/action 0.17 / replay/replay_ratio 32.45 / fps/policy 61.15 / fps/train 1953.61
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 511_850]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 155 / train/loss/con 0.02 / train/loss/dyn 12.62 / train/loss/image 19.26 / train/loss/policy 8.7e-4 / train/loss/rep 12.62 / train/loss/repval 2.17 / train/loss/rew 0.06 / train/loss/value 1.51 / train/rand/action 0.16 / replay/replay_ratio 32.54 / fps/policy 59.56 / fps/train 1908.14
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 519_080]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 182 / train/loss/con 0.02 / train/loss/dyn 12.61 / train/loss/image 18.64 / train/loss/policy 1.3e-3 / train/loss/rep 12.61 / train/loss/repval 2.18 / train/loss/rew 0.06 / train/loss/value 1.49 / train/rand/action 0.15 / replay/replay_ratio 32.51 / fps/policy 60.18 / fps/train 1926.18
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T041602F990013
+Saved checkpoint.
+
+--------------------[Agent Step 525_190]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 172 / train/loss/con 0.02 / train/loss/dyn 12.58 / train/loss/image 18.94 / train/loss/policy 1e-3 / train/loss/rep 12.58 / train/loss/repval 2.18 / train/loss/rew 0.07 / train/loss/value 1.48 / train/rand/action 0.16 / replay/replay_ratio 32.51 / fps/policy 49.84 / fps/train 1595.36
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 532_370]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 176 / train/loss/con 0.02 / train/loss/dyn 12.53 / train/loss/image 18.27 / train/loss/policy 7.6e-4 / train/loss/rep 12.53 / train/loss/repval 2.18 / train/loss/rew 0.06 / train/loss/value 1.5 / train/rand/action 0.17 / replay/replay_ratio 32.45 / fps/policy 60.13 / fps/train 1921.08
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 539_590]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 279 / train/loss/con 0.02 / train/loss/dyn 12.64 / train/loss/image 18.35 / train/loss/policy 1.2e-3 / train/loss/rep 12.64 / train/loss/repval 2.17 / train/loss/rew 0.06 / train/loss/value 1.5 / train/rand/action 0.16 / replay/replay_ratio 32.55 / fps/policy 60.08 / fps/train 1925.68
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 546_760]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 166 / train/loss/con 0.02 / train/loss/dyn 12.78 / train/loss/image 18.63 / train/loss/policy 1.8e-3 / train/loss/rep 12.78 / train/loss/repval 2.22 / train/loss/rew 0.07 / train/loss/value 1.54 / train/rand/action 0.16 / replay/replay_ratio 32.49 / fps/policy 59.7 / fps/train 1909.94
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 553_890]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 315 / train/loss/con 0.02 / train/loss/dyn 12.69 / train/loss/image 18.35 / train/loss/policy 1.3e-3 / train/loss/rep 12.69 / train/loss/repval 2.18 / train/loss/rew 0.06 / train/loss/value 1.5 / train/rand/action 0.16 / replay/replay_ratio 32.53 / fps/policy 59.4 / fps/train 1902.35
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 561_120]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 4.1 / episode/length 160 / train/loss/con 0.02 / train/loss/dyn 12.77 / train/loss/image 17.88 / train/loss/policy 1.6e-3 / train/loss/rep 12.77 / train/loss/repval 2.16 / train/loss/rew 0.06 / train/loss/value 1.48 / train/rand/action 0.17 / replay/replay_ratio 32.51 / fps/policy 60.24 / fps/train 1928.37
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 568_190]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 149 / train/loss/con 0.02 / train/loss/dyn 12.84 / train/loss/image 18.13 / train/loss/policy 1.2e-3 / train/loss/rep 12.84 / train/loss/repval 2.19 / train/loss/rew 0.07 / train/loss/value 1.46 / train/rand/action 0.17 / replay/replay_ratio 32.36 / fps/policy 58.91 / fps/train 1877.1
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 575_430]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 179 / train/loss/con 0.02 / train/loss/dyn 12.85 / train/loss/image 18.16 / train/loss/policy 1.2e-3 / train/loss/rep 12.85 / train/loss/repval 2.18 / train/loss/rew 0.06 / train/loss/value 1.49 / train/rand/action 0.17 / replay/replay_ratio 32.61 / fps/policy 60.18 / fps/train 1932.24
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T043103F001522
+Saved checkpoint.
+
+--------------------[Agent Step 581_000]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 279 / train/loss/con 0.02 / train/loss/dyn 12.89 / train/loss/image 17.64 / train/loss/policy 1.4e-3 / train/loss/rep 12.89 / train/loss/repval 2.14 / train/loss/rew 0.07 / train/loss/value 1.48 / train/rand/action 0.16 / replay/replay_ratio 32.49 / fps/policy 46.33 / fps/train 1482.05
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 588_290]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 150 / train/loss/con 0.02 / train/loss/dyn 12.95 / train/loss/image 17.66 / train/loss/policy 1.7e-3 / train/loss/rep 12.95 / train/loss/repval 2.14 / train/loss/rew 0.06 / train/loss/value 1.49 / train/rand/action 0.17 / replay/replay_ratio 32.53 / fps/policy 60.64 / fps/train 1941.98
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 595_590]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 188 / train/loss/con 0.02 / train/loss/dyn 12.84 / train/loss/image 17.85 / train/loss/policy 2.8e-3 / train/loss/rep 12.84 / train/loss/repval 2.17 / train/loss/rew 0.06 / train/loss/value 1.53 / train/rand/action 0.18 / replay/replay_ratio 32.48 / fps/policy 60.66 / fps/train 1940.05
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 602_810]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 225 / train/loss/con 0.02 / train/loss/dyn 13.16 / train/loss/image 18.04 / train/loss/policy 1.9e-3 / train/loss/rep 13.16 / train/loss/repval 2.16 / train/loss/rew 0.06 / train/loss/value 1.47 / train/rand/action 0.17 / replay/replay_ratio 32.41 / fps/policy 59.92 / fps/train 1912.26
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 610_090]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 180 / train/loss/con 0.02 / train/loss/dyn 13.14 / train/loss/image 17.33 / train/loss/policy 1.7e-3 / train/loss/rep 13.14 / train/loss/repval 2.18 / train/loss/rew 0.06 / train/loss/value 1.48 / train/rand/action 0.16 / replay/replay_ratio 32.57 / fps/policy 60.55 / fps/train 1941.76
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 617_290]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.1 / episode/length 180 / train/loss/con 0.02 / train/loss/dyn 13.28 / train/loss/image 17.55 / train/loss/policy 9.4e-4 / train/loss/rep 13.28 / train/loss/repval 2.17 / train/loss/rew 0.07 / train/loss/value 1.43 / train/rand/action 0.17 / replay/replay_ratio 32.5 / fps/policy 59.86 / fps/train 1915.36
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 624_620]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 239 / train/loss/con 0.02 / train/loss/dyn 13.06 / train/loss/image 16.84 / train/loss/policy 1.8e-3 / train/loss/rep 13.06 / train/loss/repval 2.2 / train/loss/rew 0.07 / train/loss/value 1.48 / train/rand/action 0.16 / replay/replay_ratio 32.49 / fps/policy 61.09 / fps/train 1954.48
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T044603F187283
+Saved checkpoint.
+
+--------------------[Agent Step 630_710]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 3.1 / episode/length 77 / train/loss/con 0.02 / train/loss/dyn 13.24 / train/loss/image 17.12 / train/loss/policy 1.5e-3 / train/loss/rep 13.24 / train/loss/repval 2.19 / train/loss/rew 0.07 / train/loss/value 1.49 / train/rand/action 0.16 / replay/replay_ratio 32.45 / fps/policy 50.63 / fps/train 1617.54
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 637_970]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 196 / train/loss/con 0.02 / train/loss/dyn 13.27 / train/loss/image 16.71 / train/loss/policy 8e-4 / train/loss/rep 13.27 / train/loss/repval 2.19 / train/loss/rew 0.06 / train/loss/value 1.46 / train/rand/action 0.15 / replay/replay_ratio 32.52 / fps/policy 60.51 / fps/train 1937.45
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 645_250]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 171 / train/loss/con 0.02 / train/loss/dyn 13.29 / train/loss/image 16.62 / train/loss/policy 1.3e-3 / train/loss/rep 13.29 / train/loss/repval 2.19 / train/loss/rew 0.07 / train/loss/value 1.46 / train/rand/action 0.15 / replay/replay_ratio 32.57 / fps/policy 60.57 / fps/train 1942.36
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 652_420]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 191 / train/loss/con 0.02 / train/loss/dyn 13.36 / train/loss/image 16.78 / train/loss/policy 1.6e-3 / train/loss/rep 13.36 / train/loss/repval 2.23 / train/loss/rew 0.06 / train/loss/value 1.51 / train/rand/action 0.15 / replay/replay_ratio 32.49 / fps/policy 59.69 / fps/train 1909.43
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 659_610]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 271 / train/loss/con 0.02 / train/loss/dyn 13.28 / train/loss/image 16.64 / train/loss/policy 1.8e-3 / train/loss/rep 13.28 / train/loss/repval 2.26 / train/loss/rew 0.07 / train/loss/value 1.51 / train/rand/action 0.15 / replay/replay_ratio 32.4 / fps/policy 59.86 / fps/train 1909.61
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 666_950]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 167 / train/loss/con 0.02 / train/loss/dyn 13.45 / train/loss/image 16.74 / train/loss/policy 2.3e-3 / train/loss/rep 13.45 / train/loss/repval 2.23 / train/loss/rew 0.06 / train/loss/value 1.51 / train/rand/action 0.16 / replay/replay_ratio 32.59 / fps/policy 60.99 / fps/train 1957.04
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 674_310]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 154 / train/loss/con 0.02 / train/loss/dyn 13.55 / train/loss/image 16.88 / train/loss/policy 1.7e-3 / train/loss/rep 13.55 / train/loss/repval 2.23 / train/loss/rew 0.06 / train/loss/value 1.53 / train/rand/action 0.15 / replay/replay_ratio 32.5 / fps/policy 61.23 / fps/train 1959.34
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 681_320]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 170 / train/loss/con 0.02 / train/loss/dyn 13.49 / train/loss/image 16.52 / train/loss/policy 1.3e-3 / train/loss/rep 13.49 / train/loss/repval 2.25 / train/loss/rew 0.06 / train/loss/value 1.53 / train/rand/action 0.14 / replay/replay_ratio 32.49 / fps/policy 58.33 / fps/train 1865.93
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T050103F194128
+Saved checkpoint.
+
+--------------------[Agent Step 687_170]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 192 / train/loss/con 0.02 / train/loss/dyn 13.69 / train/loss/image 16.11 / train/loss/policy 2.5e-3 / train/loss/rep 13.69 / train/loss/repval 2.24 / train/loss/rew 0.06 / train/loss/value 1.56 / train/rand/action 0.14 / replay/replay_ratio 32.53 / fps/policy 48.63 / fps/train 1557.71
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 694_180]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 170 / train/loss/con 0.02 / train/loss/dyn 13.75 / train/loss/image 15.94 / train/loss/policy 2.4e-3 / train/loss/rep 13.75 / train/loss/repval 2.24 / train/loss/rew 0.07 / train/loss/value 1.54 / train/rand/action 0.15 / replay/replay_ratio 32.49 / fps/policy 58.31 / fps/train 1865.29
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 701_420]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 224 / train/loss/con 0.02 / train/loss/dyn 13.76 / train/loss/image 15.8 / train/loss/policy 2.4e-3 / train/loss/rep 13.76 / train/loss/repval 2.21 / train/loss/rew 0.06 / train/loss/value 1.53 / train/rand/action 0.15 / replay/replay_ratio 32.46 / fps/policy 60.17 / fps/train 1923.41
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 708_570]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 230 / train/loss/con 0.02 / train/loss/dyn 13.76 / train/loss/image 15.92 / train/loss/policy 2.3e-3 / train/loss/rep 13.76 / train/loss/repval 2.23 / train/loss/rew 0.06 / train/loss/value 1.57 / train/rand/action 0.14 / replay/replay_ratio 32.44 / fps/policy 59.52 / fps/train 1900.94
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 715_620]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 147 / train/loss/con 0.02 / train/loss/dyn 13.8 / train/loss/image 15.6 / train/loss/policy 2.4e-3 / train/loss/rep 13.8 / train/loss/repval 2.24 / train/loss/rew 0.06 / train/loss/value 1.58 / train/rand/action 0.14 / replay/replay_ratio 32.6 / fps/policy 58.74 / fps/train 1885.48
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 722_790]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 7.1 / episode/length 237 / train/loss/con 0.02 / train/loss/dyn 13.66 / train/loss/image 15.52 / train/loss/policy 2.4e-3 / train/loss/rep 13.66 / train/loss/repval 2.26 / train/loss/rew 0.07 / train/loss/value 1.57 / train/rand/action 0.13 / replay/replay_ratio 32.49 / fps/policy 59.59 / fps/train 1906.43
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 729_800]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 160 / train/loss/con 0.02 / train/loss/dyn 13.77 / train/loss/image 15.34 / train/loss/policy 2.1e-3 / train/loss/rep 13.77 / train/loss/repval 2.25 / train/loss/rew 0.06 / train/loss/value 1.58 / train/rand/action 0.13 / replay/replay_ratio 32.49 / fps/policy 58.4 / fps/train 1868.39
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T051603F228530
+Saved checkpoint.
+
+--------------------[Agent Step 735_620]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 228 / train/loss/con 0.02 / train/loss/dyn 13.82 / train/loss/image 15.32 / train/loss/policy 2.2e-3 / train/loss/rep 13.82 / train/loss/repval 2.25 / train/loss/rew 0.06 / train/loss/value 1.57 / train/rand/action 0.13 / replay/replay_ratio 32.52 / fps/policy 48.39 / fps/train 1549.54
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 742_840]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 183 / train/loss/con 0.02 / train/loss/dyn 13.88 / train/loss/image 15.16 / train/loss/policy 2e-3 / train/loss/rep 13.88 / train/loss/repval 2.22 / train/loss/rew 0.06 / train/loss/value 1.57 / train/rand/action 0.12 / replay/replay_ratio 32.41 / fps/policy 59.83 / fps/train 1909.23
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 750_090]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 142 / train/loss/con 0.02 / train/loss/dyn 13.91 / train/loss/image 15.17 / train/loss/policy 1.7e-3 / train/loss/rep 13.91 / train/loss/repval 2.24 / train/loss/rew 0.07 / train/loss/value 1.53 / train/rand/action 0.12 / replay/replay_ratio 32.56 / fps/policy 60.31 / fps/train 1933.72
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 757_290]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 289 / train/loss/con 0.02 / train/loss/dyn 13.93 / train/loss/image 14.92 / train/loss/policy 2e-3 / train/loss/rep 13.93 / train/loss/repval 2.23 / train/loss/rew 0.06 / train/loss/value 1.56 / train/rand/action 0.12 / replay/replay_ratio 32.5 / fps/policy 59.95 / fps/train 1918.48
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 764_480]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 177 / train/loss/con 0.02 / train/loss/dyn 14.11 / train/loss/image 14.97 / train/loss/policy 2e-3 / train/loss/rep 14.11 / train/loss/repval 2.21 / train/loss/rew 0.07 / train/loss/value 1.57 / train/rand/action 0.12 / replay/replay_ratio 32.55 / fps/policy 59.73 / fps/train 1914.05
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 771_910]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 272 / train/loss/con 0.02 / train/loss/dyn 13.97 / train/loss/image 14.69 / train/loss/policy 1.5e-3 / train/loss/rep 13.97 / train/loss/repval 2.25 / train/loss/rew 0.07 / train/loss/value 1.56 / train/rand/action 0.12 / replay/replay_ratio 32.47 / fps/policy 61.84 / fps/train 1977.36
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 779_300]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 194 / train/loss/con 0.02 / train/loss/dyn 13.95 / train/loss/image 14.45 / train/loss/policy 1.9e-3 / train/loss/rep 13.95 / train/loss/repval 2.22 / train/loss/rew 0.06 / train/loss/value 1.58 / train/rand/action 0.11 / replay/replay_ratio 32.51 / fps/policy 61.56 / fps/train 1970.33
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 786_540]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 10.1 / episode/length 312 / train/loss/con 0.02 / train/loss/dyn 14.01 / train/loss/image 14.5 / train/loss/policy 1.6e-3 / train/loss/rep 14.01 / train/loss/repval 2.23 / train/loss/rew 0.06 / train/loss/value 1.57 / train/rand/action 0.12 / replay/replay_ratio 32.46 / fps/policy 60.34 / fps/train 1928.79
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T053103F426472
+Saved checkpoint.
+
+--------------------[Agent Step 792_330]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 168 / train/loss/con 0.02 / train/loss/dyn 14.07 / train/loss/image 14.29 / train/loss/policy 1.9e-3 / train/loss/rep 14.07 / train/loss/repval 2.27 / train/loss/rew 0.07 / train/loss/value 1.59 / train/rand/action 0.12 / replay/replay_ratio 32.51 / fps/policy 47.91 / fps/train 1533.79
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 799_650]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 258 / train/loss/con 0.02 / train/loss/dyn 14.02 / train/loss/image 14.25 / train/loss/policy 1.2e-3 / train/loss/rep 14.02 / train/loss/repval 2.24 / train/loss/rew 0.07 / train/loss/value 1.57 / train/rand/action 0.13 / replay/replay_ratio 32.54 / fps/policy 60.88 / fps/train 1950.18
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 806_850]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 10.1 / episode/length 211 / train/loss/con 0.02 / train/loss/dyn 14.09 / train/loss/image 14.14 / train/loss/policy 1.9e-3 / train/loss/rep 14.09 / train/loss/repval 2.25 / train/loss/rew 0.06 / train/loss/value 1.6 / train/rand/action 0.13 / replay/replay_ratio 32.5 / fps/policy 59.91 / fps/train 1917.2
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 814_180]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 133 / train/loss/con 0.02 / train/loss/dyn 14.15 / train/loss/image 14.09 / train/loss/policy 1.5e-3 / train/loss/rep 14.15 / train/loss/repval 2.24 / train/loss/rew 0.07 / train/loss/value 1.56 / train/rand/action 0.13 / replay/replay_ratio 32.49 / fps/policy 61.06 / fps/train 1953.37
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 821_540]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 11.1 / episode/length 277 / train/loss/con 0.02 / train/loss/dyn 14.13 / train/loss/image 13.89 / train/loss/policy 1e-3 / train/loss/rep 14.13 / train/loss/repval 2.23 / train/loss/rew 0.06 / train/loss/value 1.55 / train/rand/action 0.12 / replay/replay_ratio 32.5 / fps/policy 61.21 / fps/train 1958.84
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 828_970]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 188 / train/loss/con 0.02 / train/loss/dyn 14.16 / train/loss/image 13.86 / train/loss/policy 1.4e-3 / train/loss/rep 14.16 / train/loss/repval 2.23 / train/loss/rew 0.06 / train/loss/value 1.55 / train/rand/action 0.12 / replay/replay_ratio 32.47 / fps/policy 61.78 / fps/train 1975.46
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 836_330]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 213 / train/loss/con 0.02 / train/loss/dyn 14.21 / train/loss/image 13.71 / train/loss/policy 1.3e-3 / train/loss/rep 14.21 / train/loss/repval 2.22 / train/loss/rew 0.06 / train/loss/value 1.55 / train/rand/action 0.12 / replay/replay_ratio 32.5 / fps/policy 61.3 / fps/train 1961.59
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T054603F585859
+Saved checkpoint.
+
+--------------------[Agent Step 842_090]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 234 / train/loss/con 0.02 / train/loss/dyn 14.12 / train/loss/image 13.65 / train/loss/policy 1.7e-3 / train/loss/rep 14.12 / train/loss/repval 2.24 / train/loss/rew 0.06 / train/loss/value 1.58 / train/rand/action 0.12 / replay/replay_ratio 32.5 / fps/policy 47.91 / fps/train 1533.17
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 849_470]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 10.1 / episode/length 304 / train/loss/con 0.02 / train/loss/dyn 14.2 / train/loss/image 13.36 / train/loss/policy 1.5e-3 / train/loss/rep 14.2 / train/loss/repval 2.22 / train/loss/rew 0.07 / train/loss/value 1.57 / train/rand/action 0.12 / replay/replay_ratio 32.41 / fps/policy 61.45 / fps/train 1961.06
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 856_860]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 293 / train/loss/con 0.02 / train/loss/dyn 14.26 / train/loss/image 13.33 / train/loss/policy 1.4e-3 / train/loss/rep 14.26 / train/loss/repval 2.22 / train/loss/rew 0.06 / train/loss/value 1.54 / train/rand/action 0.12 / replay/replay_ratio 32.51 / fps/policy 61.41 / fps/train 1965.68
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 864_260]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 273 / train/loss/con 0.02 / train/loss/dyn 14.23 / train/loss/image 13.26 / train/loss/policy 1.5e-3 / train/loss/rep 14.23 / train/loss/repval 2.23 / train/loss/rew 0.06 / train/loss/value 1.55 / train/rand/action 0.11 / replay/replay_ratio 32.61 / fps/policy 61.49 / fps/train 1974.1
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 871_590]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 197 / train/loss/con 0.02 / train/loss/dyn 14.26 / train/loss/image 13.27 / train/loss/policy 1.2e-3 / train/loss/rep 14.26 / train/loss/repval 2.24 / train/loss/rew 0.06 / train/loss/value 1.57 / train/rand/action 0.11 / replay/replay_ratio 32.49 / fps/policy 60.91 / fps/train 1948.71
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 878_810]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 6.1 / episode/length 50 / train/loss/con 0.02 / train/loss/dyn 14.22 / train/loss/image 13.13 / train/loss/policy 1.2e-3 / train/loss/rep 14.22 / train/loss/repval 2.23 / train/loss/rew 0.06 / train/loss/value 1.55 / train/rand/action 0.11 / replay/replay_ratio 32.41 / fps/policy 60.16 / fps/train 1919.85
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 886_140]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 185 / train/loss/con 0.02 / train/loss/dyn 14.15 / train/loss/image 12.99 / train/loss/policy 1.2e-3 / train/loss/rep 14.15 / train/loss/repval 2.2 / train/loss/rew 0.06 / train/loss/value 1.54 / train/rand/action 0.11 / replay/replay_ratio 32.49 / fps/policy 60.83 / fps/train 1946.05
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 893_540]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 10.1 / episode/length 187 / train/loss/con 0.02 / train/loss/dyn 14.2 / train/loss/image 13.04 / train/loss/policy 9.3e-4 / train/loss/rep 14.2 / train/loss/repval 2.2 / train/loss/rew 0.06 / train/loss/value 1.53 / train/rand/action 0.11 / replay/replay_ratio 32.61 / fps/policy 61.67 / fps/train 1979.89
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T060104F108634
+Saved checkpoint.
+
+--------------------[Agent Step 899_190]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 196 / train/loss/con 0.02 / train/loss/dyn 14.27 / train/loss/image 12.94 / train/loss/policy 1.1e-3 / train/loss/rep 14.27 / train/loss/repval 2.19 / train/loss/rew 0.06 / train/loss/value 1.52 / train/rand/action 0.1 / replay/replay_ratio 32.4 / fps/policy 47.07 / fps/train 1501.43
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 906_530]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 11.1 / episode/length 285 / train/loss/con 0.02 / train/loss/dyn 14.3 / train/loss/image 13.03 / train/loss/policy 1.3e-3 / train/loss/rep 14.3 / train/loss/repval 2.19 / train/loss/rew 0.06 / train/loss/value 1.54 / train/rand/action 0.11 / replay/replay_ratio 32.59 / fps/policy 61 / fps/train 1957.4
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 913_930]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 10.1 / episode/length 264 / train/loss/con 0.02 / train/loss/dyn 14.31 / train/loss/image 12.93 / train/loss/policy 1.2e-3 / train/loss/rep 14.31 / train/loss/repval 2.19 / train/loss/rew 0.06 / train/loss/value 1.5 / train/rand/action 0.1 / replay/replay_ratio 32.46 / fps/policy 61.58 / fps/train 1968.49
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 921_320]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 10.1 / episode/length 296 / train/loss/con 0.02 / train/loss/dyn 14.32 / train/loss/image 12.81 / train/loss/policy 8.7e-4 / train/loss/rep 14.32 / train/loss/repval 2.15 / train/loss/rew 0.06 / train/loss/value 1.48 / train/rand/action 0.11 / replay/replay_ratio 32.51 / fps/policy 61.42 / fps/train 1965.95
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 928_810]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 10.1 / episode/length 360 / train/loss/con 0.02 / train/loss/dyn 14.21 / train/loss/image 12.73 / train/loss/policy 1.4e-3 / train/loss/rep 14.21 / train/loss/repval 2.17 / train/loss/rew 0.06 / train/loss/value 1.52 / train/rand/action 0.12 / replay/replay_ratio 32.49 / fps/policy 62.28 / fps/train 1992.38
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 936_140]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 11.1 / episode/length 172 / train/loss/con 0.02 / train/loss/dyn 14.3 / train/loss/image 12.86 / train/loss/policy 8.5e-4 / train/loss/rep 14.3 / train/loss/repval 2.19 / train/loss/rew 0.06 / train/loss/value 1.5 / train/rand/action 0.12 / replay/replay_ratio 32.49 / fps/policy 61.06 / fps/train 1953.3
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 943_400]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 10.1 / episode/length 259 / train/loss/con 0.02 / train/loss/dyn 14.33 / train/loss/image 12.6 / train/loss/policy 1.2e-3 / train/loss/rep 14.33 / train/loss/repval 2.19 / train/loss/rew 0.06 / train/loss/value 1.54 / train/rand/action 0.12 / replay/replay_ratio 32.52 / fps/policy 60.42 / fps/train 1934.51
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T061604F126762
+Saved checkpoint.
+
+--------------------[Agent Step 949_170]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 12.1 / episode/length 538 / train/loss/con 0.02 / train/loss/dyn 14.28 / train/loss/image 12.54 / train/loss/policy 1.3e-3 / train/loss/rep 14.28 / train/loss/repval 2.15 / train/loss/rew 0.06 / train/loss/value 1.51 / train/rand/action 0.12 / replay/replay_ratio 32.44 / fps/policy 47.92 / fps/train 1530.73
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 956_390]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 10.1 / episode/length 311 / train/loss/con 0.02 / train/loss/dyn 14.34 / train/loss/image 12.54 / train/loss/policy 1.1e-3 / train/loss/rep 14.34 / train/loss/repval 2.19 / train/loss/rew 0.06 / train/loss/value 1.52 / train/rand/action 0.13 / replay/replay_ratio 32.55 / fps/policy 59.87 / fps/train 1919.06
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 963_650]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 271 / train/loss/con 0.02 / train/loss/dyn 14.28 / train/loss/image 12.63 / train/loss/policy 1.1e-3 / train/loss/rep 14.28 / train/loss/repval 2.16 / train/loss/rew 0.06 / train/loss/value 1.49 / train/rand/action 0.13 / replay/replay_ratio 32.52 / fps/policy 60.5 / fps/train 1936.96
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 970_950]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 185 / train/loss/con 0.02 / train/loss/dyn 14.34 / train/loss/image 12.39 / train/loss/policy 1e-3 / train/loss/rep 14.34 / train/loss/repval 2.15 / train/loss/rew 0.06 / train/loss/value 1.48 / train/rand/action 0.14 / replay/replay_ratio 32.48 / fps/policy 60.79 / fps/train 1944.31
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 977_770]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 280 / train/loss/con 0.02 / train/loss/dyn 14.32 / train/loss/image 12.29 / train/loss/policy 8.6e-4 / train/loss/rep 14.32 / train/loss/repval 2.17 / train/loss/rew 0.06 / train/loss/value 1.48 / train/rand/action 0.14 / replay/replay_ratio 32.48 / fps/policy 56.74 / fps/train 1814.75
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 985_150]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 10.1 / episode/length 248 / train/loss/con 0.02 / train/loss/dyn 14.36 / train/loss/image 12.58 / train/loss/policy 1.5e-3 / train/loss/rep 14.36 / train/loss/repval 2.19 / train/loss/rew 0.06 / train/loss/value 1.52 / train/rand/action 0.14 / replay/replay_ratio 32.41 / fps/policy 61.21 / fps/train 1953.55
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 992_490]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 11.1 / episode/length 215 / train/loss/con 0.02 / train/loss/dyn 14.17 / train/loss/image 12.2 / train/loss/policy 1.1e-3 / train/loss/rep 14.17 / train/loss/repval 2.13 / train/loss/rew 0.06 / train/loss/value 1.47 / train/rand/action 0.15 / replay/replay_ratio 32.59 / fps/policy 61.13 / fps/train 1961.47
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 999_510]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 9.1 / episode/length 180 / train/loss/con 0.02 / train/loss/dyn 14.31 / train/loss/image 12.29 / train/loss/policy 1.2e-3 / train/loss/rep 14.31 / train/loss/repval 2.12 / train/loss/rew 0.06 / train/loss/value 1.47 / train/rand/action 0.16 / replay/replay_ratio 32.44 / fps/policy 58.52 / fps/train 1869.57
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Saving checkpoint: logdir/dreamer/crafter_20251126_014459/ckpt/20251126T063104F359565
+Saved checkpoint.
+
+--------------------[Agent Step 1_005_060]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 11.1 / episode/length 203 / train/loss/con 0.02 / train/loss/dyn 14.47 / train/loss/image 12.12 / train/loss/policy 1.2e-3 / train/loss/rep 14.47 / train/loss/repval 2.16 / train/loss/rew 0.06 / train/loss/value 1.49 / train/rand/action 0.17 / replay/replay_ratio 32.61 / fps/policy 46.2 / fps/train 1483.34
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 1_011_940]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 11.1 / episode/length 251 / train/loss/con 0.02 / train/loss/dyn 14.44 / train/loss/image 12.32 / train/loss/policy 1.2e-3 / train/loss/rep 14.44 / train/loss/repval 2.15 / train/loss/rew 0.06 / train/loss/value 1.49 / train/rand/action 0.16 / replay/replay_ratio 32.5 / fps/policy 57.08 / fps/train 1826.47
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 1_019_200]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 8.1 / episode/length 291 / train/loss/con 0.02 / train/loss/dyn 14.41 / train/loss/image 12.25 / train/loss/policy 1.3e-3 / train/loss/rep 14.41 / train/loss/repval 2.2 / train/loss/rew 0.06 / train/loss/value 1.51 / train/rand/action 0.17 / replay/replay_ratio 32.52 / fps/policy 60.45 / fps/train 1935.49
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 1_026_500]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 13.1 / episode/length 328 / train/loss/con 0.02 / train/loss/dyn 14.47 / train/loss/image 12.47 / train/loss/policy 1.2e-3 / train/loss/rep 14.47 / train/loss/repval 2.19 / train/loss/rew 0.06 / train/loss/value 1.51 / train/rand/action 0.15 / replay/replay_ratio 32.48 / fps/policy 60.73 / fps/train 1942.42
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+
+--------------------[Agent Step 1_033_700]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 12.1 / episode/length 317 / train/loss/con 0.02 / train/loss/dyn 14.26 / train/loss/image 12.1 / train/loss/policy 1.5e-3 / train/loss/rep 14.26 / train/loss/repval 2.21 / train/loss/rew 0.06 / train/loss/value 1.53 / train/rand/action 0.13 / replay/replay_ratio 32.5 / fps/policy 60.02 / fps/train 1920.54
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 1_041_030]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 11.1 / episode/length 322 / train/loss/con 0.02 / train/loss/dyn 14.3 / train/loss/image 12.23 / train/loss/policy 1e-3 / train/loss/rep 14.3 / train/loss/repval 2.24 / train/loss/rew 0.06 / train/loss/value 1.54 / train/rand/action 0.13 / replay/replay_ratio 32.49 / fps/policy 60.98 / fps/train 1950.9
+
+Writing metrics: logdir/dreamer/crafter_20251126_014459/scores.jsonl
+Writing metrics: logdir/dreamer/crafter_20251126_014459/metrics.jsonl
+
+--------------------[Agent Step 1_048_260]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 12.1 / episode/length 188 / train/loss/con 0.02 / train/loss/dyn 14.57 / train/loss/image 12.04 / train/loss/policy 1.1e-3 / train/loss/rep 14.57 / train/loss/repval 2.25 / train/loss/rew 0.06 / train/loss/value 1.55 / train/rand/action 0.13 / replay/replay_ratio 32.51 / fps/policy 60.03 / fps/train 1921.55
+
+/var/spool/slurmd/job6692316/slurm_script: line 34: 329566 Killed                  python3 dreamerv3/main.py --logdir $LOGDIR --configs crafter --run.train_ratio 32
+
+=== Training Complete ===
+End time: Wed Nov 26 06:46:14 EST 2025
+[2025-11-26T06:46:14.826] error: Detected 1 oom_kill event in StepId=6692316.batch. Some of the step tasks have been OOM Killed.
