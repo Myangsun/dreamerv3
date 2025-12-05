@@ -77,6 +77,30 @@ python dreamerv3/main.py \
 To reproduce results, train on the desired task using the corresponding config,
 such as `--configs atari --task atari_pong`.
 
+## Vision encoder variants
+
+The default world model uses the original CNN autoencoder. You can now switch
+between four pluggable encoder/decoder stacks without touching the actor–critic
+backbone via the `--encoder_type` flag:
+
+- `cnn_ae`: original DreamerV3 CNN encoder + pixel reconstruction.
+- `cnn_mae`: CNN encoder with an additional masked autoencoding loss controlled
+  by `--mae_mask_ratio` and `--mae_loss_scale`.
+- `vit_ae`: lightweight ViT encoder (patch size 16, 4 layers, 4 heads) that
+  still reconstructs pixels with the CNN decoder.
+- `vit_mae`: ViT encoder plus the masked reconstruction auxiliary loss.
+
+Example commands for DMC vision tasks:
+
+```sh
+python dreamerv3/train.py --configs dmc_vision --task dmc_walker_walk --encoder_type=cnn_ae
+python dreamerv3/train.py --configs dmc_vision --task dmc_walker_walk --encoder_type=cnn_mae --mae_mask_ratio=0.5 --mae_loss_scale=1.0
+python dreamerv3/train.py --configs dmc_vision --task dmc_walker_walk --encoder_type=vit_ae
+python dreamerv3/train.py --configs dmc_vision --task dmc_walker_walk --encoder_type=vit_mae --mae_mask_ratio=0.5 --mae_loss_scale=1.0
+```
+
+All tasks (e.g., `dmc_cheetah_run`, `dmc_hopper_hop`) accept the same switches.
+
 View results:
 
 ```sh

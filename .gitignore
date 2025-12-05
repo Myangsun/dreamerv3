@@ -4,9 +4,20 @@ __pycache__/
 *.py[cod]
 *.egg-info
 MUJOCO_LOG.TXT
-;
 
 # Experiment outputs
 logdir/
-# *.out
-# logs/
+logs/
+*.out
+slurm-*.out
+
+# Virtual environments
+.venv/
+.venv_*/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

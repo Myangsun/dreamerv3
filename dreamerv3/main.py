@@ -135,8 +135,23 @@ def make_agent(config):
     return embodied.RandomAgent(obs_space, act_space)
   cpdir = elements.Path(config.logdir)
   cpdir = cpdir.parent if config.replicas > 1 else cpdir
-  return Agent(obs_space, act_space, elements.Config(
+  agent_cfg = elements.Config(
       **config.agent,
+      encoder_type=config.encoder_type,
+      mae_mask_ratio=config.mae_mask_ratio,
+      mae_loss_scale=config.mae_loss_scale,
+      mae_patch_size=config.mae_patch_size,
+      vit_patch_size=config.vit_patch_size,
+      vit_embed_dim=config.vit_embed_dim,
+      vit_num_layers=config.vit_num_layers,
+      vit_num_heads=config.vit_num_heads,
+      vit_mlp_mult=config.vit_mlp_mult,
+      vit_vec_layers=config.vit_vec_layers,
+      vit_vec_units=config.vit_vec_units,
+      vit_out_dim=config.vit_out_dim,
+      vit_symlog=config.vit_symlog,
+      vit_act=config.vit_act,
+      vit_norm=config.vit_norm,
       logdir=config.logdir,
       seed=config.seed,
       jax=config.jax,
@@ -146,7 +161,8 @@ def make_agent(config):
       report_length=config.report_length,
       replica=config.replica,
       replicas=config.replicas,
-  ))
+  )
+  return Agent(obs_space, act_space, agent_cfg)
 
 
 def make_logger(config):

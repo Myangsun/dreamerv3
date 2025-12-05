@@ -69,6 +69,22 @@ defaults:
     usage: {psutil: True, nvsmi: True, gputil: False, malloc: False, gc: False}
     debug: True
 
+  encoder_type: cnn_ae
+  mae_mask_ratio: 0.5
+  mae_loss_scale: 0.0
+  mae_patch_size: 8
+  vit_patch_size: 16
+  vit_embed_dim: 256
+  vit_num_layers: 4
+  vit_num_heads: 4
+  vit_mlp_mult: 4
+  vit_vec_layers: 2
+  vit_vec_units: 1024
+  vit_out_dim: 1024
+  vit_symlog: True
+  vit_act: silu
+  vit_norm: rms
+
   jax:
     platform: cuda
     compute_dtype: bfloat16

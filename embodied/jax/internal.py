@@ -38,7 +38,10 @@ def setup(
     jax.config.update('jax_transfer_guard', 'disallow')
   os.environ['XLA_PYTHON_CLIENT_PREALLOCATE'] = str(bool(prealloc)).lower()
   jax.config.update('jax_debug_nans', debug_nans)
-  jax.config.update('jax_enable_compilation_cache', compilation_cache)
+  try:
+    jax.config.update('jax_enable_compilation_cache', compilation_cache)
+  except AttributeError:
+    pass  # JAX < 0.4.21 doesn't support this option
 
   xlaflags = []
   xlaflags.append(f'--xla_gpu_autotune_level={autotune}')

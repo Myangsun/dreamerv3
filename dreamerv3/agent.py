@@ -10,7 +10,7 @@ import ninjax as nj
 import numpy as np
 import optax
 
-from . import rssm
+from . import rssm, vision
 
 f32 = jnp.float32
 i32 = jnp.int32
@@ -38,15 +38,15 @@ class Agent(embodied.jax.Agent):
     exclude = ('is_first', 'is_last', 'is_terminal', 'reward')
     enc_space = {k: v for k, v in obs_space.items() if k not in exclude}
     dec_space = {k: v for k, v in obs_space.items() if k not in exclude}
-    self.enc = {
-        'simple': rssm.Encoder,
-    }[config.enc.typ](enc_space, **config.enc[config.enc.typ], name='enc')
+    self.enc, self.dec, self.mae_aux = vision.make_vision_modules(
+        config, enc_space, dec_space)
     self.dyn = {
         'rssm': rssm.RSSM,
     }[config.dyn.typ](act_space, **config.dyn[config.dyn.typ], name='dyn')
-    self.dec = {
-        'simple': rssm.Decoder,
-    }[config.dec.typ](dec_space, **config.dec[config.dec.typ], name='dec')
+
+    self.vision_param_count = None
+    self._vision_logged = False
+    self.encoder_type = getattr(config, 'encoder_type', 'cnn_ae')
 
     self.feat2tensor = lambda x: jnp.concatenate([
         nn.cast(x['deter']),
@@ -81,6 +81,9 @@ class Agent(embodied.jax.Agent):
     rec = scales.pop('rec')
     scales.update({k: rec for k in dec_space})
     self.scales = scales
+    self.mae_scale = getattr(config, 'mae_loss_scale', 0.0)
+    if self.mae_aux and self.mae_scale > 0:
+      self.scales['mae_aux'] = self.mae_scale
 
   @property
   def policy_keys(self):
@@ -175,11 +178,30 @@ class Agent(embodied.jax.Agent):
     if self.config.contdisc:
       con *= 1 - 1 / self.config.horizon
     losses['con'] = self.con(self.feat2tensor(repfeat), 2).loss(con)
+    recon_targets = {}
     for key, recon in recons.items():
       space, value = self.obs_space[key], obs[key]
       assert value.dtype == space.dtype, (key, space, value.dtype)
       target = f32(value) / 255 if isimage(space) else value
       losses[key] = recon.loss(sg(target))
+      recon_targets[key] = target
+
+    if self.mae_aux and self.mae_scale > 0:
+      preds = {
+          k: recons[k].pred()
+          for k in getattr(self.mae_aux, 'imgkeys', ())
+          if k in recons}
+      targets = {k: recon_targets[k] for k in preds}
+      mae_loss = self.mae_aux(preds, targets, training)
+      losses['mae_aux'] = mae_loss
+
+    if self.vision_param_count is None:
+      self.vision_param_count = vision.count_params((self.enc, self.dec))
+      if self.vision_param_count and not self._vision_logged:
+        elements.print(
+            f'Vision modules ({self.encoder_type}): '
+            f'{self.vision_param_count:,} parameters')
+        self._vision_logged = True
 
     B, T = reset.shape
     shapes = {k: v.shape for k, v in losses.items()}
@@ -237,6 +259,8 @@ class Agent(embodied.jax.Agent):
     assert set(losses.keys()) == set(self.scales.keys()), (
         sorted(losses.keys()), sorted(self.scales.keys()))
     metrics.update({f'loss/{k}': v.mean() for k, v in losses.items()})
+    if self.vision_param_count:
+      metrics['vision/param_count'] = f32(self.vision_param_count)
     loss = sum([v.mean() * self.scales[k] for k, v in losses.items()])
 
     carry = (enc_carry, dyn_carry, dec_carry)
