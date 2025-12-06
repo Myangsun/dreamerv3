@@ -5,11 +5,19 @@ __pycache__/
 *.egg-info
 MUJOCO_LOG.TXT
 
-# Experiment outputs
-logdir/
-logs/
+# Experiment outputs - ignore slurm outputs only
 *.out
 slurm-*.out
+
+# Ignore large files in logdir (checkpoints, replay buffers, videos)
+logdir/*/ckpt/
+logdir/*/replay/
+logdir/*/scope/
+logdir/*/plugins/
+*.pkl
+*.mp4
+
+# Keep logs folder (training logs)
 
 # Virtual environments
 .venv/

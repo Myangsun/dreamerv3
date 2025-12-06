@@ -1,0 +1,3697 @@
+=== Job Information ===
+Job ID: 4639702
+Array Task ID: 6
+Node: node29
+Task: dmc_cheetah_run
+Encoder: vit_ae
+Logdir: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243
+Start time: Sat Dec  6 08:42:43 AM EST 2025
+
+=== Verifying GPU ===
+Devices: [CudaDevice(id=0)]
+
+=== Starting DMC Training: dmc_cheetah_run ===
+Model size: 50M parameters
+Steps: 550K
+Train ratio: 64
+
+2025-12-06 08:42:48.592375: W external/xla/xla/service/gpu/nvptx_compiler.cc:893] The NVIDIA driver's CUDA version is 12.5 which is older than the PTX compiler version 12.9.86. Because the driver is older than the PTX compiler version, XLA is disabling parallel compilation, which may slow down compilation. You should update your NVIDIA driver or use the NVIDIA-provided CUDA forward compatibility packages.
+---  ___                           __   ______ ---
+--- |   \ _ _ ___ __ _ _ __  ___ _ \ \ / /__ / ---
+--- | |) | '_/ -_) _` | '  \/ -_) '/\ V / |_ \ ---
+--- |___/|_| \___\__,_|_|_|_\___|_|  \_/ |___/ ---
+Replica: 0 / 1
+Logdir: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243
+Run script: train
+Observations
+  is_first         Space(bool, shape=(), low=False, high=True)
+  is_last          Space(bool, shape=(), low=False, high=True)
+  is_terminal      Space(bool, shape=(), low=False, high=True)
+  reward           Space(float32, shape=(), low=-inf, high=inf)
+  image            Space(uint8, shape=(64, 64, 3), low=0, high=255)
+Actions
+  action           Space(float32, shape=(6,), low=-1.0, high=1.0)
+Extras
+  consec           Space(int32, shape=(), low=-2147483648, high=2147483647)
+  stepid           Space(uint8, shape=(20,), low=0, high=255)
+  dyn/deter        Space(float32, shape=(4096,), low=-inf, high=inf)
+  dyn/stoch        Space(float32, shape=(32, 32), low=-inf, high=inf)
+JAX devices (1): [cuda:0]
+Policy devices: cuda:0
+Train devices:  cuda:0
+Initializing parameters...
+Vision modules (vit_ae): 8,699,267 parameters
+Optimizer opt has 43,872,654 params:
+    23,362,560 dyn
+     5,076,355 dec
+     3,622,912 enc
+     3,279,615 val
+     3,154,956 pol
+     2,753,279 rew
+     2,622,977 con
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cls
+[1]
+[1]
+enc/outnorm/scale
+[1]
+[1]
+enc/outproj/bias
+[1]
+[1]
+enc/outproj/kernel
+[1]
+[1]
+enc/patch_proj/bias
+[1]
+[1]
+enc/patch_proj/kernel
+[1]
+[1]
+enc/posemb
+[1]
+[1]
+enc/vit/block0/attn/proj/bias
+[1]
+[1]
+enc/vit/block0/attn/proj/kernel
+[1]
+[1]
+enc/vit/block0/attn/qkv/bias
+[1]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block0/mlp0/bias
+[1]
+[1]
+enc/vit/block0/mlp0/kernel
+[1]
+[1]
+enc/vit/block0/mlp1/bias
+[1]
+[1]
+enc/vit/block0/mlp1/kernel
+[1]
+[1]
+enc/vit/block0/norm1/scale
+[1]
+[1]
+enc/vit/block0/norm2/scale
+[1]
+[1]
+enc/vit/block1/attn/proj/bias
+[1]
+[1]
+enc/vit/block1/attn/proj/kernel
+[1]
+[1]
+enc/vit/block1/attn/qkv/bias
+[1]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block1/mlp0/bias
+[1]
+[1]
+enc/vit/block1/mlp0/kernel
+[1]
+[1]
+enc/vit/block1/mlp1/bias
+[1]
+[1]
+enc/vit/block1/mlp1/kernel
+[1]
+[1]
+enc/vit/block1/norm1/scale
+[1]
+[1]
+enc/vit/block1/norm2/scale
+[1]
+[1]
+enc/vit/block2/attn/proj/bias
+[1]
+[1]
+enc/vit/block2/attn/proj/kernel
+[1]
+[1]
+enc/vit/block2/attn/qkv/bias
+[1]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block2/mlp0/bias
+[1]
+[1]
+enc/vit/block2/mlp0/kernel
+[1]
+[1]
+enc/vit/block2/mlp1/bias
+[1]
+[1]
+enc/vit/block2/mlp1/kernel
+[1]
+[1]
+enc/vit/block2/norm1/scale
+[1]
+[1]
+enc/vit/block2/norm2/scale
+[1]
+[1]
+enc/vit/block3/attn/proj/bias
+[1]
+[1]
+enc/vit/block3/attn/proj/kernel
+[1]
+[1]
+enc/vit/block3/attn/qkv/bias
+[1]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block3/mlp0/bias
+[1]
+[1]
+enc/vit/block3/mlp0/kernel
+[1]
+[1]
+enc/vit/block3/mlp1/bias
+[1]
+[1]
+enc/vit/block3/mlp1/kernel
+[1]
+[1]
+enc/vit/block3/norm1/scale
+[1]
+[1]
+enc/vit/block3/norm2/scale
+[1]
+[1]
+enc/vit/outnorm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cls
+[2]
+[1]
+enc/outnorm/scale
+[2]
+[1]
+enc/outproj/bias
+[2]
+[1]
+enc/outproj/kernel
+[2]
+[1]
+enc/patch_proj/bias
+[2]
+[1]
+enc/patch_proj/kernel
+[2]
+[1]
+enc/posemb
+[2]
+[1]
+enc/vit/block0/attn/proj/bias
+[2]
+[1]
+enc/vit/block0/attn/proj/kernel
+[2]
+[1]
+enc/vit/block0/attn/qkv/bias
+[2]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block0/mlp0/bias
+[2]
+[1]
+enc/vit/block0/mlp0/kernel
+[2]
+[1]
+enc/vit/block0/mlp1/bias
+[2]
+[1]
+enc/vit/block0/mlp1/kernel
+[2]
+[1]
+enc/vit/block0/norm1/scale
+[2]
+[1]
+enc/vit/block0/norm2/scale
+[2]
+[1]
+enc/vit/block1/attn/proj/bias
+[2]
+[1]
+enc/vit/block1/attn/proj/kernel
+[2]
+[1]
+enc/vit/block1/attn/qkv/bias
+[2]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block1/mlp0/bias
+[2]
+[1]
+enc/vit/block1/mlp0/kernel
+[2]
+[1]
+enc/vit/block1/mlp1/bias
+[2]
+[1]
+enc/vit/block1/mlp1/kernel
+[2]
+[1]
+enc/vit/block1/norm1/scale
+[2]
+[1]
+enc/vit/block1/norm2/scale
+[2]
+[1]
+enc/vit/block2/attn/proj/bias
+[2]
+[1]
+enc/vit/block2/attn/proj/kernel
+[2]
+[1]
+enc/vit/block2/attn/qkv/bias
+[2]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block2/mlp0/bias
+[2]
+[1]
+enc/vit/block2/mlp0/kernel
+[2]
+[1]
+enc/vit/block2/mlp1/bias
+[2]
+[1]
+enc/vit/block2/mlp1/kernel
+[2]
+[1]
+enc/vit/block2/norm1/scale
+[2]
+[1]
+enc/vit/block2/norm2/scale
+[2]
+[1]
+enc/vit/block3/attn/proj/bias
+[2]
+[1]
+enc/vit/block3/attn/proj/kernel
+[2]
+[1]
+enc/vit/block3/attn/qkv/bias
+[2]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block3/mlp0/bias
+[2]
+[1]
+enc/vit/block3/mlp0/kernel
+[2]
+[1]
+enc/vit/block3/mlp1/bias
+[2]
+[1]
+enc/vit/block3/mlp1/kernel
+[2]
+[1]
+enc/vit/block3/norm1/scale
+[2]
+[1]
+enc/vit/block3/norm2/scale
+[2]
+[1]
+enc/vit/outnorm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cls
+[1]
+[1]
+enc/outnorm/scale
+[1]
+[1]
+enc/outproj/bias
+[1]
+[1]
+enc/outproj/kernel
+[1]
+[1]
+enc/patch_proj/bias
+[1]
+[1]
+enc/patch_proj/kernel
+[1]
+[1]
+enc/posemb
+[1]
+[1]
+enc/vit/block0/attn/proj/bias
+[1]
+[1]
+enc/vit/block0/attn/proj/kernel
+[1]
+[1]
+enc/vit/block0/attn/qkv/bias
+[1]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block0/mlp0/bias
+[1]
+[1]
+enc/vit/block0/mlp0/kernel
+[1]
+[1]
+enc/vit/block0/mlp1/bias
+[1]
+[1]
+enc/vit/block0/mlp1/kernel
+[1]
+[1]
+enc/vit/block0/norm1/scale
+[1]
+[1]
+enc/vit/block0/norm2/scale
+[1]
+[1]
+enc/vit/block1/attn/proj/bias
+[1]
+[1]
+enc/vit/block1/attn/proj/kernel
+[1]
+[1]
+enc/vit/block1/attn/qkv/bias
+[1]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block1/mlp0/bias
+[1]
+[1]
+enc/vit/block1/mlp0/kernel
+[1]
+[1]
+enc/vit/block1/mlp1/bias
+[1]
+[1]
+enc/vit/block1/mlp1/kernel
+[1]
+[1]
+enc/vit/block1/norm1/scale
+[1]
+[1]
+enc/vit/block1/norm2/scale
+[1]
+[1]
+enc/vit/block2/attn/proj/bias
+[1]
+[1]
+enc/vit/block2/attn/proj/kernel
+[1]
+[1]
+enc/vit/block2/attn/qkv/bias
+[1]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block2/mlp0/bias
+[1]
+[1]
+enc/vit/block2/mlp0/kernel
+[1]
+[1]
+enc/vit/block2/mlp1/bias
+[1]
+[1]
+enc/vit/block2/mlp1/kernel
+[1]
+[1]
+enc/vit/block2/norm1/scale
+[1]
+[1]
+enc/vit/block2/norm2/scale
+[1]
+[1]
+enc/vit/block3/attn/proj/bias
+[1]
+[1]
+enc/vit/block3/attn/proj/kernel
+[1]
+[1]
+enc/vit/block3/attn/qkv/bias
+[1]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block3/mlp0/bias
+[1]
+[1]
+enc/vit/block3/mlp0/kernel
+[1]
+[1]
+enc/vit/block3/mlp1/bias
+[1]
+[1]
+enc/vit/block3/mlp1/kernel
+[1]
+[1]
+enc/vit/block3/norm1/scale
+[1]
+[1]
+enc/vit/block3/norm2/scale
+[1]
+[1]
+enc/vit/outnorm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cls
+[2]
+[1]
+enc/outnorm/scale
+[2]
+[1]
+enc/outproj/bias
+[2]
+[1]
+enc/outproj/kernel
+[2]
+[1]
+enc/patch_proj/bias
+[2]
+[1]
+enc/patch_proj/kernel
+[2]
+[1]
+enc/posemb
+[2]
+[1]
+enc/vit/block0/attn/proj/bias
+[2]
+[1]
+enc/vit/block0/attn/proj/kernel
+[2]
+[1]
+enc/vit/block0/attn/qkv/bias
+[2]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block0/mlp0/bias
+[2]
+[1]
+enc/vit/block0/mlp0/kernel
+[2]
+[1]
+enc/vit/block0/mlp1/bias
+[2]
+[1]
+enc/vit/block0/mlp1/kernel
+[2]
+[1]
+enc/vit/block0/norm1/scale
+[2]
+[1]
+enc/vit/block0/norm2/scale
+[2]
+[1]
+enc/vit/block1/attn/proj/bias
+[2]
+[1]
+enc/vit/block1/attn/proj/kernel
+[2]
+[1]
+enc/vit/block1/attn/qkv/bias
+[2]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block1/mlp0/bias
+[2]
+[1]
+enc/vit/block1/mlp0/kernel
+[2]
+[1]
+enc/vit/block1/mlp1/bias
+[2]
+[1]
+enc/vit/block1/mlp1/kernel
+[2]
+[1]
+enc/vit/block1/norm1/scale
+[2]
+[1]
+enc/vit/block1/norm2/scale
+[2]
+[1]
+enc/vit/block2/attn/proj/bias
+[2]
+[1]
+enc/vit/block2/attn/proj/kernel
+[2]
+[1]
+enc/vit/block2/attn/qkv/bias
+[2]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block2/mlp0/bias
+[2]
+[1]
+enc/vit/block2/mlp0/kernel
+[2]
+[1]
+enc/vit/block2/mlp1/bias
+[2]
+[1]
+enc/vit/block2/mlp1/kernel
+[2]
+[1]
+enc/vit/block2/norm1/scale
+[2]
+[1]
+enc/vit/block2/norm2/scale
+[2]
+[1]
+enc/vit/block3/attn/proj/bias
+[2]
+[1]
+enc/vit/block3/attn/proj/kernel
+[2]
+[1]
+enc/vit/block3/attn/qkv/bias
+[2]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block3/mlp0/bias
+[2]
+[1]
+enc/vit/block3/mlp0/kernel
+[2]
+[1]
+enc/vit/block3/mlp1/bias
+[2]
+[1]
+enc/vit/block3/mlp1/kernel
+[2]
+[1]
+enc/vit/block3/norm1/scale
+[2]
+[1]
+enc/vit/block3/norm2/scale
+[2]
+[1]
+enc/vit/outnorm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+Done initializing!
+Compiling 1 checkpoint groups...
+Largest checkpoint group: 1 GB
+Compiling train and report...
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cls
+[1]
+[1]
+enc/outnorm/scale
+[1]
+[1]
+enc/outproj/bias
+[1]
+[1]
+enc/outproj/kernel
+[1]
+[1]
+enc/patch_proj/bias
+[1]
+[1]
+enc/patch_proj/kernel
+[1]
+[1]
+enc/posemb
+[1]
+[1]
+enc/vit/block0/attn/proj/bias
+[1]
+[1]
+enc/vit/block0/attn/proj/kernel
+[1]
+[1]
+enc/vit/block0/attn/qkv/bias
+[1]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block0/mlp0/bias
+[1]
+[1]
+enc/vit/block0/mlp0/kernel
+[1]
+[1]
+enc/vit/block0/mlp1/bias
+[1]
+[1]
+enc/vit/block0/mlp1/kernel
+[1]
+[1]
+enc/vit/block0/norm1/scale
+[1]
+[1]
+enc/vit/block0/norm2/scale
+[1]
+[1]
+enc/vit/block1/attn/proj/bias
+[1]
+[1]
+enc/vit/block1/attn/proj/kernel
+[1]
+[1]
+enc/vit/block1/attn/qkv/bias
+[1]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block1/mlp0/bias
+[1]
+[1]
+enc/vit/block1/mlp0/kernel
+[1]
+[1]
+enc/vit/block1/mlp1/bias
+[1]
+[1]
+enc/vit/block1/mlp1/kernel
+[1]
+[1]
+enc/vit/block1/norm1/scale
+[1]
+[1]
+enc/vit/block1/norm2/scale
+[1]
+[1]
+enc/vit/block2/attn/proj/bias
+[1]
+[1]
+enc/vit/block2/attn/proj/kernel
+[1]
+[1]
+enc/vit/block2/attn/qkv/bias
+[1]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block2/mlp0/bias
+[1]
+[1]
+enc/vit/block2/mlp0/kernel
+[1]
+[1]
+enc/vit/block2/mlp1/bias
+[1]
+[1]
+enc/vit/block2/mlp1/kernel
+[1]
+[1]
+enc/vit/block2/norm1/scale
+[1]
+[1]
+enc/vit/block2/norm2/scale
+[1]
+[1]
+enc/vit/block3/attn/proj/bias
+[1]
+[1]
+enc/vit/block3/attn/proj/kernel
+[1]
+[1]
+enc/vit/block3/attn/qkv/bias
+[1]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block3/mlp0/bias
+[1]
+[1]
+enc/vit/block3/mlp0/kernel
+[1]
+[1]
+enc/vit/block3/mlp1/bias
+[1]
+[1]
+enc/vit/block3/mlp1/kernel
+[1]
+[1]
+enc/vit/block3/norm1/scale
+[1]
+[1]
+enc/vit/block3/norm2/scale
+[1]
+[1]
+enc/vit/outnorm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cls
+[2]
+[1]
+enc/outnorm/scale
+[2]
+[1]
+enc/outproj/bias
+[2]
+[1]
+enc/outproj/kernel
+[2]
+[1]
+enc/patch_proj/bias
+[2]
+[1]
+enc/patch_proj/kernel
+[2]
+[1]
+enc/posemb
+[2]
+[1]
+enc/vit/block0/attn/proj/bias
+[2]
+[1]
+enc/vit/block0/attn/proj/kernel
+[2]
+[1]
+enc/vit/block0/attn/qkv/bias
+[2]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block0/mlp0/bias
+[2]
+[1]
+enc/vit/block0/mlp0/kernel
+[2]
+[1]
+enc/vit/block0/mlp1/bias
+[2]
+[1]
+enc/vit/block0/mlp1/kernel
+[2]
+[1]
+enc/vit/block0/norm1/scale
+[2]
+[1]
+enc/vit/block0/norm2/scale
+[2]
+[1]
+enc/vit/block1/attn/proj/bias
+[2]
+[1]
+enc/vit/block1/attn/proj/kernel
+[2]
+[1]
+enc/vit/block1/attn/qkv/bias
+[2]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block1/mlp0/bias
+[2]
+[1]
+enc/vit/block1/mlp0/kernel
+[2]
+[1]
+enc/vit/block1/mlp1/bias
+[2]
+[1]
+enc/vit/block1/mlp1/kernel
+[2]
+[1]
+enc/vit/block1/norm1/scale
+[2]
+[1]
+enc/vit/block1/norm2/scale
+[2]
+[1]
+enc/vit/block2/attn/proj/bias
+[2]
+[1]
+enc/vit/block2/attn/proj/kernel
+[2]
+[1]
+enc/vit/block2/attn/qkv/bias
+[2]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block2/mlp0/bias
+[2]
+[1]
+enc/vit/block2/mlp0/kernel
+[2]
+[1]
+enc/vit/block2/mlp1/bias
+[2]
+[1]
+enc/vit/block2/mlp1/kernel
+[2]
+[1]
+enc/vit/block2/norm1/scale
+[2]
+[1]
+enc/vit/block2/norm2/scale
+[2]
+[1]
+enc/vit/block3/attn/proj/bias
+[2]
+[1]
+enc/vit/block3/attn/proj/kernel
+[2]
+[1]
+enc/vit/block3/attn/qkv/bias
+[2]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block3/mlp0/bias
+[2]
+[1]
+enc/vit/block3/mlp0/kernel
+[2]
+[1]
+enc/vit/block3/mlp1/bias
+[2]
+[1]
+enc/vit/block3/mlp1/kernel
+[2]
+[1]
+enc/vit/block3/norm1/scale
+[2]
+[1]
+enc/vit/block3/norm2/scale
+[2]
+[1]
+enc/vit/outnorm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+2025-12-06 08:45:10.083528: E external/xla/xla/python/profiler/internal/python_hooks.cc:400] Can't import tensorflow.python.profiler.trace
+2025-12-06 08:45:23.165428: E external/xla/xla/python/profiler/internal/python_hooks.cc:400] Can't import tensorflow.python.profiler.trace
+Train cost analysis:
+  FLOPS:            5.8e+10
+  Memory (temp):    4.3e+09
+  Memory (inputs):  5.7e+08
+  Memory (outputs): 5.5e+08
+  Memory (code):    3.8e+06
+
+Report cost analysis:
+  FLOPS:            1.1e+09
+  Memory (temp):    2.5e+08
+  Memory (inputs):  1.5e+08
+  Memory (outputs): 1.0e+07
+  Memory (code):    8.1e+06
+
+Done compiling!
+Did not find any checkpoint.
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T084356F382958
+Saved checkpoint.
+Start training loop
+Start JAX profiler: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243
+Stop JAX profiler
+
+--------------------[Agent Step 4_256]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.17 / train/loss/dyn 10.31 / train/loss/image 378.97 / train/loss/policy 7.4e-3 / train/loss/rep 10.31 / train/loss/repval 10.58 / train/loss/rew 5.28 / train/loss/value 6.04 / replay/replay_ratio 47.78 / fps/policy 33.59 / fps/train 1382.08
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 7_280]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.85 / train/loss/image 28.43 / train/loss/policy 0.17 / train/loss/rep 3.85 / train/loss/repval 6.94 / train/loss/rew 3.42 / train/loss/value 6.63 / replay/replay_ratio 65 / fps/policy 25.14 / fps/train 1609
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 10_304]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 5.42 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1 / train/loss/image 20.52 / train/loss/policy 0.22 / train/loss/rep 1 / train/loss/repval 2.67 / train/loss/rew 0.76 / train/loss/value 1.98 / replay/replay_ratio 65 / fps/policy 25.13 / fps/train 1608.21
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 13_344]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.77 / train/loss/image 19.68 / train/loss/policy 0.2 / train/loss/rep 1.77 / train/loss/repval 1.79 / train/loss/rew 0.15 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 25.24 / fps/train 1615.05
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 16_368]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 2 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.44 / train/loss/image 16.05 / train/loss/policy 0.2 / train/loss/rep 2.44 / train/loss/repval 1.88 / train/loss/rew 0.14 / train/loss/value 1.18 / replay/replay_ratio 65 / fps/policy 25.11 / fps/train 1607.01
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 19_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.94 / train/loss/image 10.27 / train/loss/policy 0.18 / train/loss/rep 1.94 / train/loss/repval 1.48 / train/loss/rew 0.12 / train/loss/value 0.97 / replay/replay_ratio 65 / fps/policy 25.19 / fps/train 1612.39
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 22_416]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 7.9 / train/loss/policy 0.25 / train/loss/rep 2.38 / train/loss/repval 1.71 / train/loss/rew 0.12 / train/loss/value 1.21 / replay/replay_ratio 65 / fps/policy 25.17 / fps/train 1610.75
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T085903F021720
+Saved checkpoint.
+
+--------------------[Agent Step 25_344]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 10.47 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.44 / train/loss/image 7.05 / train/loss/policy 0.45 / train/loss/rep 2.44 / train/loss/repval 1.81 / train/loss/rew 0.14 / train/loss/value 1.28 / replay/replay_ratio 65 / fps/policy 24.3 / fps/train 1555.17
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 28_368]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 6.55 / train/loss/policy 0.38 / train/loss/rep 2.39 / train/loss/repval 2.16 / train/loss/rew 0.15 / train/loss/value 1.7 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.66
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 31_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.2 / train/loss/image 5.85 / train/loss/policy 0.26 / train/loss/rep 2.2 / train/loss/repval 2.09 / train/loss/rew 0.14 / train/loss/value 1.75 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1610.49
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 34_416]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 12.49 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.29 / train/loss/image 5.71 / train/loss/policy 0.58 / train/loss/rep 2.29 / train/loss/repval 2.2 / train/loss/rew 0.16 / train/loss/value 1.82 / replay/replay_ratio 65 / fps/policy 25.13 / fps/train 1608.47
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 37_456]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.29 / train/loss/image 6.06 / train/loss/policy 0.84 / train/loss/rep 2.29 / train/loss/repval 2.34 / train/loss/rew 0.2 / train/loss/value 1.93 / replay/replay_ratio 65 / fps/policy 25.22 / fps/train 1614.17
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 40_496]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 107.56 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 6.2 / train/loss/policy 0.85 / train/loss/rep 2.37 / train/loss/repval 2.28 / train/loss/rew 0.23 / train/loss/value 1.88 / replay/replay_ratio 65 / fps/policy 25.2 / fps/train 1612.58
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 43_536]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.36 / train/loss/image 6.71 / train/loss/policy 0.33 / train/loss/rep 2.36 / train/loss/repval 2.16 / train/loss/rew 0.25 / train/loss/value 1.76 / replay/replay_ratio 65 / fps/policy 25.26 / fps/train 1616.64
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T091403F107093
+Saved checkpoint.
+
+--------------------[Agent Step 46_496]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 7.58 / train/loss/policy 0.07 / train/loss/rep 2.42 / train/loss/repval 1.96 / train/loss/rew 0.25 / train/loss/value 1.61 / replay/replay_ratio 65 / fps/policy 24.53 / fps/train 1570.15
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 49_520]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 157.5 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.5 / train/loss/image 7.74 / train/loss/policy -0.01 / train/loss/rep 2.5 / train/loss/repval 1.79 / train/loss/rew 0.26 / train/loss/value 1.46 / replay/replay_ratio 65 / fps/policy 25.08 / fps/train 1605.33
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 52_560]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.36 / train/loss/image 6.87 / train/loss/policy 0.03 / train/loss/rep 2.36 / train/loss/repval 1.71 / train/loss/rew 0.26 / train/loss/value 1.37 / replay/replay_ratio 65 / fps/policy 25.24 / fps/train 1615.55
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 55_600]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.29 / train/loss/image 6.82 / train/loss/policy 0.07 / train/loss/rep 2.29 / train/loss/repval 1.66 / train/loss/rew 0.27 / train/loss/value 1.33 / replay/replay_ratio 65 / fps/policy 25.21 / fps/train 1613.65
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 58_640]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 85.23 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.27 / train/loss/image 6.31 / train/loss/policy 0.1 / train/loss/rep 2.27 / train/loss/repval 1.62 / train/loss/rew 0.27 / train/loss/value 1.31 / replay/replay_ratio 65 / fps/policy 25.23 / fps/train 1614.8
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 61_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.29 / train/loss/image 6.42 / train/loss/policy 0.11 / train/loss/rep 2.29 / train/loss/repval 1.57 / train/loss/rew 0.28 / train/loss/value 1.2 / replay/replay_ratio 65 / fps/policy 25.26 / fps/train 1616.43
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 64_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 120.2 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.24 / train/loss/image 6.07 / train/loss/policy 0.1 / train/loss/rep 2.24 / train/loss/repval 1.49 / train/loss/rew 0.26 / train/loss/value 1.22 / replay/replay_ratio 65 / fps/policy 25.21 / fps/train 1613.32
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 67_760]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.27 / train/loss/image 5.73 / train/loss/policy 0.11 / train/loss/rep 2.27 / train/loss/repval 1.47 / train/loss/rew 0.27 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.23 / fps/train 1614.72
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T092903F488418
+Saved checkpoint.
+
+--------------------[Agent Step 70_688]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.25 / train/loss/image 5.61 / train/loss/policy 0.12 / train/loss/rep 2.25 / train/loss/repval 1.45 / train/loss/rew 0.29 / train/loss/value 1.12 / replay/replay_ratio 65 / fps/policy 24.35 / fps/train 1558.28
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 73_728]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 158.14 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.3 / train/loss/image 5.11 / train/loss/policy 0.11 / train/loss/rep 2.3 / train/loss/repval 1.51 / train/loss/rew 0.3 / train/loss/value 1.13 / replay/replay_ratio 65 / fps/policy 25.24 / fps/train 1615.32
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 76_752]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.29 / train/loss/image 4.97 / train/loss/policy 0.11 / train/loss/rep 2.29 / train/loss/repval 1.41 / train/loss/rew 0.3 / train/loss/value 1.13 / replay/replay_ratio 65 / fps/policy 25.17 / fps/train 1611
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 79_776]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.31 / train/loss/image 4.63 / train/loss/policy 0.1 / train/loss/rep 2.31 / train/loss/repval 1.43 / train/loss/rew 0.31 / train/loss/value 1.14 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.36
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 82_784]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 165.06 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.27 / train/loss/image 4.31 / train/loss/policy 0.1 / train/loss/rep 2.27 / train/loss/repval 1.38 / train/loss/rew 0.32 / train/loss/value 1.08 / replay/replay_ratio 65 / fps/policy 25.03 / fps/train 1601.76
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 85_808]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.28 / train/loss/image 4.22 / train/loss/policy 0.1 / train/loss/rep 2.28 / train/loss/repval 1.37 / train/loss/rew 0.32 / train/loss/value 1.09 / replay/replay_ratio 65 / fps/policy 25.12 / fps/train 1607.88
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 88_848]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 182.71 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.28 / train/loss/image 4.22 / train/loss/policy 0.09 / train/loss/rep 2.28 / train/loss/repval 1.38 / train/loss/rew 0.33 / train/loss/value 1.08 / replay/replay_ratio 65 / fps/policy 25.21 / fps/train 1613.33
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T094404F015155
+Saved checkpoint.
+
+--------------------[Agent Step 91_776]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.23 / train/loss/image 4.09 / train/loss/policy 0.1 / train/loss/rep 2.23 / train/loss/repval 1.23 / train/loss/rew 0.32 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 24.31 / fps/train 1555.9
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 94_816]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.21 / train/loss/image 3.81 / train/loss/policy 0.1 / train/loss/rep 2.21 / train/loss/repval 1.36 / train/loss/rew 0.33 / train/loss/value 1.14 / replay/replay_ratio 65 / fps/policy 25.28 / fps/train 1617.81
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 97_856]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 207.41 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.17 / train/loss/image 3.5 / train/loss/policy 0.1 / train/loss/rep 2.17 / train/loss/repval 1.35 / train/loss/rew 0.34 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.24 / fps/train 1615.22
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 100_880]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.19 / train/loss/image 3.68 / train/loss/policy 0.11 / train/loss/rep 2.19 / train/loss/repval 1.2 / train/loss/rew 0.35 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.61
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 103_920]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.17 / train/loss/image 3.53 / train/loss/policy 0.09 / train/loss/rep 2.17 / train/loss/repval 1.28 / train/loss/rew 0.36 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.26 / fps/train 1616.71
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 106_960]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 239.46 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 3.38 / train/loss/policy 0.08 / train/loss/rep 2.12 / train/loss/repval 1.33 / train/loss/rew 0.36 / train/loss/value 1.09 / replay/replay_ratio 65 / fps/policy 25.25 / fps/train 1616.09
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 109_984]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.15 / train/loss/image 3.34 / train/loss/policy 0.09 / train/loss/rep 2.15 / train/loss/repval 1.21 / train/loss/rew 0.37 / train/loss/value 0.94 / replay/replay_ratio 65 / fps/policy 25.2 / fps/train 1612.91
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 113_024]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 239.2 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 3.31 / train/loss/policy 0.09 / train/loss/rep 2.12 / train/loss/repval 1.1 / train/loss/rew 0.37 / train/loss/value 0.91 / replay/replay_ratio 65 / fps/policy 25.28 / fps/train 1617.83
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T095904F522512
+Saved checkpoint.
+
+--------------------[Agent Step 115_952]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.1 / train/loss/image 3.23 / train/loss/policy 0.09 / train/loss/rep 2.1 / train/loss/repval 1.28 / train/loss/rew 0.38 / train/loss/value 1.09 / replay/replay_ratio 65 / fps/policy 24.39 / fps/train 1561.14
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 118_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.1 / train/loss/image 3.13 / train/loss/policy 0.08 / train/loss/rep 2.1 / train/loss/repval 1.31 / train/loss/rew 0.38 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.24 / fps/train 1615.4
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 122_032]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 275.37 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.07 / train/loss/image 3.05 / train/loss/policy 0.08 / train/loss/rep 2.07 / train/loss/repval 1.24 / train/loss/rew 0.39 / train/loss/value 0.96 / replay/replay_ratio 65 / fps/policy 25.24 / fps/train 1615.24
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 125_056]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.09 / train/loss/image 3.08 / train/loss/policy 0.08 / train/loss/rep 2.09 / train/loss/repval 1.08 / train/loss/rew 0.39 / train/loss/value 0.8 / replay/replay_ratio 65 / fps/policy 25.19 / fps/train 1611.84
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 128_080]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 3.02 / train/loss/policy 0.1 / train/loss/rep 2.12 / train/loss/repval 1.12 / train/loss/rew 0.39 / train/loss/value 1.01 / replay/replay_ratio 65 / fps/policy 25.13 / fps/train 1608.46
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 131_104]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 264.5 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.1 / train/loss/image 3.04 / train/loss/policy 0.08 / train/loss/rep 2.1 / train/loss/repval 1.27 / train/loss/rew 0.39 / train/loss/value 1.15 / replay/replay_ratio 65 / fps/policy 25.15 / fps/train 1609.68
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 134_128]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.11 / train/loss/image 3.03 / train/loss/policy 0.08 / train/loss/rep 2.11 / train/loss/repval 1.29 / train/loss/rew 0.41 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.19 / fps/train 1612.08
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T101404F776284
+Saved checkpoint.
+
+--------------------[Agent Step 137_056]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 307.28 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.11 / train/loss/image 2.89 / train/loss/policy 0.07 / train/loss/rep 2.11 / train/loss/repval 1.19 / train/loss/rew 0.41 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 24.31 / fps/train 1555.83
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 140_080]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 2.85 / train/loss/policy 0.07 / train/loss/rep 2.12 / train/loss/repval 1.06 / train/loss/rew 0.4 / train/loss/value 0.81 / replay/replay_ratio 65 / fps/policy 25.15 / fps/train 1609.84
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 143_104]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 2.83 / train/loss/policy 0.06 / train/loss/rep 2.12 / train/loss/repval 0.98 / train/loss/rew 0.42 / train/loss/value 0.81 / replay/replay_ratio 65 / fps/policy 25.19 / fps/train 1612.02
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 146_128]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 197.77 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 2.6 / train/loss/policy 0.08 / train/loss/rep 2.12 / train/loss/repval 1.11 / train/loss/rew 0.42 / train/loss/value 1.01 / replay/replay_ratio 65 / fps/policy 25.17 / fps/train 1610.9
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 149_168]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.14 / train/loss/image 2.69 / train/loss/policy 0.07 / train/loss/rep 2.14 / train/loss/repval 1.22 / train/loss/rew 0.42 / train/loss/value 1.14 / replay/replay_ratio 65 / fps/policy 25.22 / fps/train 1613.94
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 152_192]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 338.22 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.14 / train/loss/image 2.66 / train/loss/policy 0.08 / train/loss/rep 2.14 / train/loss/repval 1.24 / train/loss/rew 0.42 / train/loss/value 1.14 / replay/replay_ratio 65 / fps/policy 25.14 / fps/train 1609.27
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 155_232]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.13 / train/loss/image 2.66 / train/loss/policy 0.06 / train/loss/rep 2.13 / train/loss/repval 1.2 / train/loss/rew 0.42 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 25.2 / fps/train 1612.84
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 158_256]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.13 / train/loss/image 2.55 / train/loss/policy 0.06 / train/loss/rep 2.13 / train/loss/repval 1.1 / train/loss/rew 0.42 / train/loss/value 0.83 / replay/replay_ratio 65 / fps/policy 25.19 / fps/train 1612.26
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T102905F262677
+Saved checkpoint.
+
+--------------------[Agent Step 161_200]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 307.2 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.14 / train/loss/image 2.5 / train/loss/policy 0.06 / train/loss/rep 2.14 / train/loss/repval 0.99 / train/loss/rew 0.42 / train/loss/value 0.74 / replay/replay_ratio 65 / fps/policy 24.44 / fps/train 1564.33
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 164_224]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.16 / train/loss/image 2.44 / train/loss/policy 0.07 / train/loss/rep 2.16 / train/loss/repval 0.98 / train/loss/rew 0.42 / train/loss/value 0.87 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.57
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 167_264]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.22 / train/loss/image 2.57 / train/loss/policy 0.07 / train/loss/rep 2.22 / train/loss/repval 1.11 / train/loss/rew 0.42 / train/loss/value 1.05 / replay/replay_ratio 65 / fps/policy 25.23 / fps/train 1614.88
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 170_304]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 342.78 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.15 / train/loss/image 2.39 / train/loss/policy 0.07 / train/loss/rep 2.15 / train/loss/repval 1.21 / train/loss/rew 0.42 / train/loss/value 1.14 / replay/replay_ratio 65 / fps/policy 25.21 / fps/train 1613.7
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 173_328]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.21 / train/loss/image 2.31 / train/loss/policy 0.07 / train/loss/rep 2.21 / train/loss/repval 1.22 / train/loss/rew 0.43 / train/loss/value 1.15 / replay/replay_ratio 65 / fps/policy 25.13 / fps/train 1608.56
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 176_352]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 345.5 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.17 / train/loss/image 2.34 / train/loss/policy 0.07 / train/loss/rep 2.17 / train/loss/repval 1.21 / train/loss/rew 0.42 / train/loss/value 1.08 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.61
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 179_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.17 / train/loss/image 2.34 / train/loss/policy 0.06 / train/loss/rep 2.17 / train/loss/repval 1.13 / train/loss/rew 0.41 / train/loss/value 0.93 / replay/replay_ratio 65 / fps/policy 25.23 / fps/train 1614.61
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T104405F733912
+Saved checkpoint.
+
+--------------------[Agent Step 182_336]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.17 / train/loss/image 2.21 / train/loss/policy 0.06 / train/loss/rep 2.17 / train/loss/repval 1.02 / train/loss/rew 0.42 / train/loss/value 0.76 / replay/replay_ratio 65 / fps/policy 24.45 / fps/train 1565.08
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 185_376]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 337.29 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.21 / train/loss/image 2.32 / train/loss/policy 0.06 / train/loss/rep 2.21 / train/loss/repval 0.93 / train/loss/rew 0.42 / train/loss/value 0.71 / replay/replay_ratio 65 / fps/policy 25.2 / fps/train 1612.95
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 188_416]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.18 / train/loss/image 2.2 / train/loss/policy 0.07 / train/loss/rep 2.18 / train/loss/repval 0.98 / train/loss/rew 0.42 / train/loss/value 0.84 / replay/replay_ratio 65 / fps/policy 25.23 / fps/train 1614.91
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 191_456]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.2 / train/loss/image 2.22 / train/loss/policy 0.08 / train/loss/rep 2.2 / train/loss/repval 1.07 / train/loss/rew 0.42 / train/loss/value 1.03 / replay/replay_ratio 65 / fps/policy 25.2 / fps/train 1612.79
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 194_480]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 390.95 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.19 / train/loss/image 2.15 / train/loss/policy 0.08 / train/loss/rep 2.19 / train/loss/repval 1.14 / train/loss/rew 0.43 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.2 / fps/train 1612.53
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 197_504]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.16 / train/loss/image 2.13 / train/loss/policy 0.06 / train/loss/rep 2.16 / train/loss/repval 1.18 / train/loss/rew 0.42 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.17 / fps/train 1610.56
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 200_544]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 377.33 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.22 / train/loss/image 2.17 / train/loss/policy 0.06 / train/loss/rep 2.22 / train/loss/repval 1.16 / train/loss/rew 0.42 / train/loss/value 1.06 / replay/replay_ratio 65 / fps/policy 25.24 / fps/train 1615.63
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 203_584]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.16 / train/loss/image 2.09 / train/loss/policy 0.06 / train/loss/rep 2.16 / train/loss/repval 1.14 / train/loss/rew 0.42 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 25.26 / fps/train 1616.69
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T105906F012454
+Saved checkpoint.
+
+--------------------[Agent Step 206_512]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.16 / train/loss/image 2.11 / train/loss/policy 0.06 / train/loss/rep 2.16 / train/loss/repval 1.09 / train/loss/rew 0.42 / train/loss/value 0.91 / replay/replay_ratio 65 / fps/policy 24.31 / fps/train 1555.61
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 209_536]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 360.49 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.16 / train/loss/image 2.04 / train/loss/policy 0.05 / train/loss/rep 2.16 / train/loss/repval 1.01 / train/loss/rew 0.42 / train/loss/value 0.77 / replay/replay_ratio 65 / fps/policy 25.17 / fps/train 1611.05
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 212_560]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.16 / train/loss/image 2.05 / train/loss/policy 0.05 / train/loss/rep 2.16 / train/loss/repval 0.91 / train/loss/rew 0.43 / train/loss/value 0.7 / replay/replay_ratio 65 / fps/policy 25.12 / fps/train 1607.98
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 215_584]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.13 / train/loss/image 1.93 / train/loss/policy 0.07 / train/loss/rep 2.13 / train/loss/repval 0.89 / train/loss/rew 0.42 / train/loss/value 0.76 / replay/replay_ratio 65 / fps/policy 25.17 / fps/train 1610.57
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 218_608]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 373.14 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.19 / train/loss/image 2.07 / train/loss/policy 0.07 / train/loss/rep 2.19 / train/loss/repval 1 / train/loss/rew 0.42 / train/loss/value 0.92 / replay/replay_ratio 65 / fps/policy 25.13 / fps/train 1608.14
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 221_648]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.17 / train/loss/image 2.11 / train/loss/policy 0.07 / train/loss/rep 2.17 / train/loss/repval 1.08 / train/loss/rew 0.43 / train/loss/value 1.02 / replay/replay_ratio 65 / fps/policy 25.25 / fps/train 1616.11
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 224_672]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 434.17 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.17 / train/loss/image 2.07 / train/loss/policy 0.05 / train/loss/rep 2.17 / train/loss/repval 1.15 / train/loss/rew 0.42 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.41
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T111406F296254
+Saved checkpoint.
+
+--------------------[Agent Step 227_600]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.14 / train/loss/image 2 / train/loss/policy 0.05 / train/loss/rep 2.14 / train/loss/repval 1.19 / train/loss/rew 0.43 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 24.33 / fps/train 1556.93
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 230_640]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.13 / train/loss/image 2.01 / train/loss/policy 0.05 / train/loss/rep 2.13 / train/loss/repval 1.2 / train/loss/rew 0.42 / train/loss/value 1.12 / replay/replay_ratio 65 / fps/policy 25.26 / fps/train 1616.55
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 233_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 408.19 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 1.94 / train/loss/policy 0.04 / train/loss/rep 2.12 / train/loss/repval 1.19 / train/loss/rew 0.43 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.27 / fps/train 1617.59
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 236_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.15 / train/loss/image 1.96 / train/loss/policy 0.04 / train/loss/rep 2.15 / train/loss/repval 1.17 / train/loss/rew 0.43 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25.21 / fps/train 1613.38
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 239_760]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.14 / train/loss/image 1.97 / train/loss/policy 0.04 / train/loss/rep 2.14 / train/loss/repval 1.12 / train/loss/rew 0.43 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 25.28 / fps/train 1617.66
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 242_800]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 408.85 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 1.84 / train/loss/policy 0.04 / train/loss/rep 2.12 / train/loss/repval 1.08 / train/loss/rew 0.43 / train/loss/value 0.93 / replay/replay_ratio 65 / fps/policy 25.21 / fps/train 1613.58
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 245_840]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.16 / train/loss/image 1.99 / train/loss/policy 0.04 / train/loss/rep 2.16 / train/loss/repval 1.01 / train/loss/rew 0.44 / train/loss/value 0.82 / replay/replay_ratio 65 / fps/policy 25.26 / fps/train 1616.46
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 248_880]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 397.82 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.13 / train/loss/image 1.85 / train/loss/policy 0.04 / train/loss/rep 2.13 / train/loss/repval 0.98 / train/loss/rew 0.43 / train/loss/value 0.76 / replay/replay_ratio 65 / fps/policy 25.26 / fps/train 1616.36
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T112906F722500
+Saved checkpoint.
+
+--------------------[Agent Step 251_808]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.14 / train/loss/image 1.88 / train/loss/policy 0.04 / train/loss/rep 2.14 / train/loss/repval 0.96 / train/loss/rew 0.44 / train/loss/value 0.74 / replay/replay_ratio 65 / fps/policy 24.29 / fps/train 1554.38
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 254_848]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.13 / train/loss/image 1.88 / train/loss/policy 0.06 / train/loss/rep 2.13 / train/loss/repval 0.98 / train/loss/rew 0.44 / train/loss/value 0.81 / replay/replay_ratio 65 / fps/policy 25.22 / fps/train 1613.98
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 257_888]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 454.02 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 1.82 / train/loss/policy 0.07 / train/loss/rep 2.12 / train/loss/repval 1.02 / train/loss/rew 0.44 / train/loss/value 0.94 / replay/replay_ratio 65 / fps/policy 25.26 / fps/train 1616.89
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 260_912]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 1.81 / train/loss/policy 0.06 / train/loss/rep 2.12 / train/loss/repval 1.06 / train/loss/rew 0.44 / train/loss/value 1.02 / replay/replay_ratio 65 / fps/policy 25.12 / fps/train 1607.86
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 263_952]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.14 / train/loss/image 1.88 / train/loss/policy 0.05 / train/loss/rep 2.14 / train/loss/repval 1.1 / train/loss/rew 0.44 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25.28 / fps/train 1618.04
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 266_976]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 514.5 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.11 / train/loss/image 1.77 / train/loss/policy 0.05 / train/loss/rep 2.11 / train/loss/repval 1.14 / train/loss/rew 0.44 / train/loss/value 1.08 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1610.3
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 270_016]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 1.74 / train/loss/policy 0.04 / train/loss/rep 2.12 / train/loss/repval 1.16 / train/loss/rew 0.45 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.22 / fps/train 1613.85
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T114406F932727
+Saved checkpoint.
+
+--------------------[Agent Step 272_944]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 459.91 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.14 / train/loss/image 1.75 / train/loss/policy 0.05 / train/loss/rep 2.14 / train/loss/repval 1.21 / train/loss/rew 0.45 / train/loss/value 1.14 / replay/replay_ratio 65 / fps/policy 24.32 / fps/train 1556.59
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 275_984]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.11 / train/loss/image 1.75 / train/loss/policy 0.04 / train/loss/rep 2.11 / train/loss/repval 1.21 / train/loss/rew 0.45 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.25 / fps/train 1615.97
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 279_008]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.09 / train/loss/image 1.7 / train/loss/policy 0.04 / train/loss/rep 2.09 / train/loss/repval 1.18 / train/loss/rew 0.45 / train/loss/value 1.08 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1610.21
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 282_048]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 444.72 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 1.72 / train/loss/policy 0.03 / train/loss/rep 2.12 / train/loss/repval 1.15 / train/loss/rew 0.45 / train/loss/value 1.05 / replay/replay_ratio 65 / fps/policy 25.22 / fps/train 1614.3
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 285_072]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 1.72 / train/loss/policy 0.03 / train/loss/rep 2.12 / train/loss/repval 1.12 / train/loss/rew 0.46 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 25.11 / fps/train 1607.34
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 288_096]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.13 / train/loss/image 1.75 / train/loss/policy 0.03 / train/loss/rep 2.13 / train/loss/repval 1.1 / train/loss/rew 0.45 / train/loss/value 0.96 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.33
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 291_136]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 466.81 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 1.71 / train/loss/policy 0.03 / train/loss/rep 2.12 / train/loss/repval 1.05 / train/loss/rew 0.46 / train/loss/value 0.9 / replay/replay_ratio 65 / fps/policy 25.22 / fps/train 1614.18
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 294_176]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.14 / train/loss/image 1.71 / train/loss/policy 0.03 / train/loss/rep 2.14 / train/loss/repval 1.02 / train/loss/rew 0.46 / train/loss/value 0.85 / replay/replay_ratio 65 / fps/policy 25.3 / fps/train 1619.31
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T115907F027613
+Saved checkpoint.
+
+--------------------[Agent Step 297_104]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 443.63 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 1.69 / train/loss/policy 0.03 / train/loss/rep 2.12 / train/loss/repval 0.97 / train/loss/rew 0.46 / train/loss/value 0.79 / replay/replay_ratio 65 / fps/policy 24.29 / fps/train 1554.51
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 300_128]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.14 / train/loss/image 1.71 / train/loss/policy 0.03 / train/loss/rep 2.14 / train/loss/repval 0.94 / train/loss/rew 0.46 / train/loss/value 0.77 / replay/replay_ratio 65 / fps/policy 25.19 / fps/train 1612.32
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 303_168]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.11 / train/loss/image 1.7 / train/loss/policy 0.03 / train/loss/rep 2.11 / train/loss/repval 0.93 / train/loss/rew 0.46 / train/loss/value 0.76 / replay/replay_ratio 65 / fps/policy 25.21 / fps/train 1613.59
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 306_192]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 487.46 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.08 / train/loss/image 1.62 / train/loss/policy 0.04 / train/loss/rep 2.08 / train/loss/repval 0.97 / train/loss/rew 0.47 / train/loss/value 0.81 / replay/replay_ratio 65 / fps/policy 25.17 / fps/train 1610.97
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 309_216]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.14 / train/loss/image 1.68 / train/loss/policy 0.05 / train/loss/rep 2.14 / train/loss/repval 1.01 / train/loss/rew 0.46 / train/loss/value 0.91 / replay/replay_ratio 65 / fps/policy 25.15 / fps/train 1609.65
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 312_240]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.12 / train/loss/image 1.7 / train/loss/policy 0.06 / train/loss/rep 2.12 / train/loss/repval 1.05 / train/loss/rew 0.46 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 25.2 / fps/train 1612.5
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 315_264]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 535.57 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.1 / train/loss/image 1.64 / train/loss/policy 0.05 / train/loss/rep 2.1 / train/loss/repval 1.09 / train/loss/rew 0.47 / train/loss/value 1.04 / replay/replay_ratio 65 / fps/policy 25.13 / fps/train 1608.32
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T121407F311125
+Saved checkpoint.
+
+--------------------[Agent Step 318_192]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.09 / train/loss/image 1.66 / train/loss/policy 0.05 / train/loss/rep 2.09 / train/loss/repval 1.14 / train/loss/rew 0.47 / train/loss/value 1.08 / replay/replay_ratio 65 / fps/policy 24.28 / fps/train 1553.93
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 321_232]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 496.34 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.07 / train/loss/image 1.54 / train/loss/policy 0.04 / train/loss/rep 2.07 / train/loss/repval 1.15 / train/loss/rew 0.47 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.24 / fps/train 1615.13
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 324_272]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.09 / train/loss/image 1.59 / train/loss/policy 0.04 / train/loss/rep 2.09 / train/loss/repval 1.17 / train/loss/rew 0.47 / train/loss/value 1.14 / replay/replay_ratio 65 / fps/policy 25.22 / fps/train 1614.26
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 327_296]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.08 / train/loss/image 1.58 / train/loss/policy 0.03 / train/loss/rep 2.08 / train/loss/repval 1.17 / train/loss/rew 0.47 / train/loss/value 1.15 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1609.97
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 330_320]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 471.43 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.07 / train/loss/image 1.56 / train/loss/policy 0.03 / train/loss/rep 2.07 / train/loss/repval 1.18 / train/loss/rew 0.47 / train/loss/value 1.15 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1610.29
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 333_344]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.11 / train/loss/image 1.66 / train/loss/policy 0.03 / train/loss/rep 2.11 / train/loss/repval 1.2 / train/loss/rew 0.47 / train/loss/value 1.16 / replay/replay_ratio 65 / fps/policy 25.13 / fps/train 1608.45
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 336_368]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 510.19 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.09 / train/loss/image 1.57 / train/loss/policy 0.03 / train/loss/rep 2.09 / train/loss/repval 1.18 / train/loss/rew 0.47 / train/loss/value 1.15 / replay/replay_ratio 65 / fps/policy 25.14 / fps/train 1609.22
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 339_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.06 / train/loss/image 1.53 / train/loss/policy 0.03 / train/loss/rep 2.06 / train/loss/repval 1.19 / train/loss/rew 0.47 / train/loss/value 1.16 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.34
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T122907F827161
+Saved checkpoint.
+
+--------------------[Agent Step 342_320]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.09 / train/loss/image 1.59 / train/loss/policy 0.03 / train/loss/rep 2.09 / train/loss/repval 1.18 / train/loss/rew 0.47 / train/loss/value 1.15 / replay/replay_ratio 65 / fps/policy 24.36 / fps/train 1558.75
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 345_344]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 502.71 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.05 / train/loss/image 1.53 / train/loss/policy 0.03 / train/loss/rep 2.05 / train/loss/repval 1.16 / train/loss/rew 0.47 / train/loss/value 1.12 / replay/replay_ratio 65 / fps/policy 25.14 / fps/train 1608.88
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 348_368]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.07 / train/loss/image 1.53 / train/loss/policy 0.03 / train/loss/rep 2.07 / train/loss/repval 1.15 / train/loss/rew 0.47 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.14 / fps/train 1609.1
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 351_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.09 / train/loss/image 1.6 / train/loss/policy 0.03 / train/loss/rep 2.09 / train/loss/repval 1.14 / train/loss/rew 0.48 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25.15 / fps/train 1609.91
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 354_416]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 511.24 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.07 / train/loss/image 1.49 / train/loss/policy 0.03 / train/loss/rep 2.07 / train/loss/repval 1.13 / train/loss/rew 0.47 / train/loss/value 1.05 / replay/replay_ratio 65 / fps/policy 25.14 / fps/train 1609.04
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 357_440]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.06 / train/loss/image 1.5 / train/loss/policy 0.03 / train/loss/rep 2.06 / train/loss/repval 1.1 / train/loss/rew 0.47 / train/loss/value 1.01 / replay/replay_ratio 65 / fps/policy 25.17 / fps/train 1610.81
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 360_464]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 519.16 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.05 / train/loss/image 1.51 / train/loss/policy 0.03 / train/loss/rep 2.05 / train/loss/repval 1.09 / train/loss/rew 0.48 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 25.15 / fps/train 1609.46
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T124408F071360
+Saved checkpoint.
+
+--------------------[Agent Step 363_376]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.08 / train/loss/image 1.54 / train/loss/policy 0.03 / train/loss/rep 2.08 / train/loss/repval 1.07 / train/loss/rew 0.47 / train/loss/value 0.96 / replay/replay_ratio 65 / fps/policy 24.26 / fps/train 1552.81
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 366_400]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.09 / train/loss/image 1.56 / train/loss/policy 0.03 / train/loss/rep 2.09 / train/loss/repval 1.04 / train/loss/rew 0.48 / train/loss/value 0.92 / replay/replay_ratio 65 / fps/policy 25.2 / fps/train 1612.54
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 369_424]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 501.97 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.03 / train/loss/image 1.5 / train/loss/policy 0.03 / train/loss/rep 2.03 / train/loss/repval 1 / train/loss/rew 0.47 / train/loss/value 0.9 / replay/replay_ratio 65 / fps/policy 25.13 / fps/train 1608.13
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 372_448]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.03 / train/loss/image 1.47 / train/loss/policy 0.03 / train/loss/rep 2.03 / train/loss/repval 0.98 / train/loss/rew 0.47 / train/loss/value 0.86 / replay/replay_ratio 65 / fps/policy 25.14 / fps/train 1608.84
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 375_472]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.04 / train/loss/image 1.47 / train/loss/policy 0.03 / train/loss/rep 2.04 / train/loss/repval 0.96 / train/loss/rew 0.47 / train/loss/value 0.83 / replay/replay_ratio 65 / fps/policy 25.1 / fps/train 1606.59
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 378_496]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 523.41 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.05 / train/loss/image 1.5 / train/loss/policy 0.02 / train/loss/rep 2.05 / train/loss/repval 0.94 / train/loss/rew 0.48 / train/loss/value 0.81 / replay/replay_ratio 65 / fps/policy 25.15 / fps/train 1609.33
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 381_520]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.05 / train/loss/image 1.46 / train/loss/policy 0.03 / train/loss/rep 2.05 / train/loss/repval 0.94 / train/loss/rew 0.47 / train/loss/value 0.82 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1610.1
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 384_544]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 548.79 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.07 / train/loss/image 1.57 / train/loss/policy 0.02 / train/loss/rep 2.07 / train/loss/repval 0.93 / train/loss/rew 0.47 / train/loss/value 0.8 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.46
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T125908F183445
+Saved checkpoint.
+
+--------------------[Agent Step 387_456]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.02 / train/loss/image 1.49 / train/loss/policy 0.02 / train/loss/rep 2.02 / train/loss/repval 0.92 / train/loss/rew 0.47 / train/loss/value 0.79 / replay/replay_ratio 65 / fps/policy 24.22 / fps/train 1550.34
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 390_480]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.08 / train/loss/image 1.53 / train/loss/policy 0.04 / train/loss/rep 2.08 / train/loss/repval 0.97 / train/loss/rew 0.47 / train/loss/value 0.83 / replay/replay_ratio 65 / fps/policy 25.2 / fps/train 1612.68
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 393_504]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 554.13 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.05 / train/loss/image 1.57 / train/loss/policy 0.04 / train/loss/rep 2.05 / train/loss/repval 1.01 / train/loss/rew 0.47 / train/loss/value 0.91 / replay/replay_ratio 65 / fps/policy 25.08 / fps/train 1604.83
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 396_528]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.06 / train/loss/image 1.45 / train/loss/policy 0.05 / train/loss/rep 2.06 / train/loss/repval 1.04 / train/loss/rew 0.47 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1610.22
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 399_552]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.01 / train/loss/image 1.49 / train/loss/policy 0.04 / train/loss/rep 2.01 / train/loss/repval 1.07 / train/loss/rew 0.47 / train/loss/value 1.02 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1610.45
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 402_576]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 615.57 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.02 / train/loss/image 1.46 / train/loss/policy 0.03 / train/loss/rep 2.02 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.04 / replay/replay_ratio 65 / fps/policy 25.15 / fps/train 1609.29
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 405_600]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.01 / train/loss/image 1.47 / train/loss/policy 0.03 / train/loss/rep 2.01 / train/loss/repval 1.1 / train/loss/rew 0.48 / train/loss/value 1.06 / replay/replay_ratio 65 / fps/policy 25.19 / fps/train 1612.1
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T131408F515660
+Saved checkpoint.
+
+--------------------[Agent Step 408_528]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 562.39 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.04 / train/loss/image 1.5 / train/loss/policy 0.03 / train/loss/rep 2.04 / train/loss/repval 1.11 / train/loss/rew 0.47 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 24.33 / fps/train 1557.18
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 411_552]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.01 / train/loss/image 1.45 / train/loss/policy 0.03 / train/loss/rep 2.01 / train/loss/repval 1.11 / train/loss/rew 0.47 / train/loss/value 1.09 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1609.93
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 414_576]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.01 / train/loss/image 1.43 / train/loss/policy 0.03 / train/loss/rep 2.01 / train/loss/repval 1.12 / train/loss/rew 0.47 / train/loss/value 1.08 / replay/replay_ratio 65 / fps/policy 25.14 / fps/train 1609.14
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 417_600]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 575.96 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2 / train/loss/image 1.42 / train/loss/policy 0.03 / train/loss/rep 2 / train/loss/repval 1.13 / train/loss/rew 0.47 / train/loss/value 1.09 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1610.32
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 420_624]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2 / train/loss/image 1.42 / train/loss/policy 0.03 / train/loss/rep 2 / train/loss/repval 1.13 / train/loss/rew 0.46 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.48
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 423_648]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2 / train/loss/image 1.42 / train/loss/policy 0.03 / train/loss/rep 2 / train/loss/repval 1.14 / train/loss/rew 0.47 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.13 / fps/train 1608.38
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 426_672]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 613.79 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2 / train/loss/image 1.42 / train/loss/policy 0.03 / train/loss/rep 2 / train/loss/repval 1.14 / train/loss/rew 0.46 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.14 / fps/train 1608.99
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 429_696]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.01 / train/loss/image 1.42 / train/loss/policy 0.03 / train/loss/rep 2.01 / train/loss/repval 1.16 / train/loss/rew 0.47 / train/loss/value 1.12 / replay/replay_ratio 65 / fps/policy 25.12 / fps/train 1607.99
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T132909F077981
+Saved checkpoint.
+
+--------------------[Agent Step 432_624]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 602.23 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.01 / train/loss/image 1.46 / train/loss/policy 0.02 / train/loss/rep 2.01 / train/loss/repval 1.16 / train/loss/rew 0.47 / train/loss/value 1.12 / replay/replay_ratio 65 / fps/policy 24.32 / fps/train 1556.57
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 435_648]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2 / train/loss/image 1.43 / train/loss/policy 0.03 / train/loss/rep 2 / train/loss/repval 1.15 / train/loss/rew 0.46 / train/loss/value 1.12 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1610.26
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 438_672]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.98 / train/loss/image 1.37 / train/loss/policy 0.03 / train/loss/rep 1.98 / train/loss/repval 1.18 / train/loss/rew 0.46 / train/loss/value 1.13 / replay/replay_ratio 65 / fps/policy 25.08 / fps/train 1605.09
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 441_696]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 600.9 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.99 / train/loss/image 1.38 / train/loss/policy 0.02 / train/loss/rep 1.99 / train/loss/repval 1.16 / train/loss/rew 0.46 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.09 / fps/train 1605.86
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 444_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2 / train/loss/image 1.38 / train/loss/policy 0.02 / train/loss/rep 2 / train/loss/repval 1.14 / train/loss/rew 0.46 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.4
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 447_744]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.99 / train/loss/image 1.38 / train/loss/policy 0.02 / train/loss/rep 1.99 / train/loss/repval 1.16 / train/loss/rew 0.47 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.15 / fps/train 1609.37
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 450_768]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 583.6 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.99 / train/loss/image 1.39 / train/loss/policy 0.02 / train/loss/rep 1.99 / train/loss/repval 1.15 / train/loss/rew 0.46 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.12 / fps/train 1607.42
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T134409F606687
+Saved checkpoint.
+
+--------------------[Agent Step 453_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2 / train/loss/image 1.35 / train/loss/policy 0.03 / train/loss/rep 2 / train/loss/repval 1.14 / train/loss/rew 0.47 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 24.27 / fps/train 1553.05
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 456_704]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 607.31 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.99 / train/loss/image 1.38 / train/loss/policy 0.02 / train/loss/rep 1.99 / train/loss/repval 1.12 / train/loss/rew 0.46 / train/loss/value 1.08 / replay/replay_ratio 65 / fps/policy 25.12 / fps/train 1607.89
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 459_712]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.96 / train/loss/image 1.34 / train/loss/policy 0.02 / train/loss/rep 1.96 / train/loss/repval 1.12 / train/loss/rew 0.47 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25 / fps/train 1599.93
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 462_736]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.98 / train/loss/image 1.32 / train/loss/policy 0.02 / train/loss/rep 1.98 / train/loss/repval 1.1 / train/loss/rew 0.46 / train/loss/value 1.05 / replay/replay_ratio 65 / fps/policy 25.1 / fps/train 1606.27
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 465_760]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 556.85 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2 / train/loss/image 1.37 / train/loss/policy 0.02 / train/loss/rep 2 / train/loss/repval 1.1 / train/loss/rew 0.46 / train/loss/value 1.05 / replay/replay_ratio 65 / fps/policy 25.11 / fps/train 1607.26
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 468_784]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.97 / train/loss/image 1.3 / train/loss/policy 0.02 / train/loss/rep 1.97 / train/loss/repval 1.07 / train/loss/rew 0.46 / train/loss/value 1.02 / replay/replay_ratio 65 / fps/policy 25.12 / fps/train 1607.92
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 471_808]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.02 / train/loss/image 1.41 / train/loss/policy 0.02 / train/loss/rep 2.02 / train/loss/repval 1.08 / train/loss/rew 0.45 / train/loss/value 1.02 / replay/replay_ratio 65 / fps/policy 25.16 / fps/train 1610.5
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 474_832]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 286.48 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.97 / train/loss/image 1.35 / train/loss/policy 0.02 / train/loss/rep 1.97 / train/loss/repval 1.07 / train/loss/rew 0.46 / train/loss/value 1.01 / replay/replay_ratio 65 / fps/policy 25.19 / fps/train 1611.89
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T135909F929665
+Saved checkpoint.
+
+--------------------[Agent Step 477_744]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.96 / train/loss/image 1.3 / train/loss/policy 0.02 / train/loss/rep 1.96 / train/loss/repval 1.05 / train/loss/rew 0.46 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 24.26 / fps/train 1552.95
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 480_768]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 613.61 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.99 / train/loss/image 1.35 / train/loss/policy 0.02 / train/loss/rep 1.99 / train/loss/repval 1.03 / train/loss/rew 0.46 / train/loss/value 0.96 / replay/replay_ratio 65 / fps/policy 25.19 / fps/train 1612.06
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 483_792]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.97 / train/loss/image 1.34 / train/loss/policy 0.02 / train/loss/rep 1.97 / train/loss/repval 1.06 / train/loss/rew 0.46 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 25.08 / fps/train 1604.89
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 486_832]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.98 / train/loss/image 1.34 / train/loss/policy 0.02 / train/loss/rep 1.98 / train/loss/repval 1.04 / train/loss/rew 0.46 / train/loss/value 0.97 / replay/replay_ratio 65 / fps/policy 25.21 / fps/train 1613.73
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 489_856]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 580.19 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.98 / train/loss/image 1.36 / train/loss/policy 0.02 / train/loss/rep 1.98 / train/loss/repval 1.03 / train/loss/rew 0.46 / train/loss/value 0.96 / replay/replay_ratio 65 / fps/policy 25.17 / fps/train 1611.14
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 492_880]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.97 / train/loss/image 1.36 / train/loss/policy 0.02 / train/loss/rep 1.97 / train/loss/repval 1.02 / train/loss/rew 0.46 / train/loss/value 0.95 / replay/replay_ratio 65 / fps/policy 25.17 / fps/train 1610.89
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 495_904]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.97 / train/loss/image 1.3 / train/loss/policy 0.02 / train/loss/rep 1.97 / train/loss/repval 0.99 / train/loss/rew 0.45 / train/loss/value 0.92 / replay/replay_ratio 65 / fps/policy 25.2 / fps/train 1612.63
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T141410F459836
+Saved checkpoint.
+
+--------------------[Agent Step 498_832]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 598.83 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.97 / train/loss/image 1.31 / train/loss/policy 0.02 / train/loss/rep 1.97 / train/loss/repval 0.99 / train/loss/rew 0.46 / train/loss/value 0.93 / replay/replay_ratio 65 / fps/policy 24.31 / fps/train 1555.57
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 501_872]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.96 / train/loss/image 1.25 / train/loss/policy 0.02 / train/loss/rep 1.96 / train/loss/repval 0.97 / train/loss/rew 0.45 / train/loss/value 0.9 / replay/replay_ratio 65 / fps/policy 25.26 / fps/train 1616.53
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 504_896]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 597.44 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.94 / train/loss/image 1.29 / train/loss/policy 0.02 / train/loss/rep 1.94 / train/loss/repval 0.97 / train/loss/rew 0.46 / train/loss/value 0.89 / replay/replay_ratio 65 / fps/policy 25.14 / fps/train 1608.74
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 507_904]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.95 / train/loss/image 1.29 / train/loss/policy 0.02 / train/loss/rep 1.95 / train/loss/repval 0.97 / train/loss/rew 0.46 / train/loss/value 0.88 / replay/replay_ratio 65 / fps/policy 25.06 / fps/train 1603.94
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 510_944]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.96 / train/loss/image 1.3 / train/loss/policy 0.02 / train/loss/rep 1.96 / train/loss/repval 0.95 / train/loss/rew 0.45 / train/loss/value 0.87 / replay/replay_ratio 65 / fps/policy 25.21 / fps/train 1613.65
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 513_968]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 599.72 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.95 / train/loss/image 1.27 / train/loss/policy 0.02 / train/loss/rep 1.95 / train/loss/repval 0.95 / train/loss/rew 0.45 / train/loss/value 0.87 / replay/replay_ratio 65 / fps/policy 25.1 / fps/train 1606.51
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 517_008]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.96 / train/loss/image 1.27 / train/loss/policy 0.02 / train/loss/rep 1.96 / train/loss/repval 0.94 / train/loss/rew 0.46 / train/loss/value 0.85 / replay/replay_ratio 65 / fps/policy 25.24 / fps/train 1615.48
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 520_032]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.93 / train/loss/image 1.27 / train/loss/policy 0.02 / train/loss/rep 1.93 / train/loss/repval 0.92 / train/loss/rew 0.45 / train/loss/value 0.84 / replay/replay_ratio 65 / fps/policy 25.19 / fps/train 1612.44
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/ckpt/20251206T142910F864288
+Saved checkpoint.
+
+--------------------[Agent Step 522_928]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 599.88 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.93 / train/loss/image 1.27 / train/loss/policy 0.02 / train/loss/rep 1.93 / train/loss/repval 0.92 / train/loss/rew 0.45 / train/loss/value 0.83 / replay/replay_ratio 65 / fps/policy 24.03 / fps/train 1537.85
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 525_952]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.95 / train/loss/image 1.23 / train/loss/policy 0.02 / train/loss/rep 1.95 / train/loss/repval 0.91 / train/loss/rew 0.46 / train/loss/value 0.82 / replay/replay_ratio 65 / fps/policy 25.12 / fps/train 1607.77
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 528_976]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 591.73 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.95 / train/loss/image 1.25 / train/loss/policy 0.02 / train/loss/rep 1.95 / train/loss/repval 0.91 / train/loss/rew 0.45 / train/loss/value 0.83 / replay/replay_ratio 65 / fps/policy 25.18 / fps/train 1611.72
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 532_000]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.93 / train/loss/image 1.25 / train/loss/policy 0.02 / train/loss/rep 1.93 / train/loss/repval 0.91 / train/loss/rew 0.45 / train/loss/value 0.82 / replay/replay_ratio 65 / fps/policy 25.13 / fps/train 1608.27
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 535_024]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.94 / train/loss/image 1.26 / train/loss/policy 0.02 / train/loss/rep 1.94 / train/loss/repval 0.91 / train/loss/rew 0.45 / train/loss/value 0.82 / replay/replay_ratio 65 / fps/policy 25.15 / fps/train 1609.49
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 538_048]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 602.6 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.93 / train/loss/image 1.25 / train/loss/policy 0.02 / train/loss/rep 1.93 / train/loss/repval 0.91 / train/loss/rew 0.45 / train/loss/value 0.81 / replay/replay_ratio 65 / fps/policy 25.11 / fps/train 1607.31
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 541_088]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 1.94 / train/loss/image 1.2 / train/loss/policy 0.02 / train/loss/rep 1.94 / train/loss/repval 0.87 / train/loss/rew 0.45 / train/loss/value 0.77 / replay/replay_ratio 65 / fps/policy 25.23 / fps/train 1614.6
+

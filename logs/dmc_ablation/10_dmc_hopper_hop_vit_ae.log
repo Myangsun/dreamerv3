@@ -1,0 +1,3697 @@
+=== Job Information ===
+Job ID: 4639706
+Array Task ID: 10
+Node: node29
+Task: dmc_hopper_hop
+Encoder: vit_ae
+Logdir: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243
+Start time: Sat Dec  6 08:42:43 AM EST 2025
+
+=== Verifying GPU ===
+Devices: [CudaDevice(id=0)]
+
+=== Starting DMC Training: dmc_hopper_hop ===
+Model size: 50M parameters
+Steps: 550K
+Train ratio: 64
+
+2025-12-06 08:42:48.668656: W external/xla/xla/service/gpu/nvptx_compiler.cc:893] The NVIDIA driver's CUDA version is 12.5 which is older than the PTX compiler version 12.9.86. Because the driver is older than the PTX compiler version, XLA is disabling parallel compilation, which may slow down compilation. You should update your NVIDIA driver or use the NVIDIA-provided CUDA forward compatibility packages.
+---  ___                           __   ______ ---
+--- |   \ _ _ ___ __ _ _ __  ___ _ \ \ / /__ / ---
+--- | |) | '_/ -_) _` | '  \/ -_) '/\ V / |_ \ ---
+--- |___/|_| \___\__,_|_|_|_\___|_|  \_/ |___/ ---
+Replica: 0 / 1
+Logdir: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243
+Run script: train
+Observations
+  is_first         Space(bool, shape=(), low=False, high=True)
+  is_last          Space(bool, shape=(), low=False, high=True)
+  is_terminal      Space(bool, shape=(), low=False, high=True)
+  reward           Space(float32, shape=(), low=-inf, high=inf)
+  image            Space(uint8, shape=(64, 64, 3), low=0, high=255)
+Actions
+  action           Space(float32, shape=(4,), low=-1.0, high=1.0)
+Extras
+  consec           Space(int32, shape=(), low=-2147483648, high=2147483647)
+  stepid           Space(uint8, shape=(20,), low=0, high=255)
+  dyn/deter        Space(float32, shape=(4096,), low=-inf, high=inf)
+  dyn/stoch        Space(float32, shape=(32, 32), low=-inf, high=inf)
+JAX devices (1): [cuda:0]
+Policy devices: cuda:0
+Train devices:  cuda:0
+Initializing parameters...
+Vision modules (vit_ae): 8,699,267 parameters
+Optimizer opt has 43,869,578 params:
+    23,361,536 dyn
+     5,076,355 dec
+     3,622,912 enc
+     3,279,615 val
+     3,152,904 pol
+     2,753,279 rew
+     2,622,977 con
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cls
+[1]
+[1]
+enc/outnorm/scale
+[1]
+[1]
+enc/outproj/bias
+[1]
+[1]
+enc/outproj/kernel
+[1]
+[1]
+enc/patch_proj/bias
+[1]
+[1]
+enc/patch_proj/kernel
+[1]
+[1]
+enc/posemb
+[1]
+[1]
+enc/vit/block0/attn/proj/bias
+[1]
+[1]
+enc/vit/block0/attn/proj/kernel
+[1]
+[1]
+enc/vit/block0/attn/qkv/bias
+[1]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block0/mlp0/bias
+[1]
+[1]
+enc/vit/block0/mlp0/kernel
+[1]
+[1]
+enc/vit/block0/mlp1/bias
+[1]
+[1]
+enc/vit/block0/mlp1/kernel
+[1]
+[1]
+enc/vit/block0/norm1/scale
+[1]
+[1]
+enc/vit/block0/norm2/scale
+[1]
+[1]
+enc/vit/block1/attn/proj/bias
+[1]
+[1]
+enc/vit/block1/attn/proj/kernel
+[1]
+[1]
+enc/vit/block1/attn/qkv/bias
+[1]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block1/mlp0/bias
+[1]
+[1]
+enc/vit/block1/mlp0/kernel
+[1]
+[1]
+enc/vit/block1/mlp1/bias
+[1]
+[1]
+enc/vit/block1/mlp1/kernel
+[1]
+[1]
+enc/vit/block1/norm1/scale
+[1]
+[1]
+enc/vit/block1/norm2/scale
+[1]
+[1]
+enc/vit/block2/attn/proj/bias
+[1]
+[1]
+enc/vit/block2/attn/proj/kernel
+[1]
+[1]
+enc/vit/block2/attn/qkv/bias
+[1]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block2/mlp0/bias
+[1]
+[1]
+enc/vit/block2/mlp0/kernel
+[1]
+[1]
+enc/vit/block2/mlp1/bias
+[1]
+[1]
+enc/vit/block2/mlp1/kernel
+[1]
+[1]
+enc/vit/block2/norm1/scale
+[1]
+[1]
+enc/vit/block2/norm2/scale
+[1]
+[1]
+enc/vit/block3/attn/proj/bias
+[1]
+[1]
+enc/vit/block3/attn/proj/kernel
+[1]
+[1]
+enc/vit/block3/attn/qkv/bias
+[1]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block3/mlp0/bias
+[1]
+[1]
+enc/vit/block3/mlp0/kernel
+[1]
+[1]
+enc/vit/block3/mlp1/bias
+[1]
+[1]
+enc/vit/block3/mlp1/kernel
+[1]
+[1]
+enc/vit/block3/norm1/scale
+[1]
+[1]
+enc/vit/block3/norm2/scale
+[1]
+[1]
+enc/vit/outnorm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cls
+[2]
+[1]
+enc/outnorm/scale
+[2]
+[1]
+enc/outproj/bias
+[2]
+[1]
+enc/outproj/kernel
+[2]
+[1]
+enc/patch_proj/bias
+[2]
+[1]
+enc/patch_proj/kernel
+[2]
+[1]
+enc/posemb
+[2]
+[1]
+enc/vit/block0/attn/proj/bias
+[2]
+[1]
+enc/vit/block0/attn/proj/kernel
+[2]
+[1]
+enc/vit/block0/attn/qkv/bias
+[2]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block0/mlp0/bias
+[2]
+[1]
+enc/vit/block0/mlp0/kernel
+[2]
+[1]
+enc/vit/block0/mlp1/bias
+[2]
+[1]
+enc/vit/block0/mlp1/kernel
+[2]
+[1]
+enc/vit/block0/norm1/scale
+[2]
+[1]
+enc/vit/block0/norm2/scale
+[2]
+[1]
+enc/vit/block1/attn/proj/bias
+[2]
+[1]
+enc/vit/block1/attn/proj/kernel
+[2]
+[1]
+enc/vit/block1/attn/qkv/bias
+[2]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block1/mlp0/bias
+[2]
+[1]
+enc/vit/block1/mlp0/kernel
+[2]
+[1]
+enc/vit/block1/mlp1/bias
+[2]
+[1]
+enc/vit/block1/mlp1/kernel
+[2]
+[1]
+enc/vit/block1/norm1/scale
+[2]
+[1]
+enc/vit/block1/norm2/scale
+[2]
+[1]
+enc/vit/block2/attn/proj/bias
+[2]
+[1]
+enc/vit/block2/attn/proj/kernel
+[2]
+[1]
+enc/vit/block2/attn/qkv/bias
+[2]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block2/mlp0/bias
+[2]
+[1]
+enc/vit/block2/mlp0/kernel
+[2]
+[1]
+enc/vit/block2/mlp1/bias
+[2]
+[1]
+enc/vit/block2/mlp1/kernel
+[2]
+[1]
+enc/vit/block2/norm1/scale
+[2]
+[1]
+enc/vit/block2/norm2/scale
+[2]
+[1]
+enc/vit/block3/attn/proj/bias
+[2]
+[1]
+enc/vit/block3/attn/proj/kernel
+[2]
+[1]
+enc/vit/block3/attn/qkv/bias
+[2]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block3/mlp0/bias
+[2]
+[1]
+enc/vit/block3/mlp0/kernel
+[2]
+[1]
+enc/vit/block3/mlp1/bias
+[2]
+[1]
+enc/vit/block3/mlp1/kernel
+[2]
+[1]
+enc/vit/block3/norm1/scale
+[2]
+[1]
+enc/vit/block3/norm2/scale
+[2]
+[1]
+enc/vit/outnorm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cls
+[1]
+[1]
+enc/outnorm/scale
+[1]
+[1]
+enc/outproj/bias
+[1]
+[1]
+enc/outproj/kernel
+[1]
+[1]
+enc/patch_proj/bias
+[1]
+[1]
+enc/patch_proj/kernel
+[1]
+[1]
+enc/posemb
+[1]
+[1]
+enc/vit/block0/attn/proj/bias
+[1]
+[1]
+enc/vit/block0/attn/proj/kernel
+[1]
+[1]
+enc/vit/block0/attn/qkv/bias
+[1]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block0/mlp0/bias
+[1]
+[1]
+enc/vit/block0/mlp0/kernel
+[1]
+[1]
+enc/vit/block0/mlp1/bias
+[1]
+[1]
+enc/vit/block0/mlp1/kernel
+[1]
+[1]
+enc/vit/block0/norm1/scale
+[1]
+[1]
+enc/vit/block0/norm2/scale
+[1]
+[1]
+enc/vit/block1/attn/proj/bias
+[1]
+[1]
+enc/vit/block1/attn/proj/kernel
+[1]
+[1]
+enc/vit/block1/attn/qkv/bias
+[1]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block1/mlp0/bias
+[1]
+[1]
+enc/vit/block1/mlp0/kernel
+[1]
+[1]
+enc/vit/block1/mlp1/bias
+[1]
+[1]
+enc/vit/block1/mlp1/kernel
+[1]
+[1]
+enc/vit/block1/norm1/scale
+[1]
+[1]
+enc/vit/block1/norm2/scale
+[1]
+[1]
+enc/vit/block2/attn/proj/bias
+[1]
+[1]
+enc/vit/block2/attn/proj/kernel
+[1]
+[1]
+enc/vit/block2/attn/qkv/bias
+[1]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block2/mlp0/bias
+[1]
+[1]
+enc/vit/block2/mlp0/kernel
+[1]
+[1]
+enc/vit/block2/mlp1/bias
+[1]
+[1]
+enc/vit/block2/mlp1/kernel
+[1]
+[1]
+enc/vit/block2/norm1/scale
+[1]
+[1]
+enc/vit/block2/norm2/scale
+[1]
+[1]
+enc/vit/block3/attn/proj/bias
+[1]
+[1]
+enc/vit/block3/attn/proj/kernel
+[1]
+[1]
+enc/vit/block3/attn/qkv/bias
+[1]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block3/mlp0/bias
+[1]
+[1]
+enc/vit/block3/mlp0/kernel
+[1]
+[1]
+enc/vit/block3/mlp1/bias
+[1]
+[1]
+enc/vit/block3/mlp1/kernel
+[1]
+[1]
+enc/vit/block3/norm1/scale
+[1]
+[1]
+enc/vit/block3/norm2/scale
+[1]
+[1]
+enc/vit/outnorm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cls
+[2]
+[1]
+enc/outnorm/scale
+[2]
+[1]
+enc/outproj/bias
+[2]
+[1]
+enc/outproj/kernel
+[2]
+[1]
+enc/patch_proj/bias
+[2]
+[1]
+enc/patch_proj/kernel
+[2]
+[1]
+enc/posemb
+[2]
+[1]
+enc/vit/block0/attn/proj/bias
+[2]
+[1]
+enc/vit/block0/attn/proj/kernel
+[2]
+[1]
+enc/vit/block0/attn/qkv/bias
+[2]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block0/mlp0/bias
+[2]
+[1]
+enc/vit/block0/mlp0/kernel
+[2]
+[1]
+enc/vit/block0/mlp1/bias
+[2]
+[1]
+enc/vit/block0/mlp1/kernel
+[2]
+[1]
+enc/vit/block0/norm1/scale
+[2]
+[1]
+enc/vit/block0/norm2/scale
+[2]
+[1]
+enc/vit/block1/attn/proj/bias
+[2]
+[1]
+enc/vit/block1/attn/proj/kernel
+[2]
+[1]
+enc/vit/block1/attn/qkv/bias
+[2]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block1/mlp0/bias
+[2]
+[1]
+enc/vit/block1/mlp0/kernel
+[2]
+[1]
+enc/vit/block1/mlp1/bias
+[2]
+[1]
+enc/vit/block1/mlp1/kernel
+[2]
+[1]
+enc/vit/block1/norm1/scale
+[2]
+[1]
+enc/vit/block1/norm2/scale
+[2]
+[1]
+enc/vit/block2/attn/proj/bias
+[2]
+[1]
+enc/vit/block2/attn/proj/kernel
+[2]
+[1]
+enc/vit/block2/attn/qkv/bias
+[2]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block2/mlp0/bias
+[2]
+[1]
+enc/vit/block2/mlp0/kernel
+[2]
+[1]
+enc/vit/block2/mlp1/bias
+[2]
+[1]
+enc/vit/block2/mlp1/kernel
+[2]
+[1]
+enc/vit/block2/norm1/scale
+[2]
+[1]
+enc/vit/block2/norm2/scale
+[2]
+[1]
+enc/vit/block3/attn/proj/bias
+[2]
+[1]
+enc/vit/block3/attn/proj/kernel
+[2]
+[1]
+enc/vit/block3/attn/qkv/bias
+[2]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block3/mlp0/bias
+[2]
+[1]
+enc/vit/block3/mlp0/kernel
+[2]
+[1]
+enc/vit/block3/mlp1/bias
+[2]
+[1]
+enc/vit/block3/mlp1/kernel
+[2]
+[1]
+enc/vit/block3/norm1/scale
+[2]
+[1]
+enc/vit/block3/norm2/scale
+[2]
+[1]
+enc/vit/outnorm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+Done initializing!
+Compiling 1 checkpoint groups...
+Largest checkpoint group: 1 GB
+Compiling train and report...
+[1]
+[0]
+[1]
+[1]
+con/head/logit/bias
+[1]
+[1]
+con/head/logit/kernel
+[1]
+[1]
+con/mlp/linear0/bias
+[1]
+[1]
+con/mlp/linear0/kernel
+[1]
+[1]
+con/mlp/norm0/scale
+[1]
+[1]
+dec/conv0/bias
+[1]
+[1]
+dec/conv0/kernel
+[1]
+[1]
+dec/conv0norm/scale
+[1]
+[1]
+dec/conv1/bias
+[1]
+[1]
+dec/conv1/kernel
+[1]
+[1]
+dec/conv1norm/scale
+[1]
+[1]
+dec/conv2/bias
+[1]
+[1]
+dec/conv2/kernel
+[1]
+[1]
+dec/conv2norm/scale
+[1]
+[1]
+dec/imgout/bias
+[1]
+[1]
+dec/imgout/kernel
+[1]
+[1]
+dec/sp0/bias
+[1]
+[1]
+dec/sp0/kernel
+[1]
+[1]
+dec/sp1/bias
+[1]
+[1]
+dec/sp1/kernel
+[1]
+[1]
+dec/sp1norm/scale
+[1]
+[1]
+dec/sp2/bias
+[1]
+[1]
+dec/sp2/kernel
+[1]
+[1]
+dec/spnorm/scale
+[1]
+[1]
+dyn/dyngru/bias
+[1]
+[1]
+dyn/dyngru/kernel
+[1]
+[1]
+dyn/dynhid0/bias
+[1]
+[1]
+dyn/dynhid0/kernel
+[1]
+[1]
+dyn/dynhid0norm/scale
+[1]
+[1]
+dyn/dynin0/bias
+[1]
+[1]
+dyn/dynin0/kernel
+[1]
+[1]
+dyn/dynin0norm/scale
+[1]
+[1]
+dyn/dynin1/bias
+[1]
+[1]
+dyn/dynin1/kernel
+[1]
+[1]
+dyn/dynin1norm/scale
+[1]
+[1]
+dyn/dynin2/bias
+[1]
+[1]
+dyn/dynin2/kernel
+[1]
+[1]
+dyn/dynin2norm/scale
+[1]
+[1]
+dyn/obs0/bias
+[1]
+[1]
+dyn/obs0/kernel
+[1]
+[1]
+dyn/obs0norm/scale
+[1]
+[1]
+dyn/obslogit/bias
+[1]
+[1]
+dyn/obslogit/kernel
+[1]
+[1]
+dyn/prior0/bias
+[1]
+[1]
+dyn/prior0/kernel
+[1]
+[1]
+dyn/prior0norm/scale
+[1]
+[1]
+dyn/prior1/bias
+[1]
+[1]
+dyn/prior1/kernel
+[1]
+[1]
+dyn/prior1norm/scale
+[1]
+[1]
+dyn/priorlogit/bias
+[1]
+[1]
+dyn/priorlogit/kernel
+[1]
+[1]
+enc/cls
+[1]
+[1]
+enc/outnorm/scale
+[1]
+[1]
+enc/outproj/bias
+[1]
+[1]
+enc/outproj/kernel
+[1]
+[1]
+enc/patch_proj/bias
+[1]
+[1]
+enc/patch_proj/kernel
+[1]
+[1]
+enc/posemb
+[1]
+[1]
+enc/vit/block0/attn/proj/bias
+[1]
+[1]
+enc/vit/block0/attn/proj/kernel
+[1]
+[1]
+enc/vit/block0/attn/qkv/bias
+[1]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block0/mlp0/bias
+[1]
+[1]
+enc/vit/block0/mlp0/kernel
+[1]
+[1]
+enc/vit/block0/mlp1/bias
+[1]
+[1]
+enc/vit/block0/mlp1/kernel
+[1]
+[1]
+enc/vit/block0/norm1/scale
+[1]
+[1]
+enc/vit/block0/norm2/scale
+[1]
+[1]
+enc/vit/block1/attn/proj/bias
+[1]
+[1]
+enc/vit/block1/attn/proj/kernel
+[1]
+[1]
+enc/vit/block1/attn/qkv/bias
+[1]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block1/mlp0/bias
+[1]
+[1]
+enc/vit/block1/mlp0/kernel
+[1]
+[1]
+enc/vit/block1/mlp1/bias
+[1]
+[1]
+enc/vit/block1/mlp1/kernel
+[1]
+[1]
+enc/vit/block1/norm1/scale
+[1]
+[1]
+enc/vit/block1/norm2/scale
+[1]
+[1]
+enc/vit/block2/attn/proj/bias
+[1]
+[1]
+enc/vit/block2/attn/proj/kernel
+[1]
+[1]
+enc/vit/block2/attn/qkv/bias
+[1]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block2/mlp0/bias
+[1]
+[1]
+enc/vit/block2/mlp0/kernel
+[1]
+[1]
+enc/vit/block2/mlp1/bias
+[1]
+[1]
+enc/vit/block2/mlp1/kernel
+[1]
+[1]
+enc/vit/block2/norm1/scale
+[1]
+[1]
+enc/vit/block2/norm2/scale
+[1]
+[1]
+enc/vit/block3/attn/proj/bias
+[1]
+[1]
+enc/vit/block3/attn/proj/kernel
+[1]
+[1]
+enc/vit/block3/attn/qkv/bias
+[1]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[1]
+[1]
+enc/vit/block3/mlp0/bias
+[1]
+[1]
+enc/vit/block3/mlp0/kernel
+[1]
+[1]
+enc/vit/block3/mlp1/bias
+[1]
+[1]
+enc/vit/block3/mlp1/kernel
+[1]
+[1]
+enc/vit/block3/norm1/scale
+[1]
+[1]
+enc/vit/block3/norm2/scale
+[1]
+[1]
+enc/vit/outnorm/scale
+[1]
+[1]
+pol/head/action/mean/bias
+[1]
+[1]
+pol/head/action/mean/kernel
+[1]
+[1]
+pol/head/action/stddev/bias
+[1]
+[1]
+pol/head/action/stddev/kernel
+[1]
+[1]
+pol/mlp/linear0/bias
+[1]
+[1]
+pol/mlp/linear0/kernel
+[1]
+[1]
+pol/mlp/linear1/bias
+[1]
+[1]
+pol/mlp/linear1/kernel
+[1]
+[1]
+pol/mlp/linear2/bias
+[1]
+[1]
+pol/mlp/linear2/kernel
+[1]
+[1]
+pol/mlp/norm0/scale
+[1]
+[1]
+pol/mlp/norm1/scale
+[1]
+[1]
+pol/mlp/norm2/scale
+[1]
+[1]
+rew/head/logits/bias
+[1]
+[1]
+rew/head/logits/kernel
+[1]
+[1]
+rew/mlp/linear0/bias
+[1]
+[1]
+rew/mlp/linear0/kernel
+[1]
+[1]
+rew/mlp/norm0/scale
+[1]
+[1]
+val/head/logits/bias
+[1]
+[1]
+val/head/logits/kernel
+[1]
+[1]
+val/mlp/linear0/bias
+[1]
+[1]
+val/mlp/linear0/kernel
+[1]
+[1]
+val/mlp/linear1/bias
+[1]
+[1]
+val/mlp/linear1/kernel
+[1]
+[1]
+val/mlp/linear2/bias
+[1]
+[1]
+val/mlp/linear2/kernel
+[1]
+[1]
+val/mlp/norm0/scale
+[1]
+[1]
+val/mlp/norm1/scale
+[1]
+[1]
+val/mlp/norm2/scale
+[2]
+[0]
+[2]
+[1]
+con/head/logit/bias
+[2]
+[1]
+con/head/logit/kernel
+[2]
+[1]
+con/mlp/linear0/bias
+[2]
+[1]
+con/mlp/linear0/kernel
+[2]
+[1]
+con/mlp/norm0/scale
+[2]
+[1]
+dec/conv0/bias
+[2]
+[1]
+dec/conv0/kernel
+[2]
+[1]
+dec/conv0norm/scale
+[2]
+[1]
+dec/conv1/bias
+[2]
+[1]
+dec/conv1/kernel
+[2]
+[1]
+dec/conv1norm/scale
+[2]
+[1]
+dec/conv2/bias
+[2]
+[1]
+dec/conv2/kernel
+[2]
+[1]
+dec/conv2norm/scale
+[2]
+[1]
+dec/imgout/bias
+[2]
+[1]
+dec/imgout/kernel
+[2]
+[1]
+dec/sp0/bias
+[2]
+[1]
+dec/sp0/kernel
+[2]
+[1]
+dec/sp1/bias
+[2]
+[1]
+dec/sp1/kernel
+[2]
+[1]
+dec/sp1norm/scale
+[2]
+[1]
+dec/sp2/bias
+[2]
+[1]
+dec/sp2/kernel
+[2]
+[1]
+dec/spnorm/scale
+[2]
+[1]
+dyn/dyngru/bias
+[2]
+[1]
+dyn/dyngru/kernel
+[2]
+[1]
+dyn/dynhid0/bias
+[2]
+[1]
+dyn/dynhid0/kernel
+[2]
+[1]
+dyn/dynhid0norm/scale
+[2]
+[1]
+dyn/dynin0/bias
+[2]
+[1]
+dyn/dynin0/kernel
+[2]
+[1]
+dyn/dynin0norm/scale
+[2]
+[1]
+dyn/dynin1/bias
+[2]
+[1]
+dyn/dynin1/kernel
+[2]
+[1]
+dyn/dynin1norm/scale
+[2]
+[1]
+dyn/dynin2/bias
+[2]
+[1]
+dyn/dynin2/kernel
+[2]
+[1]
+dyn/dynin2norm/scale
+[2]
+[1]
+dyn/obs0/bias
+[2]
+[1]
+dyn/obs0/kernel
+[2]
+[1]
+dyn/obs0norm/scale
+[2]
+[1]
+dyn/obslogit/bias
+[2]
+[1]
+dyn/obslogit/kernel
+[2]
+[1]
+dyn/prior0/bias
+[2]
+[1]
+dyn/prior0/kernel
+[2]
+[1]
+dyn/prior0norm/scale
+[2]
+[1]
+dyn/prior1/bias
+[2]
+[1]
+dyn/prior1/kernel
+[2]
+[1]
+dyn/prior1norm/scale
+[2]
+[1]
+dyn/priorlogit/bias
+[2]
+[1]
+dyn/priorlogit/kernel
+[2]
+[1]
+enc/cls
+[2]
+[1]
+enc/outnorm/scale
+[2]
+[1]
+enc/outproj/bias
+[2]
+[1]
+enc/outproj/kernel
+[2]
+[1]
+enc/patch_proj/bias
+[2]
+[1]
+enc/patch_proj/kernel
+[2]
+[1]
+enc/posemb
+[2]
+[1]
+enc/vit/block0/attn/proj/bias
+[2]
+[1]
+enc/vit/block0/attn/proj/kernel
+[2]
+[1]
+enc/vit/block0/attn/qkv/bias
+[2]
+[1]
+enc/vit/block0/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block0/mlp0/bias
+[2]
+[1]
+enc/vit/block0/mlp0/kernel
+[2]
+[1]
+enc/vit/block0/mlp1/bias
+[2]
+[1]
+enc/vit/block0/mlp1/kernel
+[2]
+[1]
+enc/vit/block0/norm1/scale
+[2]
+[1]
+enc/vit/block0/norm2/scale
+[2]
+[1]
+enc/vit/block1/attn/proj/bias
+[2]
+[1]
+enc/vit/block1/attn/proj/kernel
+[2]
+[1]
+enc/vit/block1/attn/qkv/bias
+[2]
+[1]
+enc/vit/block1/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block1/mlp0/bias
+[2]
+[1]
+enc/vit/block1/mlp0/kernel
+[2]
+[1]
+enc/vit/block1/mlp1/bias
+[2]
+[1]
+enc/vit/block1/mlp1/kernel
+[2]
+[1]
+enc/vit/block1/norm1/scale
+[2]
+[1]
+enc/vit/block1/norm2/scale
+[2]
+[1]
+enc/vit/block2/attn/proj/bias
+[2]
+[1]
+enc/vit/block2/attn/proj/kernel
+[2]
+[1]
+enc/vit/block2/attn/qkv/bias
+[2]
+[1]
+enc/vit/block2/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block2/mlp0/bias
+[2]
+[1]
+enc/vit/block2/mlp0/kernel
+[2]
+[1]
+enc/vit/block2/mlp1/bias
+[2]
+[1]
+enc/vit/block2/mlp1/kernel
+[2]
+[1]
+enc/vit/block2/norm1/scale
+[2]
+[1]
+enc/vit/block2/norm2/scale
+[2]
+[1]
+enc/vit/block3/attn/proj/bias
+[2]
+[1]
+enc/vit/block3/attn/proj/kernel
+[2]
+[1]
+enc/vit/block3/attn/qkv/bias
+[2]
+[1]
+enc/vit/block3/attn/qkv/kernel
+[2]
+[1]
+enc/vit/block3/mlp0/bias
+[2]
+[1]
+enc/vit/block3/mlp0/kernel
+[2]
+[1]
+enc/vit/block3/mlp1/bias
+[2]
+[1]
+enc/vit/block3/mlp1/kernel
+[2]
+[1]
+enc/vit/block3/norm1/scale
+[2]
+[1]
+enc/vit/block3/norm2/scale
+[2]
+[1]
+enc/vit/outnorm/scale
+[2]
+[1]
+pol/head/action/mean/bias
+[2]
+[1]
+pol/head/action/mean/kernel
+[2]
+[1]
+pol/head/action/stddev/bias
+[2]
+[1]
+pol/head/action/stddev/kernel
+[2]
+[1]
+pol/mlp/linear0/bias
+[2]
+[1]
+pol/mlp/linear0/kernel
+[2]
+[1]
+pol/mlp/linear1/bias
+[2]
+[1]
+pol/mlp/linear1/kernel
+[2]
+[1]
+pol/mlp/linear2/bias
+[2]
+[1]
+pol/mlp/linear2/kernel
+[2]
+[1]
+pol/mlp/norm0/scale
+[2]
+[1]
+pol/mlp/norm1/scale
+[2]
+[1]
+pol/mlp/norm2/scale
+[2]
+[1]
+rew/head/logits/bias
+[2]
+[1]
+rew/head/logits/kernel
+[2]
+[1]
+rew/mlp/linear0/bias
+[2]
+[1]
+rew/mlp/linear0/kernel
+[2]
+[1]
+rew/mlp/norm0/scale
+[2]
+[1]
+val/head/logits/bias
+[2]
+[1]
+val/head/logits/kernel
+[2]
+[1]
+val/mlp/linear0/bias
+[2]
+[1]
+val/mlp/linear0/kernel
+[2]
+[1]
+val/mlp/linear1/bias
+[2]
+[1]
+val/mlp/linear1/kernel
+[2]
+[1]
+val/mlp/linear2/bias
+[2]
+[1]
+val/mlp/linear2/kernel
+[2]
+[1]
+val/mlp/norm0/scale
+[2]
+[1]
+val/mlp/norm1/scale
+[2]
+[1]
+val/mlp/norm2/scale
+[3]
+.count
+2025-12-06 08:45:18.222907: E external/xla/xla/python/profiler/internal/python_hooks.cc:400] Can't import tensorflow.python.profiler.trace
+2025-12-06 08:45:31.068993: E external/xla/xla/python/profiler/internal/python_hooks.cc:400] Can't import tensorflow.python.profiler.trace
+Train cost analysis:
+  FLOPS:            5.8e+10
+  Memory (temp):    4.3e+09
+  Memory (inputs):  5.7e+08
+  Memory (outputs): 5.5e+08
+  Memory (code):    3.7e+06
+
+Report cost analysis:
+  FLOPS:            1.1e+09
+  Memory (temp):    2.5e+08
+  Memory (inputs):  1.5e+08
+  Memory (outputs): 1.0e+07
+  Memory (code):    8.1e+06
+
+Done compiling!
+Did not find any checkpoint.
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T084404F411377
+Saved checkpoint.
+Start training loop
+Start JAX profiler: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243
+Stop JAX profiler
+
+--------------------[Agent Step 4_272]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.17 / train/loss/dyn 9.89 / train/loss/image 358.4 / train/loss/policy -9.3e-4 / train/loss/rep 9.89 / train/loss/repval 10.56 / train/loss/rew 5.27 / train/loss/value 6.03 / replay/replay_ratio 47.85 / fps/policy 33.65 / fps/train 1387.38
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 7_328]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.72 / train/loss/image 29.46 / train/loss/policy -1.6e-3 / train/loss/rep 2.72 / train/loss/repval 6.77 / train/loss/rew 3.33 / train/loss/value 6.58 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.73
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 10_384]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 1.13 / train/loss/image 27.92 / train/loss/policy -9.4e-4 / train/loss/rep 1.13 / train/loss/repval 1.32 / train/loss/rew 0.6 / train/loss/value 1.28 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.69
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 13_456]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.1 / train/loss/image 25.76 / train/loss/policy -5.7e-4 / train/loss/rep 2.1 / train/loss/repval 0.09 / train/loss/rew 0.02 / train/loss/value 0.07 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.98
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 16_512]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0.02 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.56 / train/loss/image 22.37 / train/loss/policy -6.7e-4 / train/loss/rep 2.56 / train/loss/repval 0.11 / train/loss/rew 8.3e-3 / train/loss/value 0.1 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1629.07
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 19_568]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.63 / train/loss/image 17.04 / train/loss/policy -4.5e-4 / train/loss/rep 2.63 / train/loss/repval 0.16 / train/loss/rew 6.8e-3 / train/loss/value 0.15 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.38
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 22_624]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3 / train/loss/image 12.84 / train/loss/policy -6.7e-4 / train/loss/rep 3 / train/loss/repval 0.2 / train/loss/rew 3.6e-3 / train/loss/value 0.19 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.49
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T085909F942210
+Saved checkpoint.
+
+--------------------[Agent Step 25_568]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0.01 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.31 / train/loss/image 10.47 / train/loss/policy 1.5e-3 / train/loss/rep 3.31 / train/loss/repval 0.26 / train/loss/rew 0.01 / train/loss/value 0.24 / replay/replay_ratio 65 / fps/policy 24.5 / fps/train 1567.77
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 28_624]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.1 / train/loss/image 8.73 / train/loss/policy 5.7e-3 / train/loss/rep 3.1 / train/loss/repval 0.38 / train/loss/rew 0.01 / train/loss/value 0.35 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.81
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 31_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.93 / train/loss/image 7.27 / train/loss/policy 0.02 / train/loss/rep 2.93 / train/loss/repval 0.49 / train/loss/rew 0.01 / train/loss/value 0.45 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.33
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 34_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 16.23 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.01 / train/loss/image 6.94 / train/loss/policy 0.09 / train/loss/rep 3.01 / train/loss/repval 1.21 / train/loss/rew 0.01 / train/loss/value 1.2 / replay/replay_ratio 65 / fps/policy 25.31 / fps/train 1620.04
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 37_776]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.09 / train/loss/image 6.85 / train/loss/policy 0.09 / train/loss/rep 3.09 / train/loss/repval 1.37 / train/loss/rew 6.6e-3 / train/loss/value 1.35 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.37
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 40_848]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 14.73 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.08 / train/loss/image 6.95 / train/loss/policy 0.08 / train/loss/rep 3.08 / train/loss/repval 1.45 / train/loss/rew 1e-2 / train/loss/value 1.37 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.47
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 43_920]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.09 / train/loss/image 6.92 / train/loss/policy 0.1 / train/loss/rep 3.09 / train/loss/repval 1.65 / train/loss/rew 0.01 / train/loss/value 1.45 / replay/replay_ratio 65 / fps/policy 25.49 / fps/train 1631.21
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T091410F575620
+Saved checkpoint.
+
+--------------------[Agent Step 46_912]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.1 / train/loss/image 6.7 / train/loss/policy 0.06 / train/loss/rep 3.1 / train/loss/repval 1.72 / train/loss/rew 0.01 / train/loss/value 1.52 / replay/replay_ratio 65 / fps/policy 24.78 / fps/train 1586.1
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 49_952]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.1 / train/loss/image 6.43 / train/loss/policy 0.02 / train/loss/rep 3.1 / train/loss/repval 1.59 / train/loss/rew 0.02 / train/loss/value 1.42 / replay/replay_ratio 65 / fps/policy 25.26 / fps/train 1616.57
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 53_024]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.04 / train/loss/image 6.32 / train/loss/policy 0.02 / train/loss/rep 3.04 / train/loss/repval 1.56 / train/loss/rew 0.02 / train/loss/value 1.39 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.63
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 56_096]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 38.75 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.05 / train/loss/image 6.36 / train/loss/policy 0.02 / train/loss/rep 3.05 / train/loss/repval 1.55 / train/loss/rew 0.02 / train/loss/value 1.39 / replay/replay_ratio 65 / fps/policy 25.47 / fps/train 1630.08
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 59_152]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.09 / train/loss/image 6.36 / train/loss/policy 0.04 / train/loss/rep 3.09 / train/loss/repval 1.66 / train/loss/rew 0.02 / train/loss/value 1.42 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.67
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 62_192]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.12 / train/loss/image 6.44 / train/loss/policy 0.04 / train/loss/rep 3.12 / train/loss/repval 1.62 / train/loss/rew 0.02 / train/loss/value 1.38 / replay/replay_ratio 65 / fps/policy 25.25 / fps/train 1616.32
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 65_264]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 2.5e-3 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.16 / train/loss/image 6.37 / train/loss/policy 0.03 / train/loss/rep 3.16 / train/loss/repval 1.56 / train/loss/rew 0.02 / train/loss/value 1.31 / replay/replay_ratio 65 / fps/policy 25.49 / fps/train 1631.23
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 68_320]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.18 / train/loss/image 6.37 / train/loss/policy 0.03 / train/loss/rep 3.18 / train/loss/repval 1.52 / train/loss/rew 0.02 / train/loss/value 1.22 / replay/replay_ratio 65 / fps/policy 25.47 / fps/train 1629.87
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T092911F157556
+Saved checkpoint.
+
+--------------------[Agent Step 71_280]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3 / train/loss/image 6.12 / train/loss/policy 0.04 / train/loss/rep 3 / train/loss/repval 1.48 / train/loss/rew 0.02 / train/loss/value 1.22 / replay/replay_ratio 65 / fps/policy 24.55 / fps/train 1571.44
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 74_336]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 0.05 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 3.06 / train/loss/image 6.27 / train/loss/policy 0.05 / train/loss/rep 3.06 / train/loss/repval 1.81 / train/loss/rew 0.02 / train/loss/value 1.53 / replay/replay_ratio 65 / fps/policy 25.41 / fps/train 1626.55
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 77_392]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 3.02 / train/loss/image 6.11 / train/loss/policy 0.05 / train/loss/rep 3.02 / train/loss/repval 1.83 / train/loss/rew 0.02 / train/loss/value 1.57 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.66
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 80_448]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 61.73 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.93 / train/loss/image 6 / train/loss/policy 0.06 / train/loss/rep 2.93 / train/loss/repval 1.83 / train/loss/rew 0.02 / train/loss/value 1.55 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.6
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 83_504]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.88 / train/loss/image 5.91 / train/loss/policy 0.07 / train/loss/rep 2.88 / train/loss/repval 1.83 / train/loss/rew 0.03 / train/loss/value 1.55 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.38
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 86_560]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.88 / train/loss/image 5.88 / train/loss/policy 0.06 / train/loss/rep 2.88 / train/loss/repval 1.83 / train/loss/rew 0.03 / train/loss/value 1.58 / replay/replay_ratio 65 / fps/policy 25.44 / fps/train 1627.97
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 89_632]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 57.67 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.81 / train/loss/image 5.73 / train/loss/policy 0.05 / train/loss/rep 2.81 / train/loss/repval 1.77 / train/loss/rew 0.04 / train/loss/value 1.49 / replay/replay_ratio 65 / fps/policy 25.51 / fps/train 1632.37
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T094411F372560
+Saved checkpoint.
+
+--------------------[Agent Step 92_592]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.73 / train/loss/image 5.55 / train/loss/policy 0.05 / train/loss/rep 2.73 / train/loss/repval 1.58 / train/loss/rew 0.04 / train/loss/value 1.42 / replay/replay_ratio 65 / fps/policy 24.58 / fps/train 1573.3
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 95_664]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.69 / train/loss/image 5.42 / train/loss/policy 0.05 / train/loss/rep 2.69 / train/loss/repval 1.56 / train/loss/rew 0.04 / train/loss/value 1.34 / replay/replay_ratio 65 / fps/policy 25.49 / fps/train 1631.57
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 98_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 43.62 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.75 / train/loss/image 5.52 / train/loss/policy 0.04 / train/loss/rep 2.75 / train/loss/repval 1.42 / train/loss/rew 0.04 / train/loss/value 1.22 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.21
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 101_792]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.71 / train/loss/image 5.45 / train/loss/policy 0.04 / train/loss/rep 2.71 / train/loss/repval 1.36 / train/loss/rew 0.04 / train/loss/value 1.23 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.98
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 104_848]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 14.85 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.68 / train/loss/image 5.38 / train/loss/policy 0.04 / train/loss/rep 2.68 / train/loss/repval 1.45 / train/loss/rew 0.05 / train/loss/value 1.14 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.48
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 107_904]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.62 / train/loss/image 5.21 / train/loss/policy 0.04 / train/loss/rep 2.62 / train/loss/repval 1.37 / train/loss/rew 0.04 / train/loss/value 1.18 / replay/replay_ratio 65 / fps/policy 25.35 / fps/train 1622.3
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 110_960]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.68 / train/loss/image 5.23 / train/loss/policy 0.04 / train/loss/rep 2.68 / train/loss/repval 1.29 / train/loss/rew 0.05 / train/loss/value 1.19 / replay/replay_ratio 65 / fps/policy 25.36 / fps/train 1622.9
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 114_016]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 71.52 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.73 / train/loss/image 5.23 / train/loss/policy 0.04 / train/loss/rep 2.73 / train/loss/repval 1.35 / train/loss/rew 0.05 / train/loss/value 1.18 / replay/replay_ratio 65 / fps/policy 25.42 / fps/train 1627.04
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T095911F709473
+Saved checkpoint.
+
+--------------------[Agent Step 116_960]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.86 / train/loss/image 5.15 / train/loss/policy 0.04 / train/loss/rep 2.86 / train/loss/repval 1.4 / train/loss/rew 0.05 / train/loss/value 1.13 / replay/replay_ratio 65 / fps/policy 24.5 / fps/train 1568.25
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 120_016]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.66 / train/loss/image 4.99 / train/loss/policy 0.04 / train/loss/rep 2.66 / train/loss/repval 1.29 / train/loss/rew 0.05 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.39 / fps/train 1625.19
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 123_072]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 62.32 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.92 / train/loss/image 5.02 / train/loss/policy 0.04 / train/loss/rep 2.92 / train/loss/repval 1.34 / train/loss/rew 0.05 / train/loss/value 1.2 / replay/replay_ratio 65 / fps/policy 25.38 / fps/train 1624.44
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 126_128]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.68 / train/loss/image 4.79 / train/loss/policy 0.03 / train/loss/rep 2.68 / train/loss/repval 1.34 / train/loss/rew 0.06 / train/loss/value 1.17 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.23
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 129_184]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 52.52 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.8 / train/loss/image 4.66 / train/loss/policy 0.03 / train/loss/rep 2.8 / train/loss/repval 1.25 / train/loss/rew 0.05 / train/loss/value 1.14 / replay/replay_ratio 65 / fps/policy 25.38 / fps/train 1624.44
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 132_240]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.76 / train/loss/image 4.5 / train/loss/policy 0.03 / train/loss/rep 2.76 / train/loss/repval 1.27 / train/loss/rew 0.06 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.38 / fps/train 1624.31
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 135_296]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.74 / train/loss/image 4.48 / train/loss/policy 0.04 / train/loss/rep 2.74 / train/loss/repval 1.26 / train/loss/rew 0.06 / train/loss/value 1.06 / replay/replay_ratio 65 / fps/policy 25.35 / fps/train 1622.22
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T101411F962614
+Saved checkpoint.
+
+--------------------[Agent Step 138_256]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 67.09 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.67 / train/loss/image 4.34 / train/loss/policy 0.04 / train/loss/rep 2.67 / train/loss/repval 1.22 / train/loss/rew 0.06 / train/loss/value 1.06 / replay/replay_ratio 65 / fps/policy 24.57 / fps/train 1572.27
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 141_328]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.65 / train/loss/image 4.23 / train/loss/policy 0.04 / train/loss/rep 2.65 / train/loss/repval 1.2 / train/loss/rew 0.06 / train/loss/value 1.12 / replay/replay_ratio 65 / fps/policy 25.47 / fps/train 1630.37
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 144_384]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 66.06 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.62 / train/loss/image 4.11 / train/loss/policy 0.03 / train/loss/rep 2.62 / train/loss/repval 1.24 / train/loss/rew 0.06 / train/loss/value 1.12 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.44
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 147_440]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.65 / train/loss/image 4.12 / train/loss/policy 0.03 / train/loss/rep 2.65 / train/loss/repval 1.25 / train/loss/rew 0.06 / train/loss/value 1.12 / replay/replay_ratio 65 / fps/policy 25.41 / fps/train 1625.99
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 150_480]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.54 / train/loss/image 3.97 / train/loss/policy 0.03 / train/loss/rep 2.54 / train/loss/repval 1.18 / train/loss/rew 0.06 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.31 / fps/train 1619.75
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 153_536]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 59.79 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.57 / train/loss/image 3.98 / train/loss/policy 0.03 / train/loss/rep 2.57 / train/loss/repval 1.18 / train/loss/rew 0.07 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25.37 / fps/train 1623.47
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 156_592]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.51 / train/loss/image 3.81 / train/loss/policy 0.03 / train/loss/rep 2.51 / train/loss/repval 1.19 / train/loss/rew 0.07 / train/loss/value 1.05 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.86
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 159_664]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.51 / train/loss/image 3.83 / train/loss/policy 0.03 / train/loss/rep 2.51 / train/loss/repval 1.17 / train/loss/rew 0.07 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 25.53 / fps/train 1634.1
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T102912F115001
+Saved checkpoint.
+
+--------------------[Agent Step 162_624]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 70.67 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.47 / train/loss/image 3.76 / train/loss/policy 0.03 / train/loss/rep 2.47 / train/loss/repval 1.09 / train/loss/rew 0.07 / train/loss/value 0.99 / replay/replay_ratio 65 / fps/policy 24.6 / fps/train 1574.14
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 165_696]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 3.63 / train/loss/policy 0.03 / train/loss/rep 2.42 / train/loss/repval 1.06 / train/loss/rew 0.07 / train/loss/value 1.03 / replay/replay_ratio 65 / fps/policy 25.54 / fps/train 1634.27
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 168_768]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 68.85 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.46 / train/loss/image 3.61 / train/loss/policy 0.03 / train/loss/rep 2.46 / train/loss/repval 1.1 / train/loss/rew 0.07 / train/loss/value 1.08 / replay/replay_ratio 65 / fps/policy 25.53 / fps/train 1633.81
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 171_824]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 3.5 / train/loss/policy 0.03 / train/loss/rep 2.38 / train/loss/repval 1.13 / train/loss/rew 0.07 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.13
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 174_896]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 3.49 / train/loss/policy 0.02 / train/loss/rep 2.38 / train/loss/repval 1.18 / train/loss/rew 0.07 / train/loss/value 1.08 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.82
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 177_952]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 70.93 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.35 / train/loss/image 3.44 / train/loss/policy 0.03 / train/loss/rep 2.35 / train/loss/repval 1.19 / train/loss/rew 0.07 / train/loss/value 1.04 / replay/replay_ratio 65 / fps/policy 25.44 / fps/train 1627.86
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 181_008]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.33 / train/loss/image 3.35 / train/loss/policy 0.03 / train/loss/rep 2.33 / train/loss/repval 1.15 / train/loss/rew 0.07 / train/loss/value 1.02 / replay/replay_ratio 65 / fps/policy 25.35 / fps/train 1622.18
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T104412F327711
+Saved checkpoint.
+
+--------------------[Agent Step 183_968]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.34 / train/loss/image 3.34 / train/loss/policy 0.02 / train/loss/rep 2.34 / train/loss/repval 1.09 / train/loss/rew 0.07 / train/loss/value 1.04 / replay/replay_ratio 65 / fps/policy 24.55 / fps/train 1571.44
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 187_024]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 74.06 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.33 / train/loss/image 3.3 / train/loss/policy 0.02 / train/loss/rep 2.33 / train/loss/repval 1.09 / train/loss/rew 0.08 / train/loss/value 1.04 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.58
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 190_096]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.3 / train/loss/image 3.26 / train/loss/policy 0.03 / train/loss/rep 2.3 / train/loss/repval 1.1 / train/loss/rew 0.08 / train/loss/value 1.03 / replay/replay_ratio 65 / fps/policy 25.51 / fps/train 1632.6
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 193_152]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 69.34 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.31 / train/loss/image 3.24 / train/loss/policy 0.02 / train/loss/rep 2.31 / train/loss/repval 1.12 / train/loss/rew 0.08 / train/loss/value 1.01 / replay/replay_ratio 65 / fps/policy 25.41 / fps/train 1626.16
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 196_208]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.31 / train/loss/image 3.22 / train/loss/policy 0.02 / train/loss/rep 2.31 / train/loss/repval 1.12 / train/loss/rew 0.08 / train/loss/value 0.99 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.59
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 199_264]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.33 / train/loss/image 3.22 / train/loss/policy 0.02 / train/loss/rep 2.33 / train/loss/repval 1.12 / train/loss/rew 0.08 / train/loss/value 0.95 / replay/replay_ratio 65 / fps/policy 25.38 / fps/train 1624.53
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 202_336]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 78.8 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.3 / train/loss/image 3.16 / train/loss/policy 0.02 / train/loss/rep 2.3 / train/loss/repval 1.11 / train/loss/rew 0.08 / train/loss/value 0.95 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.96
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 205_408]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.27 / train/loss/image 3.08 / train/loss/policy 0.02 / train/loss/rep 2.27 / train/loss/repval 1.08 / train/loss/rew 0.08 / train/loss/value 0.97 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.81
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T105912F663614
+Saved checkpoint.
+
+--------------------[Agent Step 208_368]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 82.4 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.25 / train/loss/image 3.04 / train/loss/policy 0.02 / train/loss/rep 2.25 / train/loss/repval 1.02 / train/loss/rew 0.08 / train/loss/value 1.01 / replay/replay_ratio 65 / fps/policy 24.66 / fps/train 1578.53
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 211_440]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.27 / train/loss/image 3.04 / train/loss/policy 0.01 / train/loss/rep 2.27 / train/loss/repval 1.01 / train/loss/rew 0.08 / train/loss/value 1.04 / replay/replay_ratio 65 / fps/policy 25.49 / fps/train 1631.32
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 214_496]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.27 / train/loss/image 3 / train/loss/policy 0.01 / train/loss/rep 2.27 / train/loss/repval 1.02 / train/loss/rew 0.09 / train/loss/value 1.04 / replay/replay_ratio 65 / fps/policy 25.44 / fps/train 1628.32
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 217_552]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 82.42 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.26 / train/loss/image 3 / train/loss/policy 0.01 / train/loss/rep 2.26 / train/loss/repval 1.04 / train/loss/rew 0.08 / train/loss/value 1.05 / replay/replay_ratio 65 / fps/policy 25.41 / fps/train 1626.44
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 220_608]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.23 / train/loss/image 2.94 / train/loss/policy 0.01 / train/loss/rep 2.23 / train/loss/repval 1.07 / train/loss/rew 0.09 / train/loss/value 1.04 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.57
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 223_664]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.26 / train/loss/image 2.93 / train/loss/policy 0.01 / train/loss/rep 2.26 / train/loss/repval 1.1 / train/loss/rew 0.09 / train/loss/value 1.03 / replay/replay_ratio 65 / fps/policy 25.39 / fps/train 1625.22
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 226_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 85.58 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.26 / train/loss/image 2.93 / train/loss/policy 0.01 / train/loss/rep 2.26 / train/loss/repval 1.11 / train/loss/rew 0.09 / train/loss/value 1.01 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.32
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T111412F803055
+Saved checkpoint.
+
+--------------------[Agent Step 229_680]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.24 / train/loss/image 2.88 / train/loss/policy 0.01 / train/loss/rep 2.24 / train/loss/repval 1.12 / train/loss/rew 0.09 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 24.64 / fps/train 1577.22
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 232_752]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 82.47 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.28 / train/loss/image 2.9 / train/loss/policy 0.01 / train/loss/rep 2.28 / train/loss/repval 1.11 / train/loss/rew 0.09 / train/loss/value 0.97 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.94
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 235_824]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.23 / train/loss/image 2.83 / train/loss/policy 0.01 / train/loss/rep 2.23 / train/loss/repval 1.1 / train/loss/rew 0.09 / train/loss/value 0.95 / replay/replay_ratio 65 / fps/policy 25.49 / fps/train 1631.28
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 238_880]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.25 / train/loss/image 2.83 / train/loss/policy 0.01 / train/loss/rep 2.25 / train/loss/repval 1.06 / train/loss/rew 0.09 / train/loss/value 0.97 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.57
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 241_936]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 99.86 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.26 / train/loss/image 2.83 / train/loss/policy 0.01 / train/loss/rep 2.26 / train/loss/repval 1.02 / train/loss/rew 0.09 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 25.39 / fps/train 1624.7
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 244_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.22 / train/loss/image 2.76 / train/loss/policy 0.01 / train/loss/rep 2.22 / train/loss/repval 1.01 / train/loss/rew 0.09 / train/loss/value 0.99 / replay/replay_ratio 65 / fps/policy 25.42 / fps/train 1627.12
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 248_064]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.25 / train/loss/image 2.8 / train/loss/policy 0.02 / train/loss/rep 2.25 / train/loss/repval 1.02 / train/loss/rew 0.09 / train/loss/value 1.01 / replay/replay_ratio 65 / fps/policy 25.51 / fps/train 1632.42
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 251_120]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 115.95 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.26 / train/loss/image 2.82 / train/loss/policy 0.01 / train/loss/rep 2.26 / train/loss/repval 1.05 / train/loss/rew 0.09 / train/loss/value 1.03 / replay/replay_ratio 65 / fps/policy 25.35 / fps/train 1622.43
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T112913F396972
+Saved checkpoint.
+
+--------------------[Agent Step 254_080]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.25 / train/loss/image 2.78 / train/loss/policy 0.01 / train/loss/rep 2.25 / train/loss/repval 1.07 / train/loss/rew 0.09 / train/loss/value 1.04 / replay/replay_ratio 65 / fps/policy 24.59 / fps/train 1573.64
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 257_136]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 112.64 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.29 / train/loss/image 2.8 / train/loss/policy 0.01 / train/loss/rep 2.29 / train/loss/repval 1.08 / train/loss/rew 0.1 / train/loss/value 1.03 / replay/replay_ratio 65 / fps/policy 25.42 / fps/train 1626.97
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 260_192]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.23 / train/loss/image 2.7 / train/loss/policy 0.01 / train/loss/rep 2.23 / train/loss/repval 1.07 / train/loss/rew 0.1 / train/loss/value 1.03 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.41
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 263_248]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.29 / train/loss/image 2.74 / train/loss/policy 8.6e-3 / train/loss/rep 2.29 / train/loss/repval 1.05 / train/loss/rew 0.1 / train/loss/value 1.02 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.96
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 266_304]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 103.11 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.34 / train/loss/image 2.77 / train/loss/policy 7.7e-3 / train/loss/rep 2.34 / train/loss/repval 1.06 / train/loss/rew 0.1 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 25.47 / fps/train 1629.78
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 269_360]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.34 / train/loss/image 2.73 / train/loss/policy 0.01 / train/loss/rep 2.34 / train/loss/repval 1.06 / train/loss/rew 0.1 / train/loss/value 0.99 / replay/replay_ratio 65 / fps/policy 25.37 / fps/train 1623.81
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 272_416]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 119.7 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.36 / train/loss/image 2.74 / train/loss/policy 0.01 / train/loss/rep 2.36 / train/loss/repval 1.06 / train/loss/rew 0.1 / train/loss/value 0.97 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.23
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T114413F503981
+Saved checkpoint.
+
+--------------------[Agent Step 275_360]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.81 / train/loss/policy 0.01 / train/loss/rep 2.38 / train/loss/repval 1.07 / train/loss/rew 0.1 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 24.52 / fps/train 1569.41
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 278_432]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 2.76 / train/loss/policy 0.01 / train/loss/rep 2.37 / train/loss/repval 1.08 / train/loss/rew 0.1 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.93
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 281_488]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 108.54 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.75 / train/loss/policy 9.4e-3 / train/loss/rep 2.38 / train/loss/repval 1.09 / train/loss/rew 0.11 / train/loss/value 1.05 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.44
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 284_544]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.43 / train/loss/image 2.78 / train/loss/policy 0.01 / train/loss/rep 2.43 / train/loss/repval 1.09 / train/loss/rew 0.11 / train/loss/value 1.06 / replay/replay_ratio 65 / fps/policy 25.44 / fps/train 1628.3
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 287_600]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.75 / train/loss/policy 0.01 / train/loss/rep 2.42 / train/loss/repval 1.12 / train/loss/rew 0.11 / train/loss/value 1.06 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.74
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 290_656]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 117.74 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.69 / train/loss/policy 7.2e-3 / train/loss/rep 2.38 / train/loss/repval 1.13 / train/loss/rew 0.11 / train/loss/value 1.01 / replay/replay_ratio 65 / fps/policy 25.34 / fps/train 1621.81
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 293_712]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 2.66 / train/loss/policy 8.3e-3 / train/loss/rep 2.37 / train/loss/repval 1.11 / train/loss/rew 0.11 / train/loss/value 0.99 / replay/replay_ratio 65 / fps/policy 25.42 / fps/train 1626.72
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 296_784]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 122.56 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.36 / train/loss/image 2.63 / train/loss/policy 0.01 / train/loss/rep 2.36 / train/loss/repval 1.06 / train/loss/rew 0.11 / train/loss/value 0.97 / replay/replay_ratio 65 / fps/policy 25.49 / fps/train 1631.36
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T115913F650845
+Saved checkpoint.
+
+--------------------[Agent Step 299_744]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.45 / train/loss/image 2.67 / train/loss/policy 6.9e-3 / train/loss/rep 2.45 / train/loss/repval 1.03 / train/loss/rew 0.11 / train/loss/value 0.96 / replay/replay_ratio 65 / fps/policy 24.55 / fps/train 1571.16
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 302_800]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.36 / train/loss/image 2.61 / train/loss/policy 0.01 / train/loss/rep 2.36 / train/loss/repval 1.01 / train/loss/rew 0.11 / train/loss/value 0.95 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.6
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 305_872]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 111.73 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.65 / train/loss/policy 0.01 / train/loss/rep 2.41 / train/loss/repval 1.01 / train/loss/rew 0.11 / train/loss/value 0.95 / replay/replay_ratio 65 / fps/policy 25.47 / fps/train 1629.87
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 308_928]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.4 / train/loss/image 2.62 / train/loss/policy 0.01 / train/loss/rep 2.4 / train/loss/repval 1.02 / train/loss/rew 0.11 / train/loss/value 0.96 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.61
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 312_000]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.4 / train/loss/image 2.59 / train/loss/policy 0.01 / train/loss/rep 2.4 / train/loss/repval 1.04 / train/loss/rew 0.11 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 25.47 / fps/train 1630.07
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 315_056]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 125.4 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.58 / train/loss/policy 0.01 / train/loss/rep 2.38 / train/loss/repval 1.07 / train/loss/rew 0.11 / train/loss/value 1.06 / replay/replay_ratio 65 / fps/policy 25.39 / fps/train 1624.69
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 318_112]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.56 / train/loss/policy 0.01 / train/loss/rep 2.39 / train/loss/repval 1.09 / train/loss/rew 0.11 / train/loss/value 1.09 / replay/replay_ratio 65 / fps/policy 25.47 / fps/train 1630.07
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T121413F761761
+Saved checkpoint.
+
+--------------------[Agent Step 321_072]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 120.52 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.57 / train/loss/policy 7.8e-3 / train/loss/rep 2.39 / train/loss/repval 1.13 / train/loss/rew 0.11 / train/loss/value 1.09 / replay/replay_ratio 65 / fps/policy 24.61 / fps/train 1574.84
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 324_128]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.6 / train/loss/policy 6.8e-3 / train/loss/rep 2.42 / train/loss/repval 1.16 / train/loss/rew 0.12 / train/loss/value 1.06 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.22
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 327_184]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.55 / train/loss/policy 5.1e-3 / train/loss/rep 2.38 / train/loss/repval 1.15 / train/loss/rew 0.11 / train/loss/value 1.02 / replay/replay_ratio 65 / fps/policy 25.44 / fps/train 1628.01
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 330_240]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 143.31 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.55 / train/loss/policy 8.6e-3 / train/loss/rep 2.42 / train/loss/repval 1.11 / train/loss/rew 0.11 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 25.39 / fps/train 1625.17
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 333_296]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.52 / train/loss/policy 0.01 / train/loss/rep 2.41 / train/loss/repval 1.05 / train/loss/rew 0.11 / train/loss/value 0.96 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.42
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 336_352]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 146.16 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.49 / train/loss/policy 0.01 / train/loss/rep 2.41 / train/loss/repval 0.98 / train/loss/rew 0.11 / train/loss/value 0.94 / replay/replay_ratio 65 / fps/policy 25.42 / fps/train 1627
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 339_408]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.47 / train/loss/policy 0.01 / train/loss/rep 2.38 / train/loss/repval 0.95 / train/loss/rew 0.12 / train/loss/value 0.94 / replay/replay_ratio 65 / fps/policy 25.41 / fps/train 1626.48
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 342_464]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.46 / train/loss/policy 0.02 / train/loss/rep 2.42 / train/loss/repval 0.98 / train/loss/rew 0.12 / train/loss/value 0.96 / replay/replay_ratio 65 / fps/policy 25.39 / fps/train 1625.07
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T122913F849823
+Saved checkpoint.
+
+--------------------[Agent Step 345_424]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 159.41 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.43 / train/loss/image 2.51 / train/loss/policy 0.02 / train/loss/rep 2.43 / train/loss/repval 1 / train/loss/rew 0.12 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 24.59 / fps/train 1573.73
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 348_480]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.4 / train/loss/image 2.45 / train/loss/policy 0.01 / train/loss/rep 2.4 / train/loss/repval 1.02 / train/loss/rew 0.12 / train/loss/value 1.03 / replay/replay_ratio 65 / fps/policy 25.39 / fps/train 1625.21
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 351_552]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.35 / train/loss/image 2.41 / train/loss/policy 0.01 / train/loss/rep 2.35 / train/loss/repval 1.05 / train/loss/rew 0.12 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.59
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 354_608]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 159.31 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.44 / train/loss/policy 0.01 / train/loss/rep 2.42 / train/loss/repval 1.09 / train/loss/rew 0.12 / train/loss/value 1.09 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.68
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 357_664]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 2.38 / train/loss/policy 0.01 / train/loss/rep 2.37 / train/loss/repval 1.13 / train/loss/rew 0.12 / train/loss/value 1.08 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.76
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 360_720]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 149.24 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 2.37 / train/loss/policy 0.01 / train/loss/rep 2.37 / train/loss/repval 1.17 / train/loss/rew 0.12 / train/loss/value 1.06 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.21
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 363_776]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.44 / train/loss/image 2.45 / train/loss/policy 7.3e-3 / train/loss/rep 2.44 / train/loss/repval 1.18 / train/loss/rew 0.12 / train/loss/value 1.02 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.65
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T124414F297890
+Saved checkpoint.
+
+--------------------[Agent Step 366_736]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.4 / train/loss/image 2.41 / train/loss/policy 8.4e-3 / train/loss/rep 2.4 / train/loss/repval 1.16 / train/loss/rew 0.12 / train/loss/value 0.99 / replay/replay_ratio 65 / fps/policy 24.6 / fps/train 1574.29
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 369_792]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 171.3 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.37 / train/loss/policy 0.01 / train/loss/rep 2.42 / train/loss/repval 1.13 / train/loss/rew 0.12 / train/loss/value 0.96 / replay/replay_ratio 65 / fps/policy 25.44 / fps/train 1628.36
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 372_848]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.36 / train/loss/image 2.29 / train/loss/policy 0.01 / train/loss/rep 2.36 / train/loss/repval 1.09 / train/loss/rew 0.12 / train/loss/value 0.93 / replay/replay_ratio 65 / fps/policy 25.44 / fps/train 1627.88
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 375_920]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.33 / train/loss/policy 0.01 / train/loss/rep 2.39 / train/loss/repval 1.03 / train/loss/rew 0.12 / train/loss/value 0.92 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.81
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 378_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 180 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.35 / train/loss/policy 0.01 / train/loss/rep 2.41 / train/loss/repval 0.97 / train/loss/rew 0.12 / train/loss/value 0.92 / replay/replay_ratio 65 / fps/policy 25.51 / fps/train 1632.33
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 382_064]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.3 / train/loss/policy 0.02 / train/loss/rep 2.39 / train/loss/repval 0.94 / train/loss/rew 0.12 / train/loss/value 0.91 / replay/replay_ratio 65 / fps/policy 25.47 / fps/train 1630.34
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 385_136]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 160.67 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.31 / train/loss/policy 0.02 / train/loss/rep 2.41 / train/loss/repval 0.95 / train/loss/rew 0.12 / train/loss/value 0.94 / replay/replay_ratio 65 / fps/policy 25.52 / fps/train 1633.27
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 388_208]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.27 / train/loss/policy 0.02 / train/loss/rep 2.39 / train/loss/repval 0.97 / train/loss/rew 0.12 / train/loss/value 0.99 / replay/replay_ratio 65 / fps/policy 25.49 / fps/train 1631.45
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T125914F470489
+Saved checkpoint.
+
+--------------------[Agent Step 391_152]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.35 / train/loss/image 2.24 / train/loss/policy 0.02 / train/loss/rep 2.35 / train/loss/repval 0.98 / train/loss/rew 0.12 / train/loss/value 1.05 / replay/replay_ratio 65 / fps/policy 24.53 / fps/train 1569.84
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 394_208]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 154.66 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.4 / train/loss/image 2.28 / train/loss/policy 0.02 / train/loss/rep 2.4 / train/loss/repval 1 / train/loss/rew 0.12 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.35 / fps/train 1622.16
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 397_264]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.27 / train/loss/policy 0.01 / train/loss/rep 2.39 / train/loss/repval 1.04 / train/loss/rew 0.12 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.31
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 400_320]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.27 / train/loss/policy 0.01 / train/loss/rep 2.42 / train/loss/repval 1.08 / train/loss/rew 0.13 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.42 / fps/train 1626.9
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 403_376]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 163.02 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 2.21 / train/loss/policy 0.01 / train/loss/rep 2.37 / train/loss/repval 1.12 / train/loss/rew 0.13 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.42 / fps/train 1626.84
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 406_432]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.22 / train/loss/policy 1e-2 / train/loss/rep 2.39 / train/loss/repval 1.15 / train/loss/rew 0.13 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25.44 / fps/train 1628.32
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 409_488]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 149.33 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.22 / train/loss/policy 0.01 / train/loss/rep 2.41 / train/loss/repval 1.16 / train/loss/rew 0.13 / train/loss/value 1.03 / replay/replay_ratio 65 / fps/policy 25.37 / fps/train 1623.74
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T131414F986567
+Saved checkpoint.
+
+--------------------[Agent Step 412_432]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.18 / train/loss/policy 9.7e-3 / train/loss/rep 2.39 / train/loss/repval 1.16 / train/loss/rew 0.13 / train/loss/value 0.98 / replay/replay_ratio 65 / fps/policy 24.53 / fps/train 1569.74
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 415_488]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.35 / train/loss/image 2.16 / train/loss/policy 9.2e-3 / train/loss/rep 2.35 / train/loss/repval 1.15 / train/loss/rew 0.13 / train/loss/value 0.94 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.35
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 418_544]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 171.33 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 2.17 / train/loss/policy 0.01 / train/loss/rep 2.37 / train/loss/repval 1.13 / train/loss/rew 0.13 / train/loss/value 0.91 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.3
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 421_600]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.17 / train/loss/policy 0.01 / train/loss/rep 2.38 / train/loss/repval 1.1 / train/loss/rew 0.13 / train/loss/value 0.87 / replay/replay_ratio 65 / fps/policy 25.38 / fps/train 1624.18
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 424_656]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 188.82 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.2 / train/loss/policy 0.01 / train/loss/rep 2.42 / train/loss/repval 1.06 / train/loss/rew 0.13 / train/loss/value 0.86 / replay/replay_ratio 65 / fps/policy 25.37 / fps/train 1623.43
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 427_712]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.17 / train/loss/policy 0.01 / train/loss/rep 2.42 / train/loss/repval 1.02 / train/loss/rew 0.13 / train/loss/value 0.86 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.61
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 430_768]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.14 / train/loss/policy 0.02 / train/loss/rep 2.38 / train/loss/repval 0.98 / train/loss/rew 0.13 / train/loss/value 0.87 / replay/replay_ratio 65 / fps/policy 25.43 / fps/train 1627.5
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 433_808]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 176.62 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.16 / train/loss/policy 0.02 / train/loss/rep 2.39 / train/loss/repval 0.96 / train/loss/rew 0.14 / train/loss/value 0.92 / replay/replay_ratio 65 / fps/policy 25.33 / fps/train 1621.12
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T132915F364035
+Saved checkpoint.
+
+--------------------[Agent Step 436_752]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.14 / train/loss/policy 0.02 / train/loss/rep 2.39 / train/loss/repval 0.94 / train/loss/rew 0.13 / train/loss/value 0.95 / replay/replay_ratio 65 / fps/policy 24.47 / fps/train 1566.32
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 439_808]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.14 / train/loss/policy 0.01 / train/loss/rep 2.38 / train/loss/repval 0.95 / train/loss/rew 0.13 / train/loss/value 1.02 / replay/replay_ratio 65 / fps/policy 25.46 / fps/train 1629.2
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 442_864]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 189.31 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.15 / train/loss/policy 0.01 / train/loss/rep 2.39 / train/loss/repval 0.98 / train/loss/rew 0.13 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25.33 / fps/train 1620.91
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 445_920]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.13 / train/loss/policy 0.01 / train/loss/rep 2.42 / train/loss/repval 1 / train/loss/rew 0.14 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.39 / fps/train 1624.81
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 448_976]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 187.85 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.12 / train/loss/policy 0.01 / train/loss/rep 2.42 / train/loss/repval 1.02 / train/loss/rew 0.14 / train/loss/value 1.13 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.77
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 452_048]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.12 / train/loss/policy 0.01 / train/loss/rep 2.39 / train/loss/repval 1.04 / train/loss/rew 0.13 / train/loss/value 1.13 / replay/replay_ratio 65 / fps/policy 25.47 / fps/train 1630.38
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 455_104]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.07 / train/loss/policy 0.01 / train/loss/rep 2.38 / train/loss/repval 1.06 / train/loss/rew 0.14 / train/loss/value 1.13 / replay/replay_ratio 65 / fps/policy 25.37 / fps/train 1623.99
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T134415F862880
+Saved checkpoint.
+
+--------------------[Agent Step 458_048]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 192.26 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.43 / train/loss/image 2.11 / train/loss/policy 0.01 / train/loss/rep 2.43 / train/loss/repval 1.09 / train/loss/rew 0.14 / train/loss/value 1.12 / replay/replay_ratio 65 / fps/policy 24.4 / fps/train 1561.85
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 461_104]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.1 / train/loss/policy 0.01 / train/loss/rep 2.41 / train/loss/repval 1.1 / train/loss/rew 0.14 / train/loss/value 1.09 / replay/replay_ratio 65 / fps/policy 25.42 / fps/train 1626.98
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 464_160]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.06 / train/loss/policy 9.5e-3 / train/loss/rep 2.38 / train/loss/repval 1.12 / train/loss/rew 0.14 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25.39 / fps/train 1624.67
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 467_216]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 182.84 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.08 / train/loss/policy 8.9e-3 / train/loss/rep 2.41 / train/loss/repval 1.13 / train/loss/rew 0.14 / train/loss/value 1.04 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.83
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 470_288]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 2.05 / train/loss/policy 9.2e-3 / train/loss/rep 2.39 / train/loss/repval 1.14 / train/loss/rew 0.14 / train/loss/value 1 / replay/replay_ratio 65 / fps/policy 25.49 / fps/train 1631.55
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 473_344]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 207.1 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.05 / train/loss/policy 0.01 / train/loss/rep 2.42 / train/loss/repval 1.14 / train/loss/rew 0.14 / train/loss/value 0.97 / replay/replay_ratio 65 / fps/policy 25.42 / fps/train 1626.8
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 476_400]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 2.05 / train/loss/policy 0.01 / train/loss/rep 2.42 / train/loss/repval 1.13 / train/loss/rew 0.14 / train/loss/value 0.93 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.52
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 479_472]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.06 / train/loss/policy 9.3e-3 / train/loss/rep 2.41 / train/loss/repval 1.12 / train/loss/rew 0.14 / train/loss/value 0.9 / replay/replay_ratio 65 / fps/policy 25.51 / fps/train 1632.8
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T135916F331924
+Saved checkpoint.
+
+--------------------[Agent Step 482_432]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 199.32 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.04 / train/loss/policy 0.01 / train/loss/rep 2.41 / train/loss/repval 1.11 / train/loss/rew 0.14 / train/loss/value 0.87 / replay/replay_ratio 65 / fps/policy 24.55 / fps/train 1571.47
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 485_488]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.02 / train/loss/policy 0.01 / train/loss/rep 2.41 / train/loss/repval 1.09 / train/loss/rew 0.14 / train/loss/value 0.85 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.66
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 488_544]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 199.55 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.02 / train/loss/policy 0.01 / train/loss/rep 2.38 / train/loss/repval 1.07 / train/loss/rew 0.14 / train/loss/value 0.85 / replay/replay_ratio 65 / fps/policy 25.42 / fps/train 1626.95
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 491_600]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 2.01 / train/loss/policy 0.01 / train/loss/rep 2.38 / train/loss/repval 1.06 / train/loss/rew 0.14 / train/loss/value 0.84 / replay/replay_ratio 65 / fps/policy 25.35 / fps/train 1622.26
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 494_656]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2.02 / train/loss/policy 0.01 / train/loss/rep 2.41 / train/loss/repval 1.03 / train/loss/rew 0.14 / train/loss/value 0.84 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.82
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 497_712]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 222.52 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 1.98 / train/loss/policy 0.01 / train/loss/rep 2.38 / train/loss/repval 1.02 / train/loss/rew 0.14 / train/loss/value 0.85 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.58
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 500_768]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 1.99 / train/loss/policy 0.01 / train/loss/rep 2.39 / train/loss/repval 1 / train/loss/rew 0.14 / train/loss/value 0.87 / replay/replay_ratio 65 / fps/policy 25.35 / fps/train 1622.39
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T141416F416661
+Saved checkpoint.
+
+--------------------[Agent Step 503_712]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 2 / train/loss/policy 0.01 / train/loss/rep 2.41 / train/loss/repval 0.98 / train/loss/rew 0.14 / train/loss/value 0.9 / replay/replay_ratio 65 / fps/policy 24.5 / fps/train 1568.19
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 506_768]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 228.49 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 1.97 / train/loss/policy 0.02 / train/loss/rep 2.38 / train/loss/repval 0.95 / train/loss/rew 0.14 / train/loss/value 0.94 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.89
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+
+--------------------[Agent Step 509_824]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 1.97 / train/loss/policy 0.01 / train/loss/rep 2.37 / train/loss/repval 0.95 / train/loss/rew 0.14 / train/loss/value 0.99 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.52
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 512_880]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 206.78 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.4 / train/loss/image 1.96 / train/loss/policy 0.01 / train/loss/rep 2.4 / train/loss/repval 0.94 / train/loss/rew 0.14 / train/loss/value 1.03 / replay/replay_ratio 65 / fps/policy 25.42 / fps/train 1626.68
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 515_936]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.4 / train/loss/image 1.96 / train/loss/policy 0.01 / train/loss/rep 2.4 / train/loss/repval 0.95 / train/loss/rew 0.15 / train/loss/value 1.07 / replay/replay_ratio 65 / fps/policy 25.37 / fps/train 1623.4
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 518_992]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 1.93 / train/loss/policy 0.01 / train/loss/rep 2.37 / train/loss/repval 0.95 / train/loss/rew 0.15 / train/loss/value 1.11 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.54
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 522_064]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 214.63 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.41 / train/loss/image 1.96 / train/loss/policy 0.01 / train/loss/rep 2.41 / train/loss/repval 0.96 / train/loss/rew 0.15 / train/loss/value 1.13 / replay/replay_ratio 65 / fps/policy 25.47 / fps/train 1629.93
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 525_120]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 1.91 / train/loss/policy 0.01 / train/loss/rep 2.37 / train/loss/repval 0.98 / train/loss/rew 0.14 / train/loss/value 1.14 / replay/replay_ratio 65 / fps/policy 25.39 / fps/train 1624.96
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+Saving checkpoint: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/ckpt/20251206T142917F054634
+Saved checkpoint.
+
+--------------------[Agent Step 528_080]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 1.92 / train/loss/policy 9.5e-3 / train/loss/rep 2.39 / train/loss/repval 1 / train/loss/rew 0.15 / train/loss/value 1.15 / replay/replay_ratio 65 / fps/policy 24.6 / fps/train 1574.16
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 531_136]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 231.95 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 1.93 / train/loss/policy 8e-3 / train/loss/rep 2.39 / train/loss/repval 1.01 / train/loss/rew 0.15 / train/loss/value 1.16 / replay/replay_ratio 65 / fps/policy 25.41 / fps/train 1626.37
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 534_192]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 1.9 / train/loss/policy 9.3e-3 / train/loss/rep 2.37 / train/loss/repval 1.04 / train/loss/rew 0.15 / train/loss/value 1.16 / replay/replay_ratio 65 / fps/policy 25.45 / fps/train 1628.85
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 537_248]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 190.11 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.38 / train/loss/image 1.89 / train/loss/policy 9e-3 / train/loss/rep 2.38 / train/loss/repval 1.06 / train/loss/rew 0.15 / train/loss/value 1.15 / replay/replay_ratio 65 / fps/policy 25.4 / fps/train 1625.37
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 540_304]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.39 / train/loss/image 1.92 / train/loss/policy 9.2e-3 / train/loss/rep 2.39 / train/loss/repval 1.07 / train/loss/rew 0.15 / train/loss/value 1.14 / replay/replay_ratio 65 / fps/policy 25.41 / fps/train 1626.48
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 543_376]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+train/loss/con 0.02 / train/loss/dyn 2.37 / train/loss/image 1.89 / train/loss/policy 1e-2 / train/loss/rep 2.37 / train/loss/repval 1.07 / train/loss/rew 0.15 / train/loss/value 1.12 / replay/replay_ratio 65 / fps/policy 25.48 / fps/train 1630.69
+
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/metrics.jsonl
+Writing metrics: /mnt/home/tianyuez/DL-PJ/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251206_084243/scores.jsonl
+
+--------------------[Agent Step 546_448]--------------------
+Metrics filtered by: 'score|length|fps|ratio|train/loss/|train/rand/'
+episode/score 220.15 / episode/length 1001 / train/loss/con 0.02 / train/loss/dyn 2.42 / train/loss/image 1.93 / train/loss/policy 1e-2 / train/loss/rep 2.42 / train/loss/repval 1.08 / train/loss/rew 0.15 / train/loss/value 1.1 / replay/replay_ratio 65 / fps/policy 25.47 / fps/train 1630.09
+
