@@ -9,13 +9,8 @@ MUJOCO_LOG.TXT
 *.out
 slurm-*.out
 
-# Ignore large files in logdir (checkpoints, replay buffers, videos)
-logdir/*/ckpt/
-logdir/*/replay/
-logdir/*/scope/
-logdir/*/plugins/
-*.pkl
-*.mp4
+# Ignore logdir completely (final models added with git add -f)
+logdir/
 
 # Keep logs folder (training logs)
 
