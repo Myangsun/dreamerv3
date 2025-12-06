@@ -1,60 +1,48 @@
 #!/bin/bash
-#SBATCH --job-name=dreamer-ablate
+#SBATCH --job-name=vit-ablate-resume
 #SBATCH --partition=mit_normal_gpu
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --gres=gpu:1
-#SBATCH --mem=32G
+#SBATCH --mem=64G
 #SBATCH --time=6:00:00
-#SBATCH --array=0-11%4
-#SBATCH --output=/home/msun14/dreamerv3/logs/dmc_ablation/slurm_%A_%a.out
+#SBATCH --array=0-2%3
+#SBATCH --output=/home/msun14/dreamerv3/logs/dmc_ablation/resume_slurm_%A_%a.out
 #SBATCH --exclude=node3207
 
 set -euo pipefail
 
 # Setup
 WORKDIR="/home/msun14/dreamerv3"
-LOG_ROOT="${WORKDIR}/logs/dmc_ablation"
 cd "${WORKDIR}"
 
 # Set MuJoCo rendering backend
 export MUJOCO_GL=egl
 
 # =============================================================================
-# Task Configuration - 4 encoders × 3 tasks = 12 combinations
+# Resume from existing logdirs
 # =============================================================================
-ENCODERS=(vit_ae)
+LOGDIRS=(
+  "/home/msun14/dreamerv3/logdir/dmc_walker_walk_vit_ae_20251205_135115"
+  "/home/msun14/dreamerv3/logdir/dmc_cheetah_run_vit_ae_20251205_135115"
+  "/home/msun14/dreamerv3/logdir/dmc_hopper_hop_vit_ae_20251205_195206"
+)
+
 TASKS=(dmc_walker_walk dmc_cheetah_run dmc_hopper_hop)
 
-enc_index=$((SLURM_ARRAY_TASK_ID % ${#ENCODERS[@]}))
-task_index=$((SLURM_ARRAY_TASK_ID / ${#ENCODERS[@]}))
-
-ENCODER_TYPE="${ENCODERS[$enc_index]}"
-TASK_NAME="${TASKS[$task_index]}"
-
-MAE_FLAGS=""
-if [[ "${ENCODER_TYPE}" == cnn_mae || "${ENCODER_TYPE}" == vit_mae ]]; then
-  MAE_FLAGS="--mae_loss_scale=1.0 --mae_mask_ratio=0.5"
-fi
-
-# =============================================================================
-# Logging
-# =============================================================================
-mkdir -p "${LOG_ROOT}"
-
-TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-LOGDIR="${WORKDIR}/logdir/${TASK_NAME}_${ENCODER_TYPE}_${TIMESTAMP}"
+LOGDIR="${LOGDIRS[$SLURM_ARRAY_TASK_ID]}"
+TASK_NAME="${TASKS[$SLURM_ARRAY_TASK_ID]}"
 
 # =============================================================================
 # Job Info
 # =============================================================================
-echo "=== Job Information ==="
+echo "=== Resuming ViT Ablation Training ==="
 echo "Job ID: $SLURM_JOB_ID"
 echo "Array Task ID: $SLURM_ARRAY_TASK_ID"
 echo "Node: $SLURM_NODELIST"
 echo "Task: $TASK_NAME"
-echo "Encoder: $ENCODER_TYPE"
+echo "Encoder: vit_ae"
 echo "Logdir: $LOGDIR"
 echo "Start time: $(date)"
 echo ""
@@ -63,20 +51,22 @@ echo "=== Verifying GPU ==="
 python3 -c 'import jax; print("Devices:", jax.devices())'
 echo ""
 
-echo "=== Starting DMC Training: $TASK_NAME ==="
-echo "Steps: 1.1M (paper setting)"
-echo "Train ratio: 256 (paper setting)"
+echo "=== Checking existing checkpoint ==="
+ls -la "${LOGDIR}/ckpt/" 2>/dev/null || echo "No checkpoint dir found"
 echo ""
 
 # =============================================================================
-# Training
+# Resume Training
+# DreamerV3 will automatically:
+# 1. Detect existing checkpoint in logdir
+# 2. Load model weights and optimizer state
+# 3. Continue training from last step
 # =============================================================================
 python3 dreamerv3/main.py \
   --logdir "$LOGDIR" \
   --configs dmc_vision \
   --task "${TASK_NAME}" \
-  --encoder_type="${ENCODER_TYPE}" \
-  ${MAE_FLAGS}
+  --encoder_type=vit_ae
 
 echo ""
 echo "=== Training Complete ==="
