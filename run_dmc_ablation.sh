@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --gres=gpu:1
-#SBATCH --mem=32G
+#SBATCH --mem=64G
 #SBATCH --time=6:00:00
 #SBATCH --array=0-11%4
 #SBATCH --output=/home/msun14/dreamerv3/logs/dmc_ablation/slurm_%A_%a.out
@@ -22,9 +22,9 @@ cd "${WORKDIR}"
 export MUJOCO_GL=egl
 
 # =============================================================================
-# Task Configuration - 4 encoders × 3 tasks = 12 combinations
+# Task Configuration - 2 encoders × 3 tasks = 6 combinations
 # =============================================================================
-ENCODERS=(vit_ae)
+ENCODERS=(cnn_mae vit_mae)
 TASKS=(dmc_walker_walk dmc_cheetah_run dmc_hopper_hop)
 
 enc_index=$((SLURM_ARRAY_TASK_ID % ${#ENCODERS[@]}))
@@ -64,7 +64,7 @@ python3 -c 'import jax; print("Devices:", jax.devices())'
 echo ""
 
 echo "=== Starting DMC Training: $TASK_NAME ==="
-echo "Steps: 1.1M (paper setting)"
+echo "Steps: 0.2M (temporary ablation setting)"
 echo "Train ratio: 256 (paper setting)"
 echo ""
 
@@ -76,6 +76,7 @@ python3 dreamerv3/main.py \
   --configs dmc_vision \
   --task "${TASK_NAME}" \
   --encoder_type="${ENCODER_TYPE}" \
+  --run.steps=200000 \
   ${MAE_FLAGS}
 
 echo ""
