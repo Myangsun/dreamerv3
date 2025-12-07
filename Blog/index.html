@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Different Visual Encoders Understand Dynamics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>How Different Visual Encoders Understand Dynamics: A Systematic Study of Latent Representations in RL</h1>
+
+<p class="subtitle">How do different representation learning objectives shape what visual encoders understand about environment dynamics?</p>
+
+<p class="authors">
+    [Author Names] | MIT 6.7960 Deep Learning | Fall 2025
+</p>
+
+<!-- ==================== SECTION 1: INTRODUCTION ==================== -->
+<h2>1. Introduction</h2>
+
+<p>
+Modern reinforcement learning agents operating from pixel observations face a fundamental challenge: they must extract meaningful representations from high-dimensional visual inputs to make effective decisions. The choice of how to train these visual encoders—whether through world model objectives, self-supervised learning, or end-to-end RL—has profound implications for what information gets encoded in the resulting representations.
+</p>
+
+<p>
+Consider what an ideal representation for an RL agent should capture. Beyond recognizing objects and spatial layouts, an agent must understand how its actions affect the environment. It needs to predict the consequences of its decisions, distinguish between aspects of the world it can control versus those it cannot, and encode the underlying structure of environment dynamics rather than mere visual appearances. This raises a critical question: <strong>do different encoder training objectives lead to fundamentally different levels of dynamics awareness in the learned representations?</strong>
+</p>
+
+<p>
+In this work, we systematically investigate this question by comparing four distinct approaches to learning visual representations for RL:
+</p>
+
+<ul>
+    <li><strong>DreamerV3</strong>: A world model that learns latent representations by predicting future states, rewards, and episode terminations</li>
+    <li><strong>MAE (Masked Autoencoder)</strong>: A self-supervised method that reconstructs masked image patches</li>
+    <li><strong>MoCo (Momentum Contrast)</strong>: A contrastive learning approach that learns by distinguishing between similar and dissimilar observations</li>
+    <li><strong>RAD (Reinforcement Learning with Augmented Data)</strong>: An end-to-end RL encoder trained purely through the actor-critic objective</li>
+</ul>
+
+<p>
+Our contributions include: (1) a unified dynamics probing benchmark for evaluating RL visual encoders, (2) systematic comparison across multiple probing tasks revealing distinct representation characteristics, (3) latent space geometry analysis demonstrating how training objectives shape temporal structure, and (4) preliminary transfer experiments validating the practical implications of dynamics awareness.
+</p>
+
+<!-- ==================== SECTION 2: BACKGROUND ==================== -->
+<h2>2. Background and Related Work</h2>
+
+<p>
+The question of what makes a good representation for reinforcement learning has been studied from multiple perspectives. We briefly review the key approaches and position our work relative to existing literature.
+</p>
+
+
+
+<!-- ==================== SECTION 3: EXPERIMENTAL SETUP ==================== -->
+<h2>3. Experimental Setup</h2>
+
+<h3>3.1 Environments and Data Collection</h3>
+
+
+<h3>3.2 Encoders Compared</h3>
+
+<p>
+We compare four encoders with standardized architectures where possible:
+</p>
+
+<ul>
+    <li><strong>DreamerV3</strong>: We use the encoder from a trained DreamerV3 agent, extracting the deterministic latent state</li>
+    <li><strong>MAE</strong>: Vision Transformer encoder with masked autoencoder pretraining on the replay buffer</li>
+    <li><strong>RAD</strong>: CNN encoder from an end-to-end SAC agent trained with data augmentation</li>
+</ul>
+
+<p>
+All encoders process 84×84 RGB observations and produce 256-dimensional latent vectors. For self-supervised methods (MAE, MoCo), we train on observations from the replay buffer without action or reward labels. For RL methods (DreamerV3, RAD), we use pretrained agents.
+</p>
+
+<h3>3.3 Latent Dataset Construction</h3>
+
+<p>
+We construct a unified evaluation dataset by encoding trajectories from our replay buffer with each encoder. For each timestep, we store:
+</p>
+
+<div class="figure">
+    <div class="figure-placeholder">
+        [Figure 1: Pipeline overview showing observation → encoder → latent → probes architecture]
+    </div>
+    <p class="figure-caption"><strong>Figure 1:</strong> Experimental pipeline. Observations from the replay buffer are encoded by each method to produce latent representations. These frozen representations are then evaluated using our dynamics probing benchmark.</p>
+</div>
+
+<!-- ==================== SECTION 4: DYNAMICS PROBING BENCHMARK ==================== -->
+<h2>4. Dynamics Probing Benchmark</h2>
+
+<p>
+We introduce a suite of probing tasks specifically designed to measure dynamics awareness in visual representations. Each probe tests a different aspect of what the representation encodes about environment dynamics.
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Encoder</th>
+            <th>Forward MSE (1-step)</th>
+            <th>Inverse Acc.</th>
+            <th>Event F1</th>
+            <th>Reward R²</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>DreamerV3</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+        </tr>
+        <tr>
+            <td>RAD</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+        </tr>
+        <tr>
+            <td>MoCo</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+        </tr>
+        <tr>
+            <td>MAE</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+            <td>[TBD]</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- ==================== SECTION 5: REPRESENTATION ANALYSIS ==================== -->
+<h2>5. Representation Analysis</h2>
+
+<p>
+Beyond probing task performance, we analyze the geometric structure of each representation space to understand how training objectives shape latent organization.
+</p>
+
+<h3>5.1 Latent Space Visualization</h3>
+
+
+<h3>5.2 Temporal Geometry and Smoothness</h3>
+
+<div class="figure">
+    <div class="figure-placeholder">
+        [Figure 6: Temporal smoothness curves showing latent distance vs. temporal separation]
+    </div>
+    <p class="figure-caption"><strong>Figure 6:</strong> Latent distance as a function of temporal separation. Dynamics-aware representations (DreamerV3) show smooth, predictable growth. Self-supervised methods show irregular patterns.</p>
+</div>
+
+<p>
+<strong>Interpretation:</strong> DreamerV3's latent space should be temporally smooth and stable, reflecting its training objective of supporting accurate multi-step prediction. MAE and MoCo, lacking temporal training signals, should show no consistent relationship between temporal and latent distance. RAD should exhibit some temporal structure but biased toward task-relevant state changes.
+</p>
+
+<!-- ==================== SECTION 6: DISCUSSION ==================== -->
+<h2>6. Discussion</h2>
+
+
+
+<!-- ==================== SECTION 7: LIMITATIONS ==================== -->
+<h2>7. Limitations</h2>
+
+<!-- ==================== SECTION 8: CONCLUSION ==================== -->
+<h2>8. Conclusion</h2>
+
+
+<!-- ==================== REFERENCES ==================== -->
+<h2>References</h2>
+
+<ol class="references">
+    <li>XX</li>
+</ol>
+
+<!-- ==================== APPENDIX ==================== -->
+<h2>Appendix</h2>
+
+<h3>A. Hyperparameters</h3>
+<p>[To be added: encoder architectures, training details, probe configurations]</p>
+
+<h3>B. Additional Probe Results</h3>
+<p>[To be added: extended results tables, per-event breakdown]</p>
+
+<h3>C. Replay Buffer Statistics</h3>
+<p>[To be added: data collection details, trajectory statistics]</p>
+
+</body>
+</html>
