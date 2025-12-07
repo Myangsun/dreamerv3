@@ -9,10 +9,14 @@ MUJOCO_LOG.TXT
 *.out
 slurm-*.out
 
-# Ignore logdir completely (final models added with git add -f)
-logdir/
+# Ignore large files in logdir
+logdir/*/replay/
+logdir/*/scope/
+logdir/*/plugins/
+logdir/*/ckpt/
+logdir/*_cont_*/
 
-# Keep logs folder (training logs)
+# Keep small files: config.yaml, metrics.jsonl, scores.jsonl
 
 # Virtual environments
 .venv/
