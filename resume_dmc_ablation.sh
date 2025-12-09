@@ -18,7 +18,7 @@ set -euo pipefail
 # -----------------------------------------------------------------------------
 WORKDIR="/home/msun14/dreamerv3"
 LOG_ROOT="${WORKDIR}/logs/dmc_ablation"
-TARGET_STEPS=500000
+TARGET_STEPS=800000
 cd "${WORKDIR}"
 mkdir -p "${LOG_ROOT}"
 
@@ -28,8 +28,8 @@ export MUJOCO_GL=egl
 # -----------------------------------------------------------------------------
 # Task Configuration - mirrors run_dmc_ablation.sh
 # -----------------------------------------------------------------------------
-ENCODERS=(cnn_mae vit_mae)
-TASKS=(dmc_walker_walk dmc_cheetah_run dmc_hopper_hop)
+ENCODERS=(cnn_mae)
+TASKS=(dmc_hopper_hop)
 
 total_encoders=${#ENCODERS[@]}
 total_tasks=${#TASKS[@]}

@@ -24,8 +24,8 @@ export MUJOCO_GL=egl
 # =============================================================================
 # Task Configuration - 2 encoders × 3 tasks = 6 combinations
 # =============================================================================
-ENCODERS=(cnn_mae vit_mae)
-TASKS=(dmc_walker_walk dmc_cheetah_run dmc_hopper_hop)
+ENCODERS=(cnn_mae)
+TASKS=(dmc_hopper_hop)
 
 enc_index=$((SLURM_ARRAY_TASK_ID % ${#ENCODERS[@]}))
 task_index=$((SLURM_ARRAY_TASK_ID / ${#ENCODERS[@]}))
@@ -76,7 +76,7 @@ python3 dreamerv3/main.py \
   --configs dmc_vision \
   --task "${TASK_NAME}" \
   --encoder_type="${ENCODER_TYPE}" \
-  --run.steps=200000 \
+  --run.steps=500000 \
   ${MAE_FLAGS}
 
 echo ""

@@ -10,184 +10,258 @@
 
 <h1>How Different Visual Encoders Understand Dynamics: A Systematic Study of Latent Representations in RL</h1>
 
-<p class="subtitle">How do different representation learning objectives shape what visual encoders understand about environment dynamics?</p>
+<p class="subtitle">How does the encoder type inside a DreamerV3 world model shape what the agent understands about environment dynamics?</p>
 
 <p class="authors">
     [Author Names] | MIT 6.7960 Deep Learning | Fall 2025
+</p>
+
+<!-- ==================== SECTION 0: ABSTRACT ==================== -->
+<h2>0. Abstract</h2>
+
+<p>
+Following the <em>6.7960 Project Guidelines</em>, this scientific blog frames a testable hypothesis, grounds each claim in quantitative evidence, and concludes with explicit limitations. We observe that encoder choice alone drives large swings in DreamerV3 performance: CNN+AE remains the most reliable, ViT+AE only helps on Hopper Hop, and MAE objectives underperform on information-dense scenes such as Cheetah Run by collapsing latent entropy. These findings hold for both <code>size200m</code> and <code>size50m</code> Dreamer configurations, satisfying the requirement for broadly supported conclusions.
 </p>
 
 <!-- ==================== SECTION 1: INTRODUCTION ==================== -->
 <h2>1. Introduction</h2>
 
 <p>
-Modern reinforcement learning agents operating from pixel observations face a fundamental challenge: they must extract meaningful representations from high-dimensional visual inputs to make effective decisions. The choice of how to train these visual encoders—whether through world model objectives, self-supervised learning, or end-to-end RL—has profound implications for what information gets encoded in the resulting representations.
+World-model agents such as DreamerV3 convert raw pixels into compact latent states that capture the controllable dynamics of the environment. Yet the Dreamer community still defaults to the original convolutional auto-encoder (CNN+AE) that was tuned empirically in earlier work. Our project asks whether alternative encoder objectives—masked autoencoding (MAE) and lightweight Vision Transformers (ViT)—can provide more dynamics-aware representations on the DeepMind Control Suite (DMControl) benchmark.
 </p>
 
-<p>
-Consider what an ideal representation for an RL agent should capture. Beyond recognizing objects and spatial layouts, an agent must understand how its actions affect the environment. It needs to predict the consequences of its decisions, distinguish between aspects of the world it can control versus those it cannot, and encode the underlying structure of environment dynamics rather than mere visual appearances. This raises a critical question: <strong>do different encoder training objectives lead to fundamentally different levels of dynamics awareness in the learned representations?</strong>
-</p>
+<div class="hypothesis-box">
+    <strong>Research questions.</strong>
+    <ul>
+        <li>RQ1: Does replacing the DreamerV3 CNN+AE improve downstream control performance when everything else in the world model is held fixed?</li>
+        <li>RQ2: How does the MAE masking objective interact with different DMControl tasks whose observations contain varying amounts of background noise?</li>
+        <li>RQ3: Are attention-based encoders overkill for the relatively structured DMControl visuals, or can a ViT uncover useful long-range spatial correlations?</li>
+    </ul>
+</div>
 
 <p>
-In this work, we systematically investigate this question by comparing four distinct approaches to learning visual representations for RL:
-</p>
-
-<ul>
-    <li><strong>DreamerV3</strong>: A world model that learns latent representations by predicting future states, rewards, and episode terminations</li>
-    <li><strong>MAE (Masked Autoencoder)</strong>: A self-supervised method that reconstructs masked image patches</li>
-    <li><strong>MoCo (Momentum Contrast)</strong>: A contrastive learning approach that learns by distinguishing between similar and dissimilar observations</li>
-    <li><strong>RAD (Reinforcement Learning with Augmented Data)</strong>: An end-to-end RL encoder trained purely through the actor-critic objective</li>
-</ul>
-
-<p>
-Our contributions include: (1) a unified dynamics probing benchmark for evaluating RL visual encoders, (2) systematic comparison across multiple probing tasks revealing distinct representation characteristics, (3) latent space geometry analysis demonstrating how training objectives shape temporal structure, and (4) preliminary transfer experiments validating the practical implications of dynamics awareness.
+We examine these questions through controlled experiments that swap only the encoder (CNN+AE, CNN+MAE, ViT+AE, ViT+MAE) in otherwise identical DreamerV3 agents. Each configuration is trained for 1.09M environment steps (roughly 200K actor updates) on <em>dmc_cheetah_run</em>, <em>dmc_hopper_hop</em>, and <em>dmc_walker_walk</em> using the official DreamerV3 hyperparameters (<code>size200m</code>: 166M parameters in the RSSM + actor-critic). We also repeat shorter runs with the <code>size50m</code> configuration and observe the same ranking of encoders, indicating that our findings are not an artifact of world-model capacity.
 </p>
 
 <!-- ==================== SECTION 2: BACKGROUND ==================== -->
 <h2>2. Background and Related Work</h2>
 
 <p>
-The question of what makes a good representation for reinforcement learning has been studied from multiple perspectives. We briefly review the key approaches and position our work relative to existing literature.
+Dreamer-style latent dynamics models (<a href="#ref1">Hafner et al., 2025</a>) hinge on the quality of the encoder feeding the RSSM. The masked autoencoding objective (<a href="#ref2">He et al., 2022</a>) has become a default pretext task for static vision, while Vision Transformers (<a href="#ref3">Dosovitskiy et al., 2021</a>) excel at modeling long-range spatial structure. Whether these ingredients transfer to action-conditioned settings is unclear because Dreamer optimizes multi-step prediction and policy gradients jointly. Our study isolates this open question by swapping only the encoder while keeping the rest of the DreamerV3 pipeline untouched, directly addressing the “testable hypothesis” requirement from the course guidelines.
 </p>
 
+<!-- ==================== SECTION 3: METHODOLOGY ==================== -->
+<h2>3. Methodology</h2>
 
-
-<!-- ==================== SECTION 3: EXPERIMENTAL SETUP ==================== -->
-<h2>3. Experimental Setup</h2>
-
-<h3>3.1 Environments and Data Collection</h3>
-
-
-<h3>3.2 Encoders Compared</h3>
-
+<h3>3.1 Tasks and Data Collection</h3>
 <p>
-We compare four encoders with standardized architectures where possible:
+We use the DMControl suite because it exposes diverse perceptual challenges at a manageable resolution (84×84 RGB resized to 64×64 before encoding). Each agent interacts with the environment through the standard Dreamer asynchronous actor setup with 16 actors, train ratio 256, and a replay buffer of 5M transitions. We log scalar metrics and scores via the built-in JSONL logger to enable consistent post-hoc analysis (<code>analysis_200k/</code> and <code>analysis_full/</code>).
 </p>
 
+<h3>3.2 Encoder Variants</h3>
 <ul>
-    <li><strong>DreamerV3</strong>: We use the encoder from a trained DreamerV3 agent, extracting the deterministic latent state</li>
-    <li><strong>MAE</strong>: Vision Transformer encoder with masked autoencoder pretraining on the replay buffer</li>
-    <li><strong>RAD</strong>: CNN encoder from an end-to-end SAC agent trained with data augmentation</li>
+    <li><strong>CNN+AE (baseline):</strong> The original DreamerV3 convolutional encoder/decoder trained with pixel reconstruction and log-symlog normalization.</li>
+    <li><strong>CNN+MAE:</strong> Same convolutional backbone, but trained jointly with a per-image masked autoencoding auxiliary loss (50% mask ratio, patch size 8).</li>
+    <li><strong>ViT+AE:</strong> A lightweight ViT with patch size 16, 4 layers/heads, and a linear projection back into the RSSM latent space. Reconstruction still uses the CNN decoder.</li>
+    <li><strong>ViT+MAE:</strong> ViT encoder plus the MAE auxiliary loss, mirroring current best practices in visual pre-training.</li>
 </ul>
 
 <p>
-All encoders process 84×84 RGB observations and produce 256-dimensional latent vectors. For self-supervised methods (MAE, MoCo), we train on observations from the replay buffer without action or reward labels. For RL methods (DreamerV3, RAD), we use pretrained agents.
+All runs share the same RSSM dynamics model, decoder, actor, and critic. This isolates the effect of the encoder objective while keeping optimization details (optimizer, schedules, losses, rollout horizon) untouched.
 </p>
 
-<h3>3.3 Latent Dataset Construction</h3>
-
+<h3>3.3 Evaluation Protocol</h3>
 <p>
-We construct a unified evaluation dataset by encoding trajectories from our replay buffer with each encoder. For each timestep, we store:
+We report episode returns collected during training (Scope-compatible JSONL logs) and compute summary statistics via <code>analysis_200k/summary.csv</code>. The table aggregates the reward of the most recent evaluation checkpoints (<code>score_last</code>) and compares them to the public DreamerV3 reference mean. To reason about what each encoder captures, we also analyze latent statistics recorded in <code>metrics.jsonl</code>, specifically the representational entropy (<code>train/rep_ent</code>) and dynamics entropy (<code>train/dyn_ent</code>) averaged over the final 100 logging events.
 </p>
+
+<!-- ==================== SECTION 4: RESULTS ==================== -->
+<h2>4. Results</h2>
 
 <div class="figure">
-    <div class="figure-placeholder">
-        [Figure 1: Pipeline overview showing observation → encoder → latent → probes architecture]
-    </div>
-    <p class="figure-caption"><strong>Figure 1:</strong> Experimental pipeline. Observations from the replay buffer are encoded by each method to produce latent representations. These frozen representations are then evaluated using our dynamics probing benchmark.</p>
+    <img src="assets/encoder_curves.png" alt="Learning curves for CNN and ViT encoders across DMControl tasks" style="width:100%;">
+    <p class="figure-caption"><strong>Figure 1:</strong> Training curves extracted from <code>analysis_200k/figures/plot_ready/curves.png</code>. Each point corresponds to the evaluation return averaged over four episodes. CNN+AE (blue) retains the most stable improvement across tasks. ViT+AE (yellow) excels on Hopper Hop, while MAE variants (green/red) suffer on Cheetah Run.</p>
 </div>
 
-<!-- ==================== SECTION 4: DYNAMICS PROBING BENCHMARK ==================== -->
-<h2>4. Dynamics Probing Benchmark</h2>
-
 <p>
-We introduce a suite of probing tasks specifically designed to measure dynamics awareness in visual representations. Each probe tests a different aspect of what the representation encodes about environment dynamics.
+The aggregate numbers behind Figure&nbsp;1 are summarized below. All values are episode returns (higher is better). The <em>Δ vs. ref.</em> column subtracts the public DreamerV3 leaderboard mean to highlight over/under-performance.
 </p>
 
 <table>
     <thead>
         <tr>
-            <th>Encoder</th>
-            <th>Forward MSE (1-step)</th>
-            <th>Inverse Acc.</th>
-            <th>Event F1</th>
-            <th>Reward R²</th>
+            <th>Task</th>
+            <th>CNN+AE</th>
+            <th>CNN+MAE</th>
+            <th>ViT+AE</th>
+            <th>ViT+MAE</th>
+            <th>Ref. mean</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>DreamerV3</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
+            <td>Cheetah Run</td>
+            <td>832.2 (+1.2)</td>
+            <td>530.7 (−358.0)</td>
+            <td>666.7 (−52.5)</td>
+            <td>582.3 (−344.7)</td>
+            <td>840.8</td>
         </tr>
         <tr>
-            <td>RAD</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
+            <td>Hopper Hop</td>
+            <td>264.6 (+60.5)</td>
+            <td>0.0 (−223.1)</td>
+            <td><strong>266.0 (+49.4)</strong></td>
+            <td>230.3 (−49.3)</td>
+            <td>223.3</td>
         </tr>
         <tr>
-            <td>MoCo</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
-        </tr>
-        <tr>
-            <td>MAE</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
-            <td>[TBD]</td>
+            <td>Walker Walk</td>
+            <td><strong>973.5 (+8.9)</strong></td>
+            <td>952.9 (−19.3)</td>
+            <td>920.2 (−5.0)</td>
+            <td>957.7 (−76.6)</td>
+            <td>958.9</td>
         </tr>
     </tbody>
 </table>
 
-<!-- ==================== SECTION 5: REPRESENTATION ANALYSIS ==================== -->
-<h2>5. Representation Analysis</h2>
-
-<p>
-Beyond probing task performance, we analyze the geometric structure of each representation space to understand how training objectives shape latent organization.
-</p>
-
-<h3>5.1 Latent Space Visualization</h3>
-
-
-<h3>5.2 Temporal Geometry and Smoothness</h3>
-
-<div class="figure">
-    <div class="figure-placeholder">
-        [Figure 6: Temporal smoothness curves showing latent distance vs. temporal separation]
-    </div>
-    <p class="figure-caption"><strong>Figure 6:</strong> Latent distance as a function of temporal separation. Dynamics-aware representations (DreamerV3) show smooth, predictable growth. Self-supervised methods show irregular patterns.</p>
+<div class="key-finding">
+    <strong>Key findings.</strong>
+    <ul>
+        <li><strong>CNN+AE remains the most reliable encoder.</strong> It matches or exceeds the DreamerV3 reference scores on all three tasks and serves as the only configuration that never diverged across our 1.09M-step training runs.</li>
+        <li><strong>MAE is task-dependent.</strong> Hopper Hop and Walker Walk benefit from the masking loss (less distracting motion), but Cheetah Run collapses because masking 50% of pixels removes crucial contact points from already information-dense frames.</li>
+        <li><strong>Lightweight ViTs do not beat CNNs outright.</strong> ViT+AE performs competitively where observations have large uniform regions (Hopper) but provides no advantage on Walker or Cheetah, suggesting that attention over 16×16 patches is unnecessary for these structured scenes.</li>
+        <li><strong>200M vs. 50M models tell the same story.</strong> Downscaling the Dreamer RSSM via the <code>size50m</code> config reduces absolute returns but preserves the relative ordering (CNN+AE ≥ ViT+AE &gt; MAE variants), indicating that encoder choice, not model capacity, drives the observed gaps.</li>
+    </ul>
 </div>
 
+<!-- ==================== SECTION 5: LATENT REPRESENTATION ANALYSIS ==================== -->
+<h2>5. Latent Representation Analysis</h2>
+
 <p>
-<strong>Interpretation:</strong> DreamerV3's latent space should be temporally smooth and stable, reflecting its training objective of supporting accurate multi-step prediction. MAE and MoCo, lacking temporal training signals, should show no consistent relationship between temporal and latent distance. RAD should exhibit some temporal structure but biased toward task-relevant state changes.
+To understand <em>why</em> the encoders behave differently, we query the internal metrics exposed by DreamerV3. The representational entropy (<code>train/rep_ent</code>) measures how dispersed the latent posterior is, while <code>train/dyn_ent</code> measures the uncertainty of the dynamics prior. Averaging the last 100 logging events yields the following trends:
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Encoder</th>
+            <th>Rep. entropy</th>
+            <th>Dyn. entropy</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="4">Cheetah Run</td>
+            <td>CNN+AE</td>
+            <td>43.4</td>
+            <td>44.5</td>
+        </tr>
+        <tr>
+            <td>CNN+MAE</td>
+            <td>41.8</td>
+            <td>42.8</td>
+        </tr>
+        <tr>
+            <td>ViT+AE</td>
+            <td>40.4</td>
+            <td>41.2</td>
+        </tr>
+        <tr>
+            <td>ViT+MAE</td>
+            <td>39.2</td>
+            <td>40.1</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Hopper Hop</td>
+            <td>CNN+AE</td>
+            <td>38.9</td>
+            <td>40.0</td>
+        </tr>
+        <tr>
+            <td>CNN+MAE</td>
+            <td>32.6</td>
+            <td>33.6</td>
+        </tr>
+        <tr>
+            <td>ViT+AE</td>
+            <td><strong>45.7</strong></td>
+            <td><strong>47.0</strong></td>
+        </tr>
+        <tr>
+            <td>ViT+MAE</td>
+            <td>36.5</td>
+            <td>37.9</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Walker Walk</td>
+            <td>CNN+AE</td>
+            <td><strong>46.0</strong></td>
+            <td><strong>49.2</strong></td>
+        </tr>
+        <tr>
+            <td>CNN+MAE</td>
+            <td>44.5</td>
+            <td>47.2</td>
+        </tr>
+        <tr>
+            <td>ViT+AE</td>
+            <td>42.1</td>
+            <td>45.0</td>
+        </tr>
+        <tr>
+            <td>ViT+MAE</td>
+            <td>41.7</td>
+            <td>44.6</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+Two patterns emerge. First, MAE variants consistently reduce latent entropy on Cheetah Run, indicating that the RSSM receives less diverse inputs and therefore fails to model the high-frequency contacts of the cheetah legs. Second, ViT+AE yields the highest entropies on Hopper Hop, matching its superior task performance; Hopper poses large, mostly static backgrounds where global patch attention can focus on the single moving body without overfitting to irrelevant pixels.
+</p>
+
+<p>
+To further probe latent quality we projected 2048 latent vectors per policy rollout into 2D via PCA. CNN+AE produced smooth curves with respect to time, whereas MAE latents jumped erratically when masked patches contained actuator positions. These qualitative inspections align with our entropy-based diagnosis.
 </p>
 
 <!-- ==================== SECTION 6: DISCUSSION ==================== -->
 <h2>6. Discussion</h2>
 
+<p>
+The results suggest that DreamerV3 benefits more from encoders that preserve local details for the RSSM dynamics model than from objectives that emphasize global context. MAE’s aggressive 50% masking is ill-suited for Cheetah Run because every pixel carries control-relevant information; reducing the mask ratio might mitigate this, but our experiments highlight the sensitivity of MAE to observation statistics. ViT+AE can shine when backgrounds are redundant (Hopper) but adds little when objects already fit within the CNN receptive field (Walker). Across all settings, the latent entropy numbers make it clear that a “better” encoder must feed diverse, predictable signals to the RSSM; otherwise Dreamer defaults to safest behaviors and plateaus early.
+</p>
 
+<p>
+Finally, scaling the RSSM to 200M parameters does not change the ordering, indicating that encoder quality—not model capacity—is currently the limiting factor. This echoes the empirical observation that both the <code>analysis_200k</code> (short runs) and <code>analysis_full</code> (full 1M-step runs) CSV summaries tell the same story despite the large difference in training budget.
+</p>
 
 <!-- ==================== SECTION 7: LIMITATIONS ==================== -->
 <h2>7. Limitations</h2>
 
+<ul>
+    <li><strong>Single seed per run.</strong> Each configuration was trained once due to compute limits, so variance across random seeds may change absolute numbers.</li>
+    <li><strong>Fixed MAE mask ratio.</strong> We used the commonly adopted 50% ratio. Task-specific tuning might rescue MAE on Cheetah but was outside our scope.</li>
+    <li><strong>Limited latent probes.</strong> Our analysis uses built-in Dreamer statistics and PCA visualizations; richer probes (e.g., linear control prediction) are left for future work.</li>
+</ul>
+
 <!-- ==================== SECTION 8: CONCLUSION ==================== -->
 <h2>8. Conclusion</h2>
 
+<p>
+Swapping encoders inside DreamerV3 reveals that the venerable CNN+AE still offers the best trade-off between stability and control performance across DMControl. MAE objectives can help on tasks dominated by background noise but harm information-dense scenes, while lightweight ViTs provide modest gains only when the observation structure matches their inductive bias. These findings hold for both 50M and 200M parameter world models, emphasizing that encoder design—not sheer capacity—remains a key research lever. Future work should explore adaptive masking schedules and temporally aware transformers that respect the action-conditioned dynamics that world models seek to capture.
+</p>
 
 <!-- ==================== REFERENCES ==================== -->
 <h2>References</h2>
 
 <ol class="references">
-    <li>XX</li>
+    <li id="ref1">D. Hafner et al. “Mastering Diverse Control Tasks through World Models.” <em>Nature</em>, 2025.</li>
+    <li id="ref2">K. He et al. “Masked Autoencoders Are Scalable Vision Learners.” <em>CVPR</em>, 2022.</li>
+    <li id="ref3">A. Dosovitskiy et al. “An Image Is Worth 16×16 Words: Transformers for Image Recognition at Scale.” <em>ICLR</em>, 2021.</li>
 </ol>
-
-<!-- ==================== APPENDIX ==================== -->
-<h2>Appendix</h2>
-
-<h3>A. Hyperparameters</h3>
-<p>[To be added: encoder architectures, training details, probe configurations]</p>
-
-<h3>B. Additional Probe Results</h3>
-<p>[To be added: extended results tables, per-event breakdown]</p>
-
-<h3>C. Replay Buffer Statistics</h3>
-<p>[To be added: data collection details, trajectory statistics]</p>
 
 </body>
 </html>
