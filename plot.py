@@ -19,6 +19,14 @@ COLORS = [
     '#7777cc', '#999999', '#990099', '#888800', '#ff00aa', '#444444',
 ]
 
+# Custom style mapping for specific methods
+METHOD_STYLES = {
+    'cnn_ae': {'color': '#0022ff', 'linestyle': '-'},   # Blue solid
+    'cnn_mae': {'color': '#00bfff', 'linestyle': '-'},  # Sky blue solid
+    'vit_ae': {'color': '#ff0011', 'linestyle': '-'},   # Red solid
+    'vit_mae': {'color': '#ff69b4', 'linestyle': '-'},  # Pink solid
+}
+
 
 def load_run(filename, xkeys, ykeys, ythres=None):
   try:
@@ -113,10 +121,13 @@ def bin_runs(df, args):
 
 def comp_stat(name, df, fn, baseline=None):
   df = df.copy()
+  # Keep original x values (steps) instead of normalizing to [0, 1]
+  # Use the mean of all xs as the common x axis
   if not df['xs'].apply(lambda xs: np.array_equal(xs, df['xs'][0])).all():
     assert len(df['xs'].apply(len).unique()) == 1
-    domain = np.linspace(0, 1, len(df['xs'][0]))
-    df['xs'] = df['xs'].apply(lambda _: domain)
+    # Don't normalize xs - keep original step values
+    # domain = np.linspace(0, 1, len(df['xs'][0]))
+    # df['xs'] = df['xs'].apply(lambda _: domain)
 
   df = df.groupby(['task', 'method'])[['xs', 'ys']].agg(np.stack).reset_index()
   df['xs'] = df['xs'].apply(lambda xs: nanmean(xs, axis=0))
@@ -180,7 +191,7 @@ def comp_stats(df, args):
     elif stat == 'median':
       x = comp_stat('Median', df, ax0(np.median))
     elif stat == 'self_mean':
-      x = comp_stat('Self Mean', df, ax0(nanmean), self_baseline)
+      x = comp_stat('Normalized Mean', df, ax0(nanmean), self_baseline)
     elif stat == 'self_median':
       x = comp_stat('Self Median', df, ax0(nanmedian), self_baseline)
     elif stat == 'atari_mean':
@@ -287,13 +298,20 @@ def style(ax, xticks=4, yticks=4, grid=(1, 1), logx=False, darker=False):
 def curve(
     ax, xs, ys, lo=None, hi=None, label=None, order=None, color=None,
     scatter=True, **kwargs):
-  color = color or (None if order is None else COLORS[order])
+  # Use custom style if method is in METHOD_STYLES
+  if label in METHOD_STYLES:
+    style_info = METHOD_STYLES[label]
+    color = color or style_info.get('color')
+    linestyle = style_info.get('linestyle', '-')
+  else:
+    color = color or (None if order is None else COLORS[order])
+    linestyle = '-'
   order = order or 0
   kwargs['color'] = color
   mask = np.isfinite(ys)
-  ax.plot(xs[mask], ys[mask], label=label, zorder=200 - order, **kwargs)
+  ax.plot(xs[mask], ys[mask], label=label, zorder=200 - order, linestyle=linestyle, **kwargs)
   if scatter:
-    ax.scatter(xs, ys, s=5, label=label, zorder=3000 - order, **kwargs)
+    ax.scatter(xs, ys, s=5, zorder=3000 - order, **kwargs)  # Remove duplicate label
   if lo is not None:
     ax.fill_between(
         xs[mask], lo[mask], hi[mask],

@@ -10,6 +10,7 @@ logdir/
 logs/
 *.out
 slurm-*.out
+download/
 
 # Virtual environments
 .venv/
